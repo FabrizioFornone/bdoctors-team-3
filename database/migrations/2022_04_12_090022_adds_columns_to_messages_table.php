@@ -15,8 +15,8 @@ class AddsColumnsToMessagesTable extends Migration
     {
         Schema::table('messages', function (Blueprint $table) {
             
-            $table->foreignId('doctor_id')->after('id')->constrained();
-            $table->string('name')->after('doctor_id');
+            $table->foreignId('user_id')->after('id')->constrained();
+            $table->string('name')->after('user_id');
             $table->string('email')->after('name');
 
         });
@@ -31,8 +31,8 @@ class AddsColumnsToMessagesTable extends Migration
     {
         Schema::table('messages', function (Blueprint $table) {
             
-            $table->dropForeign('messages_doctor_id_foreign');
-            $table->dropColumn('doctor_id');
+            $table->dropForeign('messages_user_id_foreign');
+            $table->dropColumn('user_id');
             $table->dropColumn('name');
             $table->dropColumn('email');
 

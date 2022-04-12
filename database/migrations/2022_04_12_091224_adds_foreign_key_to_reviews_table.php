@@ -15,7 +15,7 @@ class AddsForeignKeyToReviewsTable extends Migration
     {
         Schema::table('reviews', function (Blueprint $table) {
 
-            $table->foreignId('doctor_id')->after('id')->constrained();
+            $table->foreignId('user_id')->after('id')->constrained();
         });
     }
 
@@ -28,8 +28,8 @@ class AddsForeignKeyToReviewsTable extends Migration
     {
         Schema::table('reviews', function (Blueprint $table) {
 
-            $table->dropForeign('reviews_doctor_id_foreign');
-            $table->dropColumn('doctor_id');
+            $table->dropForeign('reviews_user_id_foreign');
+            $table->dropColumn('user_id');
         });
     }
 }
