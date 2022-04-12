@@ -15,7 +15,7 @@ class AddsForeignKeyToInfosTable extends Migration
     {
         Schema::table('infos', function (Blueprint $table) {
 
-            $table->foreignId('doctor_id')->after('id')->constrained();
+            $table->foreignId('user_id')->after('id')->constrained();
         });
     }
 
@@ -28,8 +28,8 @@ class AddsForeignKeyToInfosTable extends Migration
     {
         Schema::table('infos', function (Blueprint $table) {
 
-            $table->dropForeign('infos_doctor_id_foreign');
-            $table->dropColumn('doctor_id');
+            $table->dropForeign('infos_user_id_foreign');
+            $table->dropColumn('user_id');
         });
     }
 }
