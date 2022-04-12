@@ -15,7 +15,7 @@ class CreateAdvertisingsTable extends Migration
     {
         Schema::create('advertisings', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('duration');
+            $table->smallInteger('duration');
             $table->float('price');
             $table->timestamps();
         });
