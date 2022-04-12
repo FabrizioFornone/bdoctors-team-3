@@ -1,6 +1,7 @@
 <?php
 
 use App\Specialization;
+
 use Illuminate\Database\Seeder;
 
 class SpecializationsTableSeeder extends Seeder
