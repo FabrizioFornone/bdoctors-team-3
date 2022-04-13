@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
@@ -14,7 +15,9 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+
+        return view('', compact('users'));
     }
 
     /**
@@ -24,7 +27,7 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        //
+        return redirect()->route('');
     }
 
     /**
@@ -35,7 +38,7 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect()->route();
     }
 
     /**
@@ -44,9 +47,9 @@ class DoctorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        return view('', compact('user'));
     }
 
     /**
@@ -55,9 +58,9 @@ class DoctorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return view('', compact('user'));
     }
 
     /**
@@ -69,7 +72,16 @@ class DoctorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $data = $request->validate([
+            'name' => 'required|min:2',
+            'email' => 'required|email|unique:users,email,' . $id,
+            'address' => 'required|min:5'
+        ]);
+
+        $user->update($data);
+
+        return redirect()->route('', $user->id);
     }
 
     /**
