@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use Illuminate\Support\Facades\Auth;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +21,14 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+
+Route::middleware('auth')
+    ->namespace('Admin')
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+        Route::resource('infos', 'InfoController');
+    });
 
 Route::get('/home', 'HomeController@index')->name('home');
