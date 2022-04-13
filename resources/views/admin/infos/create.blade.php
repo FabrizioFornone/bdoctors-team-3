@@ -31,20 +31,20 @@
                             @enderror
                         </div>
 
-                        @endforeach
-
-
+                        
+                        
                         {{-- Surname--}}
                         <div class="mb-3">
                             <label>Surname</label>
                             <input type="text" name="surname"
                                 class="form-control @error('surname') is-invalid @enderror"
-                                placeholder="Enter your surname" value="{{ old('surname') }}" required>
+                                placeholder={{$user->surname }} value="{{ old('surname') }}" required>
                             @error('surname')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-
+                        
+                        @endforeach
                         {{-- CV--}}
                         <div class="mb-3">
                             <label>Curriculum Vitae</label>
