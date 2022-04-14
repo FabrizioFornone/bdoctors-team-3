@@ -16,27 +16,23 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('admin.infos.store') }}" method="post" enctype="multipart/form-data">
-                        @csrf
 
-                        @foreach ($users as $user)
+                    @foreach ($users as $user)
 
                         {{-- name --}}
                         <div class="mb-3">
                             <label>Name</label>
-                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+                            <input type="text" name="name" disabled class="form-control @error('name') is-invalid @enderror"
                                 placeholder={{$user->name }} value="{{ old('name') }}" required>
                             @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-
-                        
                         
                         {{-- Surname--}}
                         <div class="mb-3">
                             <label>Surname</label>
-                            <input type="text" name="surname"
+                            <input type="text" name="surname" disabled
                                 class="form-control @error('surname') is-invalid @enderror"
                                 placeholder={{$user->surname }} value="{{ old('surname') }}" required>
                             @error('surname')
@@ -45,10 +41,14 @@
                         </div>
                         
                         @endforeach
+
+                    <form action="{{ route('admin.infos.store') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+   
                         {{-- CV--}}
                         <div class="mb-3">
                             <label>Curriculum Vitae</label>
-                            <input type="text" name="CV" class="form-control @error('surname') is-invalid @enderror"
+                            <input type="file" name="CV" class="form-control @error('CV') is-invalid @enderror"
                                 placeholder="Enter your CV" value="{{ old('CV') }}" required>
                             @error('CV')
                             <div class="invalid-feedback">{{ $message }}</div>
