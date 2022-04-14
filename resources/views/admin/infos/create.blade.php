@@ -96,6 +96,17 @@
                             @enderror
                         </div>
 
+                        {{-- Performances --}}
+                        <div class="mb-3">
+                        <label>Performances</label>
+                        <input type="text" name="performances"
+                            class="form-control @error('performances') is-invalid @enderror" placeholder="{{$user->performances}}"
+                            value="{{ old('performances') }}" required>
+                        @error('performances')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                        </div>
+
                         <div class="form-group">
                             <a href="#" class="btn btn-secondary">Cancel</a>
                             <button type="submit" class="btn btn-success">Save infos</button>
