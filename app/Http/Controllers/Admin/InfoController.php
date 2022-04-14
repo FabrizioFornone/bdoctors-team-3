@@ -19,8 +19,11 @@ class InfoController extends Controller
      */
     public function index()
     {
-        $infos = Info::all();
-        return view('admin.infos.index', compact ('infos'));
+        $infos = Info::where("id", Auth::user()->id)->get();
+
+        $users = User::where("id", Auth::user()->id)->get();
+
+        return view('admin.infos.index', compact('infos', 'users'));
     }
 
     /**
@@ -52,11 +55,11 @@ class InfoController extends Controller
             'phone' => 'nullable|min:11|numeric'
         ]);
 
-        
+
         $info = new Info();
         $info->fill($data);
         $info->user_id = Auth::user()->id;
-        
+
         if (key_exists('photo', $data)) {
             $photo = Storage::put('files', $data['photo']);
             $info->photo = $photo;
@@ -66,7 +69,7 @@ class InfoController extends Controller
             $CV = Storage::put('files', $data['CV']);
             $info->CV = $CV;
         }
-        
+
         $info->save();
 
         return redirect()->route('admin.infos.index');
