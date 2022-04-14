@@ -19,32 +19,43 @@
 
                     @foreach ($users as $user)
 
-                        {{-- name --}}
-                        <div class="mb-3">
-                            <label>Name</label>
-                            <input type="text" name="name" disabled class="form-control @error('name') is-invalid @enderror"
-                                placeholder={{$user->name }} value="{{ old('name') }}" required>
-                            @error('name')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        
-                        {{-- Surname--}}
-                        <div class="mb-3">
-                            <label>Surname</label>
-                            <input type="text" name="surname" disabled
-                                class="form-control @error('surname') is-invalid @enderror"
-                                placeholder={{$user->surname }} value="{{ old('surname') }}" required>
-                            @error('surname')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        
-                        @endforeach
+                    {{-- name --}}
+                    <div class="mb-3">
+                        <label>Name</label>
+                        <input type="text" name="name" disabled class="form-control @error('name') is-invalid @enderror"
+                            placeholder={{$user->name }} value="{{ old('name') }}" required>
+                        @error('name')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    {{-- Surname--}}
+                    <div class="mb-3">
+                        <label>Surname</label>
+                        <input type="text" name="surname" disabled
+                            class="form-control @error('surname') is-invalid @enderror" placeholder="{{$user->surname}}"
+                            value="{{ old('surname') }}" required>
+                        @error('surname')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    {{-- Address --}}
+                    <div class="mb-3">
+                        <label>Address P.IVA</label>
+                        <input type="text" name="address" disabled
+                            class="form-control @error('address') is-invalid @enderror" placeholder="{{$user->address}}"
+                            value="{{ old('address') }}" required>
+                        @error('address')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    @endforeach
 
                     <form action="{{ route('admin.infos.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
-   
+
                         {{-- CV--}}
                         <div class="mb-3">
                             <label>Curriculum Vitae</label>
