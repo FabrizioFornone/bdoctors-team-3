@@ -29,6 +29,10 @@ Route::middleware('auth')
     ->name('admin.')
     ->group(function () {
         Route::resource('infos', 'InfoController');
+        
+        Route::get("messages", "MessageController@index")->name("messages.index");
+        
+        Route::get("reviews", "ReviewController@index")->name("reviews.index");
     });
-
-Route::get('/home', 'HomeController@index')->name('home');
+    
+    Route::get('/home', 'HomeController@index')->name('home');
