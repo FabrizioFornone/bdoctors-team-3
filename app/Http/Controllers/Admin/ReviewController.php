@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Review;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -14,7 +15,8 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews = Review::all();
+        return view('admin.reviews.index', compact('reviews'));
     }
 
     /**
@@ -46,7 +48,8 @@ class ReviewController extends Controller
      */
     public function show($id)
     {
-        //
+        $reviews = Review::all();
+        return view('admin.reviews.show', compact('reviews'));
     }
 
     /**
