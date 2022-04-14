@@ -49,7 +49,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return view('', compact('user'));
+        return redirect()->route('admin.infos.index');
     }
 
     /**
@@ -60,7 +60,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        return view('', compact('user'));
+        return view('admin.infos.edit', compact('user'));
     }
 
     /**
@@ -82,7 +82,7 @@ class UserController extends Controller
 
         $user->update($data);
 
-        return redirect()->route('', $user->id);
+        return redirect()->route('admin.infos.index', $user->id);
     }
 
     /**
