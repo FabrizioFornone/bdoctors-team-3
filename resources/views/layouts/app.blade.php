@@ -53,6 +53,11 @@
                         </li>
                         @endif
                         @else
+                        <li class="nav-item d-flex">
+                            <a href="{{route('admin.messages.index')}}" class="nav-link" role="button">Messages</a>
+                            <a href="{{route('admin.reviews.index')}}" class="nav-link" role="button">Reviews</a>
+                        </li>
+
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
