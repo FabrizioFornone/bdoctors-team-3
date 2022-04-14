@@ -17,7 +17,7 @@
 
                         {{ __('You are logged in!') }}
 
-                        <a href="{{ route('admin.infos.create') }}">Create CRUD</a>
+                        <a href="{{ route('admin.infos.index') }}">Area Personale</a>
 
                     </div>
 

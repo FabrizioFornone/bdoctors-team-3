@@ -18,7 +18,7 @@ class CreateInfosTable extends Migration
             $table->text("CV");
             $table->string("photo");
             $table->string("address");
-            $table->integer("phone");
+            $table->string("phone");
             $table->timestamps();
         });
     }
