@@ -14,7 +14,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+
+        return view('admin.infos.index', compact('users'));
     }
 
     /**
@@ -24,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return redirect()->route('admin.infos.index');
     }
 
     /**
@@ -35,7 +37,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect()->route('admin.infos.index');
     }
 
     /**
@@ -46,7 +48,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('', compact('user'));
     }
 
     /**
@@ -57,7 +59,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('', compact('user'));
     }
 
     /**
@@ -69,7 +71,17 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $data = $request->validate([
+            'name' => 'required|min:2',
+            'surname' => 'required|min:2',
+            'email' => 'required|email|unique:users,email,' . $id,
+            'address' => 'nullable|min:5',
+        ]);
+
+        $user->update($data);
+
+        return redirect()->route('', $user->id);
     }
 
     /**
