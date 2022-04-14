@@ -21,9 +21,19 @@ class InfoController extends Controller
     {
         $infos = Info::where("id", Auth::user()->id)->get();
 
+        $boolean = false;
+        dump($infos);
+
+
+        if (count($infos) == 0) {
+
+            $boolean = true;
+            dump($boolean);
+        }
+
         $users = User::where("id", Auth::user()->id)->get();
 
-        return view('admin.infos.index', compact('infos', 'users'));
+        return view('admin.infos.index', compact('infos', 'users', 'boolean'));
     }
 
     /**
