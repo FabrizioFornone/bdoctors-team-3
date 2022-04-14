@@ -52,7 +52,8 @@ class InfoController extends Controller
             'CV' => 'nullable|file|max:500',
             'photo' => 'nullable|max:10000',
             'address' => 'nullable|min:5',
-            'phone' => 'nullable|min:11|numeric'
+            'phone' => 'nullable|min:11|numeric',
+            'performances' => 'nullable|numeric'
         ]);
 
 
@@ -117,7 +118,8 @@ class InfoController extends Controller
             'CV' => 'nullable|file|max:500',
             'photo' => 'nullable|image|max:500',
             'address' => 'nullable|min:5',
-            'phone' => 'nullable|min:11|numeric'
+            'phone' => 'nullable|min:11|numeric',
+            'performances' => 'nullable|numeric'
         ]);
 
         $info = Info::findOrFail($id);
