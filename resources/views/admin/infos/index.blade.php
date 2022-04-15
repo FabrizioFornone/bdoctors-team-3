@@ -11,16 +11,19 @@
                 @foreach ( $infos as $info)
 
                 <div class="card-body">
-                    <div class="d-flex my-2">
+                    <div class="row my-2">
                         {{-- Profile IMG --}}
-                        <div>
-                            <img class="w-25" src="{{asset('storage/' . $info->photo) }}" alt="">
+                        <div class="col-6">
+                            <img class="w-50" src="{{asset('storage/' . $info->photo) }}" alt="">
                         </div>
                         @foreach ( $users as $user )
-                        <div>
-                            <h3>
+                        <div class="col-6">
+                            {{-- User Name --}}
+                            <h3 class="py-2">
                                 {{$user->name}} {{$user->surname}}
                             </h3>
+                            @endforeach
+                            {{-- Boolean button  --}}
                             @if ($boolean)
                             <button type="button" class="btn btn-primary">
                                 <a class="ms-auto text-white text-decoration-none"
@@ -41,12 +44,9 @@
                             @endif
 
                         </div>
-                        @endforeach
                     </div>
 
-
                     @endforeach
-
 
                 </div>
             </div>
