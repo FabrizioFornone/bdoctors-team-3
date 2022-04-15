@@ -9,10 +9,11 @@
                     <div>
                         New Post
                     </div>
-                    <div>
-                        {{-- <a href="{{ route('admin.posts.index') }}" title="back"><i
-                                class="fa-solid fa-arrow-left"></i></a> --}}
-                    </div>
+                    <!-- <div>
+                        <a href="{{ route('admin.infos.index') }}" title="back">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                    </div> -->
                 </div>
 
                 <div class="card-body">
@@ -42,11 +43,11 @@
 
                     {{-- Address --}}
                     <div class="mb-3">
-                        <label>Address P.IVA</label>
-                        <input type="text" name="address" disabled
-                            class="form-control @error('address') is-invalid @enderror" placeholder="{{$user->address}}"
-                            value="{{ old('address') }}" required>
-                        @error('address')
+                        <label>Business Address</label>
+                        <input type="text" name="business_address" disabled
+                            class="form-control @error('business_address') is-invalid @enderror" placeholder="{{$user->business_address}}"
+                            value="{{ old('business_address') }}" required>
+                        @error('business_address')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
@@ -108,8 +109,8 @@
                         </div>
 
                         <div class="form-group">
-                            <a href="#" class="btn btn-secondary">Cancel</a>
-                            <button type="submit" class="btn btn-success">Save infos</button>
+                            <a href="{{ route('admin.infos.index') }}" class="btn btn-secondary">Back</a>
+                            <button type="submit" class="btn btn-success">Create</button>
                         </div>
                     </form>
                 </div>

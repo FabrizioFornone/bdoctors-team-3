@@ -6,55 +6,70 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                
                     <div>
-                        New Post
+                        Edit Profile
                     </div>
-                    <div>
-                        {{-- <a href="{{ route('admin.posts.index') }}" title="back">
+                    <!-- <div>
+                        <a href="{{ route('admin.infos.index') }}" title="back">
                             <i class="fa-solid fa-arrow-left"></i>
-                        </a> --}}
-                    </div>
+                        </a>
+                    </div> -->
                 </div>
-
                 <div class="card-body">
-                    @foreach ($users as $user)
-                    {{-- name --}}
-                    <div class="mb-3">
-                        <label>Name</label>
-                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" 
-                        placeholder="{{ $user->name }}" value="{{ old('name') }}" required>
-                        @error('name')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    {{-- Surname--}}
-                    <div class="mb-3">
-                        <label>Surname</label>
-                        <input type="text" name="surname"
-                            class="form-control @error('surname') is-invalid @enderror" placeholder="{{ $user->surname }}"
-                            value="{{ old('surname') }}" required>
-                        @error('surname')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    {{-- Address --}}
-                    <div class="mb-3">
-                        <label>Address P.IVA</label>
-                        <input type="text" name="address"
-                            class="form-control @error('address') is-invalid @enderror" placeholder="{{ $user->address }}"
-                            value="{{ old('address') }}" required>
-                        @error('address')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    @endforeach
-
-                    <form action="{{ route('admin.infos.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('admin.infos.update', $info->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
+                        @method("patch")
+
+                        @foreach ($users as $user)
+
+                        {{-- name --}}
+                        <div class="mb-3">
+                            <label>Name</label>
+                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" 
+                            placeholder="{{ $user->name }}" value="{{ old('name') }}" required>
+                            @error('name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        {{-- Surname--}}
+                        <div class="mb-3">
+                            <label>Surname</label>
+                            <input type="text" name="surname"
+                                class="form-control @error('surname') is-invalid @enderror" placeholder="{{ $user->surname }}"
+                                value="{{ old('surname') }}" required>
+                            @error('surname')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        {{-- Address --}}
+                        <div class="mb-3">
+                            <label>Business Address</label>
+                            <input type="text" name="business_address"
+                                class="form-control @error('business_address') is-invalid @enderror" placeholder="{{ $user->business_address }}"
+                                value="{{ old('business_address') }}" required>
+                            @error('business_address')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        @endforeach
+
+                        
+                        {{-- Specializations --}}
+                        <div class="mb-3">
+                            <label>Specializations</label>
+                            <br>
+                            @foreach ($specializations as $specialization)
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-label" type="checkbox" name="specializations[]" value="{{ $specialization->id }}" 
+                                id="specialization_{{ $specialization->id }}">
+                                <label class="form-check-label" for="specialization_{{ $specialization->id }}">{{ $specialization->name }}</label>
+                            </div>
+                            @endforeach
+                        </div>
+                        
 
                         {{-- CV--}}
                         <div class="mb-3">
@@ -100,7 +115,7 @@
                         <div class="mb-3">
                         <label>Performances</label>
                         <input type="text" name="performances"
-                            class="form-control @error('performances') is-invalid @enderror" placeholder="{{$user->performances}}"
+                            class="form-control @error('performances') is-invalid @enderror" placeholder="{{ $info->performances }}"
                             value="{{ old('performances') }}" required>
                         @error('performances')
                         <div class="invalid-feedback">{{ $message }}</div>
@@ -108,8 +123,8 @@
                         </div>
 
                         <div class="form-group">
-                            <a href="#" class="btn btn-secondary">Cancel</a>
-                            <button type="submit" class="btn btn-success">Save infos</button>
+                            <a href="{{ route('admin.infos.index') }}" class="btn btn-secondary">Back</a>
+                            <button type="submit" class="btn btn-success">Update</button>
                         </div>
                     </form>
                 </div>
