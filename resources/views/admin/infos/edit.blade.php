@@ -6,24 +6,24 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
+                
                     <div>
                         New Post
                     </div>
                     <div>
-                        {{-- <a href="{{ route('admin.posts.index') }}" title="back"><i
-                                class="fa-solid fa-arrow-left"></i></a> --}}
+                        {{-- <a href="{{ route('admin.posts.index') }}" title="back">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a> --}}
                     </div>
                 </div>
 
                 <div class="card-body">
-
                     @foreach ($users as $user)
-
                     {{-- name --}}
                     <div class="mb-3">
                         <label>Name</label>
-                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                            placeholder="{{ $user->name }}" value="{{ old('name', $users->name) }}" required>
+                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" 
+                        placeholder="{{ $user->name }}" value="{{ old('name') }}" required>
                         @error('name')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -34,7 +34,7 @@
                         <label>Surname</label>
                         <input type="text" name="surname"
                             class="form-control @error('surname') is-invalid @enderror" placeholder="{{ $user->surname }}"
-                            value="{{ old('surname', $users->surname) }}" required>
+                            value="{{ old('surname') }}" required>
                         @error('surname')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -45,7 +45,7 @@
                         <label>Address P.IVA</label>
                         <input type="text" name="address"
                             class="form-control @error('address') is-invalid @enderror" placeholder="{{ $user->address }}"
-                            value="{{ old('address', $users->address) }}" required>
+                            value="{{ old('address') }}" required>
                         @error('address')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -53,9 +53,8 @@
 
                     @endforeach
 
-                    <form action="{{ route('admin.infos.update', $info->id) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('admin.infos.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
-                        @method('patch')
 
                         {{-- CV--}}
                         <div class="mb-3">
