@@ -44,10 +44,9 @@ class InfoController extends Controller
     public function create()
     {
         $users = User::where("id", Auth::user()->id)->get();
+        $specializations = Specialization::all();
 
-        dump($users);
-
-        return view('admin.infos.create', compact('users'));
+        return view('admin.infos.create', compact('users', 'specializations'));
     }
 
     /**
