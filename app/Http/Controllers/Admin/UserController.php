@@ -77,7 +77,7 @@ class UserController extends Controller
             'name' => 'required|min:2',
             'surname' => 'required|min:2',
             'email' => 'required|email|unique:users,email,' . $id,
-            'address' => 'nullable|min:5',
+            'business_address' => 'nullable|min:5',
         ]);
 
         $user->update($data);

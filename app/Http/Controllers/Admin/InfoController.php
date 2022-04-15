@@ -130,7 +130,7 @@ class InfoController extends Controller
         $dataUser = $request->validate([
             'name' => 'required|min:3',
             'surname' => 'required|min:3',
-            'address' => 'nullable|min:5'
+            'business_address' => 'nullable|min:5'
         ]);
 
         $users = User::findOrFail($id);
@@ -143,15 +143,15 @@ class InfoController extends Controller
             'address' => 'nullable|min:5',
             'phone' => 'nullable|min:11|numeric',
             'performances' => 'nullable|numeric',
-            'specializations' => 'nullable'
+            'specializations' => 'nullable|exists:specializations,id'
         ]);
 
-        $dataInfo = Info::findOrFail($id);
+        $info = Info::findOrFail($id);
 
-        $dataInfo->update($dataInfo);
+        $info->update($dataInfo);
 
         if (key_exists('specializations', $dataInfo)) {
-            $dataInfo->specializations()->sync($dataInfo['specializations']);
+            $info->specializations()->sync($dataInfo['specializations']);
         }
         
         return redirect()->route('admin.infos.index', $id);
