@@ -7,9 +7,20 @@
             <div class="card">
                 <div class="card-header d-flex">
                     Test
-
-                    <a class="ms-auto" href="{{ route('admin.infos.create') }}"><i
-                            class="fa-solid fa-plus"></i>Aggiungi</a>
+                    
+                    @if ($boolean)
+                        <a class="ms-auto" href="{{ route('admin.infos.create') }}">
+                            <i class="fa-solid fa-plus"></i>
+                            Create
+                        </a>
+                        @else
+                        @foreach ( $infos as $info)
+                        <a class="ms-auto" href="{{ route('admin.infos.edit', $info->id) }}">
+                            <i class="fa-solid fa-plus"></i>
+                            Edit
+                        </a>
+                        @endforeach
+                    @endif
                 </div>
 
                 <div class="card-body">
