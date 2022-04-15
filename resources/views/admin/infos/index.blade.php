@@ -37,7 +37,6 @@
 
                         {{-- Profile IMG --}}
                         <div class="col-6">
-                            @dump($info->photo)
                             <img class="w-50" src={{asset('storage/' . $info->photo) }} alt="">
                         </div>
 
