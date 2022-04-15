@@ -19,7 +19,7 @@ class InfoController extends Controller
      */
     public function index()
     {
-        $infos = Info::where("id", Auth::user()->id)->get();
+        $infos = Info::where("user_id", Auth::user()->id)->get();
 
         $boolean = false;
         dump($infos);
