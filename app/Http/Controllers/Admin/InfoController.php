@@ -19,19 +19,18 @@ class InfoController extends Controller
      */
     public function index()
     {
-        $infos = Info::where("id", Auth::user()->id)->get();
+        $infos = Info::where("user_id", Auth::user()->id)->get();
 
         $boolean = false;
-        dump($infos);
 
 
         if (count($infos) == 0) {
 
             $boolean = true;
-            dump($boolean);
         }
 
         $users = User::where("id", Auth::user()->id)->get();
+
 
         return view('admin.infos.index', compact('infos', 'users', 'boolean'));
     }
@@ -153,7 +152,7 @@ class InfoController extends Controller
         if (key_exists('specializations', $dataInfo)) {
             $info->specializations()->sync($dataInfo['specializations']);
         }
-        
+
         return redirect()->route('admin.infos.index', $id);
     }
 
