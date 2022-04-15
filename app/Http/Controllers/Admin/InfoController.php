@@ -75,6 +75,8 @@ class InfoController extends Controller
             $info->photo = $photo;
         }
 
+        
+
         if (key_exists('CV', $data)) {
             $CV = Storage::put('files', $data['CV']);
             $info->CV = $CV;
@@ -138,7 +140,7 @@ class InfoController extends Controller
 
         $dataInfo = $request->validate([
             'CV' => 'nullable|file|max:500',
-            'photo' => 'nullable|image|max:500',
+            'photo' => 'nullable|max:10000',
             'address' => 'nullable|min:5',
             'phone' => 'nullable|min:11|numeric',
             'performances' => 'nullable|numeric',

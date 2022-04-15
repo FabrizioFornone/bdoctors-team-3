@@ -16,7 +16,8 @@
                     </div> -->
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.infos.update', $info->id) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('admin.infos.update', $info->id) }}" method="post"
+                        enctype="multipart/form-data">
                         @csrf
                         @method("patch")
 
@@ -25,8 +26,8 @@
                         {{-- name --}}
                         <div class="mb-3">
                             <label>Name</label>
-                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" 
-                            placeholder="{{ $user->name }}" value="{{ old('name') }}" required>
+                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+                                value="{{ old('name', $user->name) }}" required>
                             @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -36,8 +37,8 @@
                         <div class="mb-3">
                             <label>Surname</label>
                             <input type="text" name="surname"
-                                class="form-control @error('surname') is-invalid @enderror" placeholder="{{ $user->surname }}"
-                                value="{{ old('surname') }}" required>
+                                class="form-control @error('surname') is-invalid @enderror"
+                                value="{{ old('surname', $user->surname) }}" required>
                             @error('surname')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -47,8 +48,8 @@
                         <div class="mb-3">
                             <label>Business Address</label>
                             <input type="text" name="business_address"
-                                class="form-control @error('business_address') is-invalid @enderror" placeholder="{{ $user->business_address }}"
-                                value="{{ old('business_address') }}" required>
+                                class="form-control @error('business_address') is-invalid @enderror"
+                                value="{{ old('business_address', $user->business_address) }}" required>
                             @error('business_address')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -56,26 +57,26 @@
 
                         @endforeach
 
-                        
+
                         {{-- Specializations --}}
                         <div class="mb-3">
                             <label>Specializations</label>
                             <br>
                             @foreach ($specializations as $specialization)
                             <div class="form-check form-check-inline">
-                                <input class="form-check-label" type="checkbox" name="specializations[]" value="{{ $specialization->id }}" 
-                                id="specialization_{{ $specialization->id }}">
-                                <label class="form-check-label" for="specialization_{{ $specialization->id }}">{{ $specialization->name }}</label>
+                                <input class="form-check-label" type="checkbox" name="specializations[]"
+                                    value="{{ $specialization->id }}" id="specialization_{{ $specialization->id }}">
+                                <label class="form-check-label" for="specialization_{{ $specialization->id }}">{{
+                                    $specialization->name }}</label>
                             </div>
                             @endforeach
                         </div>
-                        
+
 
                         {{-- CV--}}
                         <div class="mb-3">
                             <label>Curriculum Vitae</label>
-                            <input type="file" name="CV" class="form-control @error('CV') is-invalid @enderror"
-                                placeholder="Enter your CV" value="{{ old('CV') }}" required>
+                            <input type="file" name="cv" class="form-control @error('cv') is-invalid @enderror">
                             @error('CV')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -95,7 +96,7 @@
                             <label>Address</label>
                             <input type="text" name="address"
                                 class="form-control @error('address') is-invalid @enderror"
-                                placeholder="Enter your address" value="{{ old('address') }}" required>
+                                 value="{{ old('address', $info->address) }}" required>
                             @error('address')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -105,7 +106,7 @@
                         <div class="mb-3">
                             <label>Phone Number</label>
                             <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror"
-                                placeholder="Enter your phone number" value="{{ old('phone') }}" required>
+                                 value="{{ old('phone', $info->phone) }}" required>
                             @error('phone')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -113,13 +114,13 @@
 
                         {{-- Performances --}}
                         <div class="mb-3">
-                        <label>Performances</label>
-                        <input type="text" name="performances"
-                            class="form-control @error('performances') is-invalid @enderror" placeholder="{{ $info->performances }}"
-                            value="{{ old('performances') }}" required>
-                        @error('performances')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
+                            <label>Performances</label>
+                            <input type="text" name="performances"
+                                class="form-control @error('performances') is-invalid @enderror"
+                                value="{{ old('performances', $info->performances) }}" required>
+                            @error('performances')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div class="form-group">
