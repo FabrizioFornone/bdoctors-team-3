@@ -14,7 +14,7 @@ class AddColumnAddressInUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('address')->after('email');
+            $table->string('business_address')->after('surname');
             
         });
     }
@@ -27,7 +27,7 @@ class AddColumnAddressInUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('address');
+            $table->dropColumn('business_address');
 
         });
     }

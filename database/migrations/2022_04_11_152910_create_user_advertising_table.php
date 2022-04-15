@@ -30,8 +30,8 @@ class CreateUserAdvertisingTable extends Migration
                 ->references('id')
                 ->on('advertisings');
 
-            $table->dateTime('start advertising');
-            $table->dateTime('end advertising');
+            $table->dateTime('start_advertising');
+            $table->dateTime('end_advertising');
             $table->timestamps();
         });
     }
