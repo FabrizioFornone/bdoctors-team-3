@@ -35,6 +35,7 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     {{-- Navbar left --}}
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        @auth
                         <li class="nav-item">
                             <a href="{{route('home')}}" class="nav-link" role="button">Home</a>
                         </li>
@@ -44,6 +45,7 @@
                         <li class="nav-item">
                             <a href="{{route('admin.reviews.index')}}" class="nav-link" role="button">Reviews</a>
                         </li>
+                        @endauth
                     </ul>
                     {{-- Navbar right --}}
                     <ul class="navbar-nav mb-2 mb-lg-0">

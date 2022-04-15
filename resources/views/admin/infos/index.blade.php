@@ -61,7 +61,7 @@
                             </h5>
 
                             @if ($info->specializations->count()!=0)
-                            <div> Tags:
+                            <div> Specializations:
                                 @foreach ($info->specializations as $specialization)
                                 <span class="pr-1">{{ $specialization->name }}</span>
                                 @endforeach
