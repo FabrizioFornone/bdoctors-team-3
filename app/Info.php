@@ -6,7 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Info extends Model
 {
-    protected $fillable = [
-        'CV', 'photo', 'address', 'phone', 'performances'
-    ];
+    protected $fillable = ['CV', 'photo', 'address', 'phone', 'performances'];
+
+
+    public function user() {
+        return $this->belongsTo('App\User');
+    }
+
+    public function specializations() {
+        return $this->hasMany('App\Specialization');
+    }
 }
