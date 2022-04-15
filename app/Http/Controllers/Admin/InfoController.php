@@ -45,8 +45,6 @@ class InfoController extends Controller
     {
         $users = User::where("id", Auth::user()->id)->get();
 
-        dump($users);
-
         return view('admin.infos.create', compact('users'));
     }
 
@@ -63,7 +61,8 @@ class InfoController extends Controller
             'photo' => 'nullable|max:10000',
             'address' => 'nullable|min:5',
             'phone' => 'nullable|min:11|numeric',
-            'performances' => 'nullable|numeric'
+            'performances' => 'nullable|numeric',
+            'specializations' => 'nullable'
         ]);
 
 
@@ -81,7 +80,12 @@ class InfoController extends Controller
             $info->CV = $CV;
         }
 
+
         $info->save();
+
+        if (key_exists('specializations', $data)) {
+            $info->specialization()->attach($data['specializations']);
+        }
 
         return redirect()->route('admin.infos.index');
     }
