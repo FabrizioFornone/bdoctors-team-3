@@ -105,12 +105,13 @@ class InfoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Info $info)
     {
-        $info = Info::findOrFail('id');
-        $specialization = Specialization::all();
+        $users = User::where("id", Auth::user()->id)->get();
+        // $info = Info::findOrFail('id');
+        // $specialization = Specialization::all();
 
-        return view('admin.infos.edit', compact('info', 'specialization'));
+        return view('admin.infos.edit', compact('info', 'users'));
     }
 
     /**
@@ -122,9 +123,17 @@ class InfoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->validate([
+        $dataUser = $request->validate([
             'name' => 'required|min:3',
             'surname' => 'required|min:3',
+            'address' => 'nullable|min:5'
+        ]);
+
+        $users = User::findOrFail($id);
+
+        $users->update($dataUser);
+
+        $dataInfo = $request->validate([
             'CV' => 'nullable|file|max:500',
             'photo' => 'nullable|image|max:500',
             'address' => 'nullable|min:5',
@@ -134,7 +143,7 @@ class InfoController extends Controller
 
         $info = Info::findOrFail($id);
 
-        $info->update($data);
+        $info->update($dataInfo);
 
         return redirect()->route('admin.infos.index', $id);
     }
