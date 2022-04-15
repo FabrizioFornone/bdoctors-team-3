@@ -19,8 +19,21 @@ class InfoController extends Controller
      */
     public function index()
     {
-        $infos = Info::all();
-        return view('admin.infos.index', compact('infos'));
+        $infos = Info::where("id", Auth::user()->id)->get();
+
+        $boolean = false;
+        dump($infos);
+
+
+        if (count($infos) == 0) {
+
+            $boolean = true;
+            dump($boolean);
+        }
+
+        $users = User::where("id", Auth::user()->id)->get();
+
+        return view('admin.infos.index', compact('infos', 'users', 'boolean'));
     }
 
     /**
@@ -49,7 +62,8 @@ class InfoController extends Controller
             'CV' => 'nullable|file|max:500',
             'photo' => 'nullable|max:10000',
             'address' => 'nullable|min:5',
-            'phone' => 'nullable|min:11|numeric'
+            'phone' => 'nullable|min:11|numeric',
+            'performances' => 'nullable|numeric'
         ]);
 
 
@@ -114,7 +128,8 @@ class InfoController extends Controller
             'CV' => 'nullable|file|max:500',
             'photo' => 'nullable|image|max:500',
             'address' => 'nullable|min:5',
-            'phone' => 'nullable|min:11|numeric'
+            'phone' => 'nullable|min:11|numeric',
+            'performances' => 'nullable|numeric'
         ]);
 
         $info = Info::findOrFail($id);
