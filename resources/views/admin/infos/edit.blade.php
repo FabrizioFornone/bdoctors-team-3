@@ -9,11 +9,6 @@
                     <div>
                         Edit Profile
                     </div>
-                    <!-- <div>
-                        <a href="{{ route('admin.infos.index') }}" title="back">
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </a>
-                    </div> -->
                 </div>
                 <div class="card-body">
                     <form action="{{ route('admin.infos.update', $info->id) }}" method="post"
@@ -65,7 +60,7 @@
                             <input type="checkbox" class="form-check-input" value="{{ $specialization->id }}" id="specialization_{{$specialization->id}}"
                                 name="specializations[]" {{ $info->specializations->contains($specialization) ? 'checked' : '' }}>
                             </div>
-                            @endforeach
+                        @endforeach
 
 
                         {{-- CV--}}
@@ -101,7 +96,7 @@
                         <div class="mb-3">
                             <label>Phone Number</label>
                             <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror"
-                                 value="{{ old('phone', $info->phone) }}" required>
+                                placeholder="Enter your phone number" value="{{ old('phone', $info->phone) }}" required>
                             @error('phone')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror

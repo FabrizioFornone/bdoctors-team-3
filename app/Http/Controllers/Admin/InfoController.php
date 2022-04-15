@@ -178,6 +178,8 @@ class InfoController extends Controller
 
         if (key_exists('specializations', $dataInfo)) {
             $info->specializations()->sync($dataInfo['specializations']);
+        } else {
+            $info->specializations()->detach();
         }
 
         return redirect()->route('admin.infos.index', $id);

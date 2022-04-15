@@ -60,6 +60,16 @@
                                 Performances: {{$info->performances}} €
                             </h5>
 
+                            @if ($info->specializations->count()!=0)
+                            <div> Tags:
+                                @foreach ($info->specializations as $specialization)
+                                <span class="pr-1">{{ $specialization->name }}</span>
+                                @endforeach
+                            </div>
+                            @endif
+
+
+
                             @endforeach
                         </div>
                     </div>
