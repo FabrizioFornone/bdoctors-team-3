@@ -108,10 +108,9 @@ class InfoController extends Controller
     public function edit(Info $info)
     {
         $users = User::where("id", Auth::user()->id)->get();
-        // $info = Info::findOrFail('id');
-        // $specialization = Specialization::all();
+        $specializations = Specialization::all();
 
-        return view('admin.infos.edit', compact('info', 'users'));
+        return view('admin.infos.edit', compact('info', 'users', 'specializations'));
     }
 
     /**
@@ -138,13 +137,18 @@ class InfoController extends Controller
             'photo' => 'nullable|image|max:500',
             'address' => 'nullable|min:5',
             'phone' => 'nullable|min:11|numeric',
-            'performances' => 'nullable|numeric'
+            'performances' => 'nullable|numeric',
+            'specializations' => 'nullable'
         ]);
 
-        $info = Info::findOrFail($id);
+        $dataInfo = Info::findOrFail($id);
 
-        $info->update($dataInfo);
+        $dataInfo->update($dataInfo);
 
+        if (key_exists('specializations', $dataInfo)) {
+            $dataInfo->specializations()->sync($dataInfo['specializations']);
+        }
+        
         return redirect()->route('admin.infos.index', $id);
     }
 
