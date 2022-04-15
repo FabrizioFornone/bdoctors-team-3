@@ -20,10 +20,19 @@
                         <div class="col-6">
                             {{-- User Name --}}
                             <h3 class="py-2">
-                                {{$user->name}} {{$user->surname}}
+                               Name: {{$user->name}} {{$user->surname}}
                             </h3>
-                            @endforeach
-                            {{-- Boolean button  --}}
+                        @endforeach
+                            <h5 class="py-2">
+                               Address: {{$info->address}}
+                            </h5>
+                            <h5 class="py-2">
+                               Phone: {{$info->phone}}
+                            </h5>
+                            <h5 class="py-2">
+                               Performances: {{$info->performances}}
+                            </h5>
+                            {{-- Boolean button --}}
                             @if ($boolean)
                             <button type="button" class="btn btn-primary">
                                 <a class="ms-auto text-white text-decoration-none"

@@ -31,6 +31,7 @@ class InfoController extends Controller
 
         $users = User::where("id", Auth::user()->id)->get();
 
+
         return view('admin.infos.index', compact('infos', 'users', 'boolean'));
     }
 
