@@ -84,7 +84,7 @@ class InfoController extends Controller
         $info->save();
 
         if (key_exists('specializations', $data)) {
-            $info->specialization()->attach($data['specializations']);
+            $info->specializations()->attach($data['specializations']);
         }
 
         return redirect()->route('admin.infos.index');
@@ -148,6 +148,31 @@ class InfoController extends Controller
         $info = Info::findOrFail($id);
 
         $info->update($dataInfo);
+
+        if (key_exists('CV', $dataInfo)) {
+
+            if ($info->CV) {
+                Storage::delete($info->CV);
+            }
+
+            $userCv = Storage::put('files', $dataInfo['CV']);
+
+            $info->CV = $userCv;
+            $info->save();
+        }
+
+        if (key_exists('photo', $dataInfo)) {
+
+            if ($info->photo) {
+                Storage::delete($info->photo);
+            }
+
+            $userPhoto = Storage::put('files', $dataInfo['photo']);
+
+            $info->photo = $userPhoto;
+            $info->save();
+        }
+
 
         if (key_exists('specializations', $dataInfo)) {
             $info->specializations()->sync($dataInfo['specializations']);
