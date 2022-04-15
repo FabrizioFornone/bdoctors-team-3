@@ -30,7 +30,7 @@
                                Phone: {{$info->phone}}
                             </h5>
                             <h5 class="py-2">
-                               Performances: {{$info->performances}}
+                               Performances: {{$info->performances}} €
                             </h5>
                             {{-- Boolean button --}}
                             @if ($boolean)
