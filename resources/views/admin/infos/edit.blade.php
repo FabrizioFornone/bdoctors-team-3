@@ -59,18 +59,13 @@
 
 
                         {{-- Specializations --}}
-                        <div class="mb-3">
-                            <label>Specializations</label>
-                            <br>
-                            @foreach ($specializations as $specialization)
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-label" type="checkbox" name="specializations[]"
-                                    value="{{ $specialization->id }}" id="specialization_{{ $specialization->id }}">
-                                <label class="form-check-label" for="specialization_{{ $specialization->id }}">{{
-                                    $specialization->name }}</label>
+                        @foreach ($specializations as $specialization)
+                        <div class="form-check form-check-inline mb-3">
+                            <label class="form-check-label ms-1" for="specialization_{{$specialization->id}}">{{ $specialization->name }}</label>
+                            <input type="checkbox" class="form-check-input" value="{{ $specialization->id }}" id="specialization_{{$specialization->id}}"
+                                name="specializations[]" {{ $info->specializations->contains($specialization) ? 'checked' : '' }}>
                             </div>
                             @endforeach
-                        </div>
 
 
                         {{-- CV--}}

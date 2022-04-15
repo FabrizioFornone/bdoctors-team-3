@@ -14,6 +14,6 @@ class Info extends Model
     }
 
     public function specializations() {
-        return $this->hasMany('App\Specialization');
+        return $this->belongsToMany('App\Specialization');
     }
 }

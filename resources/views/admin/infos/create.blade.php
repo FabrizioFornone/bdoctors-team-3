@@ -45,8 +45,8 @@
                     <div class="mb-3">
                         <label>Business Address</label>
                         <input type="text" name="business_address" disabled
-                            class="form-control @error('business_address') is-invalid @enderror" placeholder="{{$user->business_address}}"
-                            value="{{ old('business_address') }}" required>
+                            class="form-control @error('business_address') is-invalid @enderror"
+                            placeholder="{{$user->business_address}}" value="{{ old('business_address') }}" required>
                         @error('business_address')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -56,6 +56,14 @@
 
                     <form action="{{ route('admin.infos.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
+
+                        @foreach ($specializations as $specialization)
+                        <div class="form-check form-check-inline mb-3">
+                            <label class="form-check-label ms-1" for="specialization_{{$specialization->id}}">{{ $specialization->name }}</label>
+                            <input type="checkbox" class="form-check-input" value="{{ $specialization->id }}" id="specialization_{{$specialization->id}}"
+                                name="specializations[]">
+                            </div>
+                            @endforeach
 
                         {{-- CV--}}
                         <div class="mb-3">
@@ -99,13 +107,13 @@
 
                         {{-- Performances --}}
                         <div class="mb-3">
-                        <label>Performances</label>
-                        <input type="text" name="performances"
-                            class="form-control @error('performances') is-invalid @enderror" placeholder="{{$user->performances}}"
-                            value="{{ old('performances') }}" required>
-                        @error('performances')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
+                            <label>Performances</label>
+                            <input type="text" name="performances"
+                                class="form-control @error('performances') is-invalid @enderror"
+                                placeholder="{{$user->performances}}" value="{{ old('performances') }}" required>
+                            @error('performances')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div class="form-group">
