@@ -17,7 +17,7 @@
                         @method("patch")
 
                         @foreach ($users as $user)
-
+                        
                         {{-- name --}}
                         <div class="mb-3">
                             <label>Name</label>
@@ -49,19 +49,32 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-
                         @endforeach
 
-
+                        <!-- @php
+                            $boolean = false;
+                            if (count($info->specializations) == 0) {
+                                $boolean = true;
+                            }
+                            dump($boolean);
+                        @endphp -->
                         {{-- Specializations --}}
                         @foreach ($specializations as $specialization)
                         <div class="form-check form-check-inline mb-3">
                             <label class="form-check-label ms-1" for="specialization_{{$specialization->id}}">{{ $specialization->name }}</label>
                             <input type="checkbox" class="form-check-input" value="{{ $specialization->id }}" id="specialization_{{$specialization->id}}"
                                 name="specializations[]" {{ $info->specializations->contains($specialization) ? 'checked' : '' }}>
-                            </div>
-                        @endforeach
+                            @error('specializations')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        @endforeach  
+                        @if ($boolean)
+                            <p class="text-danger">You have to select at least one or more specializations to continue with the edit.</p>
+                        @endif
+                        
 
+                        
 
                         {{-- CV--}}
                         <div class="mb-3">
