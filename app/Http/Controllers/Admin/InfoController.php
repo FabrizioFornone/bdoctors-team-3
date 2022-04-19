@@ -62,7 +62,7 @@ class InfoController extends Controller
             'address' => 'nullable|min:5',
             'phone' => 'nullable|min:11|numeric',
             'performances' => 'nullable|numeric',
-            'specializations' => 'nullable'
+            'specializations' => 'required'
         ]);
 
 
@@ -144,7 +144,7 @@ class InfoController extends Controller
             'address' => 'nullable|min:5',
             'phone' => 'nullable|min:11|numeric',
             'performances' => 'nullable|numeric',
-            'specializations' => 'nullable|exists:specializations,id'
+            'specializations' => 'required|exists:specializations,id'
         ]);
 
         $info = Info::findOrFail($id);
