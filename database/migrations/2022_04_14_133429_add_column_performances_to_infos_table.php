@@ -14,7 +14,7 @@ class AddColumnPerformancesToInfosTable extends Migration
     public function up()
     {
         Schema::table('infos', function (Blueprint $table) {
-            $table->float('performances', 5, 2)->after('phone');
+            $table->text('performances')->after('phone');
         });
     }
 
