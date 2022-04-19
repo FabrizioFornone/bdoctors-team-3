@@ -17,7 +17,7 @@
                         @method("patch")
 
                         @foreach ($users as $user)
-                        
+
                         {{-- name --}}
                         <div class="mb-3">
                             <label>Name</label>
@@ -51,30 +51,26 @@
                         </div>
                         @endforeach
 
-                        <!-- @php
-                            $boolean = false;
-                            if (count($info->specializations) == 0) {
-                                $boolean = true;
-                            }
-                            dump($boolean);
-                        @endphp -->
                         {{-- Specializations --}}
+                        <div class="mb-3"><strong>You have to select at least one or more specialization:</strong> </div>
                         @foreach ($specializations as $specialization)
                         <div class="form-check form-check-inline mb-3">
-                            <label class="form-check-label ms-1" for="specialization_{{$specialization->id}}">{{ $specialization->name }}</label>
-                            <input type="checkbox" class="form-check-input" value="{{ $specialization->id }}" id="specialization_{{$specialization->id}}"
-                                name="specializations[]" {{ $info->specializations->contains($specialization) ? 'checked' : '' }}>
-                            @error('specializations')
+                            <label class="form-check-label ms-1" for="specialization_{{$specialization->id}}">{{
+                                $specialization->name }}</label>
+                            <input type="checkbox" class="form-check-input" value="{{ $specialization->id }}"
+                                id="specialization_{{$specialization->id}}" name="specializations[]" {{
+                                $info->specializations->contains($specialization) ? 'checked' : '' }}>
+                            @error('specialization')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-                        @endforeach  
-                        @if ($boolean)
-                            <p class="text-danger">You have to select at least one or more specializations to continue with the edit.</p>
+                        @endforeach
+                        
+                        @if ($info->specializations->count() == 0)
+                        <p class="text-danger">You have to select at least one or more specializations to continue with
+                            the edit.</p>
                         @endif
-                        
 
-                        
 
                         {{-- CV--}}
                         <div class="mb-3">
@@ -99,7 +95,7 @@
                             <label>Address</label>
                             <input type="text" name="address"
                                 class="form-control @error('address') is-invalid @enderror"
-                                 value="{{ old('address', $info->address) }}" required>
+                                value="{{ old('address', $info->address) }}" required>
                             @error('address')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror

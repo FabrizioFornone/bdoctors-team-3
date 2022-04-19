@@ -75,7 +75,7 @@ class InfoController extends Controller
             $info->photo = $photo;
         }
 
-        
+
 
         if (key_exists('CV', $data)) {
             $CV = Storage::put('files', $data['CV']);
