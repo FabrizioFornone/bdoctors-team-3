@@ -23,7 +23,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar py-1 navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 {{-- Nabar Brand --}}
                 <a class="navbar-brand" href="\">BDoctors</a>
@@ -65,6 +65,9 @@
                             {{-- User --}}
                             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="{{ asset('storage/' . Auth::user()->infos->photo) ?? 'https://keytokids.com.au/wp-content/uploads/2017/09/placeholder-face-big.png' }}"
+                                    class="rounded-circle mx-1"
+                                    style="width:32px;">
                                 <span>Dr.</span> <span>{{ Auth::user()->name }}</span> <span>{{ Auth::user()->surname
                                     }}</span>
                             </a>
