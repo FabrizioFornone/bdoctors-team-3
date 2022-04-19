@@ -37,7 +37,11 @@
 
                         {{-- Profile IMG --}}
                         <div class="col-6">
+                            @if($info->photo)
                             <img class="w-50" src={{asset('storage/' . $info->photo) }} alt="">
+                            @else
+                            <img class="w-50" src="https://keytokids.com.au/wp-content/uploads/2017/09/placeholder-face-big.png" alt="">
+                            @endif
                         </div>
 
                         @foreach ( $users as $user )
