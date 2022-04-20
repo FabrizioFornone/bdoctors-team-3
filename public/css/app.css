@@ -7786,6 +7786,15 @@ readers do not read off random characters that represent icons */
   color: #f0f0f0;
 }
 
+footer {
+  background-color: #03b6dd;
+  color: #f0f0f0;
+}
+
+footer .logo {
+  width: 300px;
+}
+
 .ms_registro .card-header {
   text-align: center;
 }
