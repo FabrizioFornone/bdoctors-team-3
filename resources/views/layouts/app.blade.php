@@ -23,7 +23,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar py-1 navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar py-1 navbar-expand-md ">
             <div class="container">
                 {{-- Nabar Brand --}}
                 <a class="navbar-brand" href="\">BDoctors</a>

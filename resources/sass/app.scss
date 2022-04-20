@@ -3,6 +3,11 @@
 
 // Variables
 @import "partials/variables";
+
+// Navbar
+@import "partials/navbar";
+
+// Register
 @import "partials/register";
 
 // Bootstrap
@@ -12,5 +17,5 @@
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
 body {
-    color: #f0f0f0;
+    background-color: #f0f0f0;
 }
