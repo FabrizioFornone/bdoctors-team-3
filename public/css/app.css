@@ -7812,6 +7812,14 @@ footer .footer-text {
   text-align: center;
 }
 
+.ms_card-div {
+  width: 70%;
+}
+
+.ms_card-div .btn {
+  width: 150px;
+}
+
 .ms_registro .card-header {
   text-align: center;
 }
