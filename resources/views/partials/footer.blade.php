@@ -1,7 +1,7 @@
 <footer>
     <div class="container d-flex justify-content-between align-items-center">
         <div class="d-flex list-container">
-            <div class="px-3 py-2">
+            <div class="px-3 py-1">
                 <h5>Servizi</h5>
                 <ul>
                     <li><a href="#">Privacy e cookies</a></li>
@@ -12,7 +12,7 @@
                     <li><a href="#">Ufficio stampa</a></li>
                 </ul>
             </div>
-            <div class="px-3 py-2">
+            <div class="px-3 py-1">
                 <h5>Per i pazienti</h5>
                 <ul>
                     <li><a href="#">Dottori</a></li>
@@ -24,7 +24,7 @@
                     <li><a href="#">Diagnostica per immagini</a></li>
                 </ul>
             </div>
-            <div class="px-3 py-2">
+            <div class="px-3 py-1">
                 <h5>Per i professionisti sanitari</h5>
                 <ul>
                     <li><a href="#">Area professionisti sanitari</a></li>
@@ -35,8 +35,12 @@
                 </ul>
             </div>
         </div>
-        <div>
+        <div class="d-flex flex-column align-items-center">
             <img class="logo" src="{{asset('imgs/logo-wide.png')}}" alt="">
+            <ul>
+                <li class="footer-text">Piazzale Giovanni dalle Bande Nere 9, 20146, Milano </li>
+                <li class="footer-text">P.IVA: 10214930967</li>
+            </ul>
         </div>
     </div>  
 </footer>

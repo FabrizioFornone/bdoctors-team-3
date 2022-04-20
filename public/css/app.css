@@ -7806,6 +7806,12 @@ footer a {
   color: #f0f0f0;
 }
 
+footer .footer-text {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
 .ms_registro .card-header {
   text-align: center;
 }
