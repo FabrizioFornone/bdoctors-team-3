@@ -10,20 +10,10 @@
                     {{-- Boolean button --}}
                     <div>
                         @if ($boolean)
-                        <button type="button" class="btn btn-primary">
-                            <a class="ms-auto text-white text-decoration-none" href="{{ route('admin.infos.create') }}">
-                                Create
-                            </a>
-                        </button>
-
+                        <a href="{{ route('admin.infos.create') }}" class="btn btn-primary ms-auto text-white">Create</a>
                         @else
                         @foreach ( $infos as $info)
-                        <button type="button" class="btn btn-primary">
-                            <a class="ms-auto text-white text-decoration-none"
-                                href="{{ route('admin.infos.edit', $info->id) }}">
-                                Edit
-                            </a>
-                        </button>
+                        <a href="{{ route('admin.infos.edit', $info->id) }}" class="btn btn-primary ms-auto text-white">Edit</a>
                         @endforeach
 
                         @endif
@@ -61,7 +51,7 @@
                                 Phone: {{$info->phone}}
                             </h5>
                             <h5 class="py-2">
-                                Performances: {{$info->performances}} €
+                                Performances: {{$info->performances}}
                             </h5>
 
                             @if ($info->specializations->count()!=0)
