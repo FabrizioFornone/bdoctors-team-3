@@ -38,8 +38,8 @@
         <div class="d-flex flex-column align-items-center">
             <img class="logo" src="{{asset('imgs/logo-wide.png')}}" alt="">
             <ul>
-                <li class="footer-text">Piazzale Giovanni dalle Bande Nere 9, 20146, Milano </li>
-                <li class="footer-text">P.IVA: 10214930967</li>
+                <li class="footer-text">Da qualche parte, Italia</li>
+                <li class="footer-text">P.IVA: Tutto in nero</li>
             </ul>
         </div>
     </div>  
