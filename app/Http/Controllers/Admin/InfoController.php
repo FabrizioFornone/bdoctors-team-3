@@ -61,7 +61,7 @@ class InfoController extends Controller
             'photo' => 'nullable|max:10000',
             'address' => 'nullable|min:5',
             'phone' => 'nullable|min:11|numeric',
-            'performances' => 'nullable|numeric',
+            'performances' => 'nullable',
             'specializations' => 'required'
         ]);
 
@@ -143,7 +143,7 @@ class InfoController extends Controller
             'photo' => 'nullable|max:10000',
             'address' => 'nullable|min:5',
             'phone' => 'nullable|min:11|numeric',
-            'performances' => 'nullable|numeric',
+            'performances' => 'nullable',
             'specializations' => 'required|exists:specializations,id'
         ]);
 
