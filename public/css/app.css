@@ -7780,6 +7780,7 @@ readers do not read off random characters that represent icons */
 
 .navbar {
   background-color: #03b6dd;
+  height: 64px;
 }
 
 .navbar a {
@@ -7787,9 +7788,14 @@ readers do not read off random characters that represent icons */
 }
 
 footer {
+  height: 190px;
   background-color: #03b6dd;
   color: #f0f0f0;
   font-size: 12px;
+}
+
+footer .container {
+  height: 100%;
 }
 
 footer .logo {
@@ -7798,7 +7804,6 @@ footer .logo {
 
 footer a {
   color: #f0f0f0;
-  text-decoration: none;
 }
 
 .ms_registro .card-header {
@@ -19999,5 +20004,18 @@ fieldset:disabled .btn {
 
 body {
   background-color: #f0f0f0;
+}
+
+main {
+  min-height: calc(100vh - 254px);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
 }
 

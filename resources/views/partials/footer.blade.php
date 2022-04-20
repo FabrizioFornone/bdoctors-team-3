@@ -1,33 +1,37 @@
 <footer>
     <div class="container d-flex justify-content-between align-items-center">
         <div class="d-flex list-container">
-            <div>
-                <h5>DC Comics</h5>
+            <div class="px-3 py-2">
+                <h5>Servizi</h5>
                 <ul>
-                    <li><a href="#">Characters</a></li>
-                    <li><a href="#">Comics</a></li>
-                    <li><a href="#">Movies</a></li>
-                    <li><a href="#">TV</a></li>
+                    <li><a href="#">Privacy e cookies</a></li>
+                    <li><a href="#">Chi siamo</a></li>
+                    <li><a href="#">Contatti</a></li>
+                    <li><a href="#">Lavoro ASSUMIAMO!</a></li>
+                    <li><a href="#">Condizioni di Servizio</a></li>
+                    <li><a href="#">Ufficio stampa</a></li>
                 </ul>
             </div>
-            <div>
-                <h5>DC</h5>
+            <div class="px-3 py-2">
+                <h5>Per i pazienti</h5>
                 <ul>
-                    <li><a href="#">Terms Of Use</a></li>
-                    <li><a href="#">Privacy policy (New)</a></li>
-                    <li><a href="#">Ad Choice</a></li>
-                    <li><a href="#">Advertising</a></li>
-                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Dottori</a></li>
+                    <li><a href="#">Struttura</a></li>
+                    <li><a href="#">Chiedi al dottore</a></li>
+                    <li><a href="#">Prestazioni</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">App mobile</a></li>
+                    <li><a href="#">Diagnostica per immagini</a></li>
                 </ul>
             </div>
-            <div>
-                <h5>SITES</h5>
+            <div class="px-3 py-2">
+                <h5>Per i professionisti sanitari</h5>
                 <ul>
-                    <li><a href="#">DC</a></li>
-                    <li><a href="#">MAD Magazine</a></li>
-                    <li><a href="#">DC Kids</a></li>
-                    <li><a href="#">Dc Universe</a></li>
-                    <li><a href="#">DC Power Visa</a></li>
+                    <li><a href="#">Area professionisti sanitari</a></li>
+                    <li><a href="#">Prezzi</a></li>
+                    <li><a href="#">Risorse gratuite</a></li>
+                    <li><a href="#">Pulsante di prenotazione</a></li>
+                    <li><a href="#">Centro Assistenza per Professionisti</a></li>
                 </ul>
             </div>
         </div>
