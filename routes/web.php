@@ -16,12 +16,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
-
 
 Route::middleware('auth')
     ->namespace('Admin')
@@ -35,4 +30,8 @@ Route::middleware('auth')
         Route::get("reviews", "ReviewController@index")->name("reviews.index");
     });
     
-    Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('{any?}', function () {
+    return view('home');
+})->where('any', '.*');
