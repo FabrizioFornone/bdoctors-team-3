@@ -7787,16 +7787,21 @@ readers do not read off random characters that represent icons */
 }
 
 .ms_registro .card-header {
-  background-color: #03b6dd;
   text-align: center;
 }
 
-.ms_registro .card-body {
+.ms_registro button {
   background-color: #00a0c3;
+  color: #f0f0f0;
 }
 
-.ms_registro button {
-  background-color: #f0f0f0;
+.ms-login button {
+  background-color: #00a0c3;
+  color: #f0f0f0;
+}
+
+.ms-login .card-header {
+  text-align: center;
 }
 
 /*!
