@@ -3,9 +3,14 @@
 
 // Variables
 @import "partials/variables";
+@import "partials/register";
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
 // Fontawesome
 @import "~@fortawesome/fontawesome-free/css/all.css";
+
+body {
+    color: #f0f0f0;
+}

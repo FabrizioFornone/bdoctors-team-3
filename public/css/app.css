@@ -7778,6 +7778,19 @@ readers do not read off random characters that represent icons */
   unicode-range: U+F041,U+F047,U+F065-F066,U+F07D-F07E,U+F080,U+F08B,U+F08E,U+F090,U+F09A,U+F0AC,U+F0AE,U+F0B2,U+F0D0,U+F0D6,U+F0E4,U+F0EC,U+F10A-F10B,U+F123,U+F13E,U+F148-F149,U+F14C,U+F156,U+F15E,U+F160-F161,U+F163,U+F175-F178,U+F195,U+F1F8,U+F219,U+F250,U+F252,U+F27A; }
 @charset "UTF-8";
 
+.ms_registro .card-header {
+  background-color: #03b6dd;
+  text-align: center;
+}
+
+.ms_registro .card-body {
+  background-color: #00a0c3;
+}
+
+.ms_registro button {
+  background-color: #f0f0f0;
+}
+
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -19954,5 +19967,9 @@ fieldset:disabled .btn {
   .d-print-none {
     display: none !important;
   }
+}
+
+body {
+  color: #f0f0f0;
 }
 
