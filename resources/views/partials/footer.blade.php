@@ -1,36 +1,27 @@
 <footer class="fixed-bottom">
-    <div class="container d-flex justify-content-between">
+    <div class="container d-flex justify-content-between align-items-center">
         <div class="d-flex list-container">
             <div>
-                <h4>DC Comics</h4>
+                <h5>DC Comics</h5>
                 <ul>
                     <li><a href="#">Characters</a></li>
                     <li><a href="#">Comics</a></li>
                     <li><a href="#">Movies</a></li>
                     <li><a href="#">TV</a></li>
-                    <li><a href="#">Games</a></li>
-                    <li><a href="#">Videos</a></li>
-                    <li><a href="#">News</a></li>
                 </ul>
             </div>
             <div>
-                <h4>DC</h4>
+                <h5>DC</h5>
                 <ul>
                     <li><a href="#">Terms Of Use</a></li>
                     <li><a href="#">Privacy policy (New)</a></li>
                     <li><a href="#">Ad Choice</a></li>
                     <li><a href="#">Advertising</a></li>
                     <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Subscriptions</a></li>
-                    <li><a href="#">Talent Workshops</a></li>
-                    <li><a href="#">CPSC Certificates</a></li>
-                    <li><a href="#">Ratings</a></li>
-                    <li><a href="#">Shop Help</a></li>
-                    <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
             <div>
-                <h4>SITES</h4>
+                <h5>SITES</h5>
                 <ul>
                     <li><a href="#">DC</a></li>
                     <li><a href="#">MAD Magazine</a></li>
@@ -41,7 +32,7 @@
             </div>
         </div>
         <div>
-            <img class="logo" src="{{asset('imgs/logo.png')}}" alt="">
+            <img class="logo" src="{{asset('imgs/logo-wide.png')}}" alt="">
         </div>
     </div>  
 </footer>

@@ -7789,10 +7789,16 @@ readers do not read off random characters that represent icons */
 footer {
   background-color: #03b6dd;
   color: #f0f0f0;
+  font-size: 12px;
 }
 
 footer .logo {
   width: 300px;
+}
+
+footer a {
+  color: #f0f0f0;
+  text-decoration: none;
 }
 
 .ms_registro .card-header {
