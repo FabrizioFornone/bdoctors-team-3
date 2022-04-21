@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::middleware('auth')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Route::resource('/users', 'Api\UserController');
 Route::get("/infos", "Api\InfoController@index");
