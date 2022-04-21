@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container ms_infos">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -28,7 +28,9 @@
                         {{-- Profile IMG --}}
                         <div class="col-6">
                             @if($info->photo)
-                            <img class="w-50" src={{asset('storage/' . $info->photo) }} alt="">
+                            <div class="photo-box">
+                                <img class="w-50" src={{asset('storage/' . $info->photo) }} alt="">
+                            </div>
                             @else
                             <img class="w-50" src="https://keytokids.com.au/wp-content/uploads/2017/09/placeholder-face-big.png" alt="">
                             @endif

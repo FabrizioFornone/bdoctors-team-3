@@ -1,0 +1,23 @@
+.ms_infos {
+
+    .photo-box {
+
+        width: 220px;
+        height: 220px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        margin: 0 auto;
+
+        img {
+
+            min-width: 100%;
+            min-height: 100%;
+            flex-shrink: 0;
+
+        }
+
+    }
+
+}
