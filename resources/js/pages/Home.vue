@@ -1,9 +1,12 @@
 <template>
     <div>
 
-        <div class="container py-3">
-            <h5>Home</h5>
+        <div class="my-4">
+            <input type="text" class="form-input" placeholder="Inserisci parola chiave." v-model="searchText" @keydown.enter="findSearchSubmit"/>
+            <button>Search</button>
         </div>
+
+        <a href="/search" class="btn btn-primary text-white">Advanced Search</a>
 
     </div>
 </template>
@@ -13,27 +16,24 @@
 import axios from "axios";
 
 export default {
-    name: "app",
-
     data() {
         return {
             users: [],
-        }
-    },
-
-    methods: {
-        getInfos() {
-            axios.get("/api/infos").then(resp => {
-                console.log('infos')
-                this.users = resp.data;
-                console.log('infos')
-
-            });
+            searchText: '',
         }
     },
 
     mounted() {
         this.getInfos();
+    },
+
+    methods: {
+        getInfos() {
+            axios.get("/api/user").then(resp => {
+                this.user = resp.data;
+                console.log(this.user)
+            });
+        }
     }
 }
 </script>
