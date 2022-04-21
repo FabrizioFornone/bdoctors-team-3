@@ -1,13 +1,13 @@
 <template>
     <div>
         
-        <NavBar></NavBar>
-        
+        <NavBar />
+    
         <div class="container">
             <router-view></router-view>
         </div>
 
-        <Footer></Footer>
+        <Footer />
         
     </div>
 </template>

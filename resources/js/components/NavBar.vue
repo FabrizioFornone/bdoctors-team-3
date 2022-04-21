@@ -6,25 +6,45 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0">
+                <ul class="navbar-nav mb-2 mb-lg-0 text-white">
 
                     <li class="nav-item d-flex">
                         <a class="nav-link" href="/login" v-if="!user">Sei già registrato?</a>
                         <a class="nav-link" href="/register" v-if="!user"> Sei un dottore?</a>
-                        <a class="nav-link" href="/admin" v-else> {{ user.name }} </a>
+                        <a class="nav-link" href="/home" v-else> {{ user.name }} </a>
                     </li>
 
                 </ul>
             </div>
-            <!-- {{user.name}} -->
         </div>
     </nav>
 </template>
 
 <script>
-export default {
 
+import axios from "axios";
+
+export default {
+    data() {
+        return { 
+            user: null,
+        }
+    },
+
+    mounted() {
+        this.getUser();
+    },
+
+    methods: {
+        getUser() {
+            axios.get("/api/user").then(resp => {
+                this.user = resp.data;
+                // console.log(this.user)
+            });
+        },
+    },
 }
+
 </script>
 
 <style lang="scss" scoped>
