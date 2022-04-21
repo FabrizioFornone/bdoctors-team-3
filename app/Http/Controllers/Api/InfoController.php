@@ -11,7 +11,7 @@ class InfoController extends Controller
     public function index() {
         $infos = Info::all();
 
-        $infos->load("user", "specialization");
+        $infos->load("user");
 
         return response()->json($infos);
     }
