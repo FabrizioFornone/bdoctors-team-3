@@ -91,7 +91,8 @@
 
                         <div class="input-group mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn">
+                                <a href="/" class="btn btn-secondary">Back</a>
+                                <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
                             </div>
