@@ -67,7 +67,7 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 @if(Auth::user()->infos != null)
                                 <img src="{{ asset('storage/' . Auth::user()->infos->photo) ?? 'https://keytokids.com.au/wp-content/uploads/2017/09/placeholder-face-big.png' }}"
-                                    class="rounded-circle mx-1" style="width:32px;">
+                                    class="rounded-circle mx-1 profile-pic-nav">
                                 @endif
                                 <span>Dr.</span> <span>{{ Auth::user()->name }}</span> <span>{{ Auth::user()->surname
                                     }}</span>
