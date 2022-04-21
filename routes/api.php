@@ -19,5 +19,5 @@ Route::middleware('auth')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::resource('/users', 'Api\UserController');
-Route::get("/infos", "Api\InfoController@index");
+Route::resource("/infos", "Api\InfoController");
+Route::resource("/specializations", "Api\SpecializationController");
