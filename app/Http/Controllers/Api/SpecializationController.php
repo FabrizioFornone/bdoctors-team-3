@@ -4,22 +4,33 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Info;
+use App\Specialization;
 use Illuminate\Http\Request;
 
-class InfoController extends Controller
+class SpecializationController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    { 
-        $infos = Info::all();
+    // public function index()
+    // {
+    //     $specializations = Specialization::all();
 
-        $infos->load("user");
+    //     return response()->json($specializations);
+    // }
 
-        return response()->json($infos);   
+    public function index(Request $request) {
+        $filter = $request->input("filter");
+
+        if ($filter) {
+            $specializations = Specialization::where("name", "LIKE", "%$filter%")->get();
+        } else {
+            $specializations = Specialization::all();    
+        }
+
+        return response()->json($specializations);
     }
 
     /**
