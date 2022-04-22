@@ -24,11 +24,11 @@ class SpecializationController extends Controller
     public function index(Request $request) {
         $filter = $request->input("filter");
 
-        if ($filter) {
-            $specializations = Specialization::where("name", "LIKE", "%$filter%")->get();
-        } else {
-            $specializations = Specialization::all();    
-        }
+        $specializations = Specialization::join('info_specialization', 'info_specialization.specialization_id', '=', 'specializations.id' )
+            ->join('infos', 'info_specialization.info_id', '=', 'infos.id')
+            ->join('users', 'infos.user_id', '=', 'users.id')
+            ->where("specializations.name", "LIKE", "%$filter%")
+            ->get();
 
         return response()->json($specializations);
     }
