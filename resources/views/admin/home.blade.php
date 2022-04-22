@@ -15,7 +15,7 @@
                         </div>
                         @endif
 
-                        <a href="{{ route('admin.infos.index') }}" class="btn btn-primary text-white fw-bold">PERSONAL AREA</a>
+                        <a href="{{ route('admin.infos.index') }}" class="btn btn-primary text-white fw-bold">PROFILE</a>
                         <a href="{{ route('admin.reviews.index') }}" class="btn btn-primary text-white fw-bold">REVIEWS</a>
                         <a href="{{ route('admin.messages.index') }}" class="btn btn-primary text-white fw-bold">MESSAGES</a>
                         <a class="btn btn-primary text-white fw-bold">ADVERTISING</a>

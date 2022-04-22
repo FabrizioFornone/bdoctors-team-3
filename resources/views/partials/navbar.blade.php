@@ -48,11 +48,14 @@
                         <span>Dr.</span> <span>{{ Auth::user()->name }}</span> <span>{{ Auth::user()->surname
                             }}</span>
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                    <ul class="dropdown-menu ms_dropdown" aria-labelledby="navbarScrollingDropdown">
+                        <li>
+                            <a class="dropdown-item ms_dropdown-item" href="{{ route('admin.infos.index') }}">Profile</a>
+                        </li>
                         <li>
                             {{-- logout --}}
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                  document.getElementById('logout-form').submit();">
+                            <a class="dropdown-item ms_dropdown-item ms_logout" href="{{ route('logout') }}" onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
