@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container ms_edit">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
@@ -52,7 +52,7 @@
                         @endforeach
 
                         {{-- Specializations --}}
-                        <div class="mb-3"><strong>You have to select at least one or more specialization:</strong> </div>
+                        <div class="mb-3"><strong>Select at least one specialization:</strong> </div>
                         @foreach ($specializations as $specialization)
                         <div class="form-check form-check-inline mb-3">
                             <label class="form-check-label ms-1" for="specialization_{{$specialization->id}}">{{
@@ -60,17 +60,12 @@
                             <input type="checkbox" class="form-check-input" value="{{ $specialization->id }}"
                                 id="specialization_{{$specialization->id}}" name="specializations[]" {{
                                 $info->specializations->contains($specialization) ? 'checked' : '' }}>
-                            @error('specialization')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
                         </div>
                         @endforeach
-                        
-                        @if ($info->specializations->count() == 0)
-                        <p class="text-danger">You have to select at least one or more specializations to continue with
-                            the edit.</p>
-                        @endif
 
+                        @error('specializations')
+                            <div class="pb-3 fw-bold ms_error">PLEASE SELECT AT LEAST ONE SPECIALIZATION</div>
+                        @enderror
 
                         {{-- CV--}}
                         <div class="mb-3">
