@@ -1,22 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container ms_infos">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-center ">
-                    <h4 class="mb-0">Personal Informations</h4>
-                    {{-- Boolean button --}}
-                    <div>
-                        @if ($boolean)
-                        <a href="{{ route('admin.infos.create') }}" class="btn btn-primary ms-auto text-white">Create</a>
-                        @else
-                        @foreach ( $infos as $info)
-                        <a href="{{ route('admin.infos.edit', $info->id) }}" class="btn btn-primary ms-auto text-white">Edit</a>
-                        @endforeach
+                <div class="card-header">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0">Personal Informations</h4>
+                        {{-- Boolean button --}}
+                        <div>
+                            @if ($boolean)
+                            <a href="{{ route('admin.infos.create') }}" class="btn btn-primary ms-auto text-white">Create</a>
+                            @else
+                            @foreach ( $infos as $info)
+                            <a href="{{ route('admin.infos.edit', $info->id) }}" class="btn btn-primary ms-auto text-white">Edit</a>
+                            @endforeach
 
-                        @endif
+                            @endif
+                        </div>
                     </div>
                 </div>
 

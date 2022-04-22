@@ -64,7 +64,7 @@
                         @endforeach
 
                         @error('specializations')
-                            <div class="pb-3 fw-bold ms_error">PLEASE SELECT AT LEAST ONE SPECIALIZATION</div>
+                            <div class="pb-3 fw-bold ms_error">{{ $message }}</div>
                         @enderror
 
                         {{-- CV--}}
