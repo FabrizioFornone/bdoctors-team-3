@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container ms_edit">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
@@ -64,7 +64,7 @@
                         @endforeach
 
                         @error('specializations')
-                            <div class="pb-3 fw-bold ms_error">{{ $message }}</div>
+                            <div class="pb-3 fw-bold text-danger">{{ $message }}</div>
                         @enderror
 
                         {{-- CV--}}
