@@ -1,17 +1,17 @@
 <template>
-    <div>
+    <div class="ms_main">
 
         <div class="my-4">
             <input type="text" 
             class="form-input" 
-            placeholder="Inserisci parola chiave." 
+            placeholder="Inserisci specializzazione." 
             v-model="searchText" 
             @keydown.enter="findSearchSubmit()" />
 
             <button @click="findSearchSubmit()">Search</button>
         </div>
 
-        <a href="/search" class="btn btn-primary text-white">Advanced Search</a>
+        <a href="/search" class="btn btn-primary text-white ms_button">Advanced Search</a>
 
         <div class="ciao">
             <info-card 
@@ -98,6 +98,14 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
+
+    .ms_main {
+        min-height: 800px;
+
+        .ms_button {
+            margin-bottom: 30px;
+        }
+    }
 
 </style>
