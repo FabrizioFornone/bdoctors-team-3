@@ -16,28 +16,13 @@
 
        
 
-        <div class="ciao">
+        <div>
             <info-card 
             v-for="specialization of specializations" 
             :key="specialization.id" 
             :specialization="specialization">
             </info-card>
         </div>
-
-
-
-
-
-
-        <!-- <div v-for="specialization of specializations" :key="specialization.id">
-            {{ specialization.name }}
-        </div> -->
-
-        <!-- <div v-for="info of infos" :key="info.id">
-            {{ info.user.name }}
-            {{ info.user.surname }}
-            {{ info.phone }}
-        </div> -->
 
     </div>
 </template>
@@ -101,6 +86,14 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
+
+    .ms_main {
+        min-height: 800px;
+
+        .ms_button {
+            margin-bottom: 30px;
+        }
+    }
 
 </style>

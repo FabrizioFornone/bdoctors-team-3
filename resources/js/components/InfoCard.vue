@@ -1,8 +1,7 @@
 <template>
-  <div>
-      {{ specialization.name }}
-      {{ specialization.surname }}
-  </div>
+    <div>
+        <a href=""> {{ specialization.name }}</a>
+    </div>
 </template>
 
 <script>
@@ -20,5 +19,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+    
 </style>
