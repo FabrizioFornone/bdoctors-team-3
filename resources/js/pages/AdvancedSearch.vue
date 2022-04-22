@@ -7,7 +7,7 @@
             <select name="" id="">
                 <option value=""></option>
             </select>
-            <button>Search</button>
+            <button class="btn btn-primary text-white">Search</button>
         </div>  
     </div>
 </template>

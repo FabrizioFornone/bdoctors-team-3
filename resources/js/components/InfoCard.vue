@@ -1,6 +1,7 @@
 <template>
   <div>
       {{ specialization.name }}
+      {{ specialization.surname }}
   </div>
 </template>
 

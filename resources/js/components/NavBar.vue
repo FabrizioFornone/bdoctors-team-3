@@ -10,8 +10,8 @@
 
                     <li class="nav-item d-flex">
                         <a class="nav-link" href="/login" v-if="!user">Sei già registrato?</a>
-                        <a class="nav-link" href="/register" v-if="!user"> Sei un dottore?</a>
-                        <a class="nav-link" href="/home" v-else> {{ user.name }} </a>
+                        <a class="nav-link" href="/register" v-if="!user">Sei un dottore?</a>
+                        <a class="nav-link" href="/home" v-else> {{ user.name }} {{ user.surname}} </a>
                     </li>
 
                 </ul>

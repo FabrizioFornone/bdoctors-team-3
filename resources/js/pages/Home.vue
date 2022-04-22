@@ -1,17 +1,20 @@
 <template>
     <div>
-
-        <div class="my-4">
-            <input type="text" 
-            class="form-input" 
-            placeholder="Inserisci parola chiave." 
-            v-model="searchText" 
-            @keydown.enter="findSearchSubmit()" />
-
-            <button @click="findSearchSubmit()">Search</button>
+        <div class="input-group my-3">
+                <input type="text" 
+                class="form-control" 
+                aria-label="Sizing example input" 
+                aria-describedby="inputGroup-sizing-default" 
+                placeholder="Inserisci parola chiave." 
+                v-model="searchText" 
+                @keydown.enter="findSearchSubmit()" />
+            </div>
+        <div class="my-3">
+            <button class="btn btn-primary text-white" @click="findSearchSubmit()">Search</button>
+            <a href="/search" class="btn btn-primary text-white">Advanced Search</a>
         </div>
 
-        <a href="/search" class="btn btn-primary text-white">Advanced Search</a>
+       
 
         <div class="ciao">
             <info-card 
@@ -59,7 +62,7 @@ export default {
     mounted() {
         this.getInfos();
         this.getSpecialization();
-        console.log(this.specializations)
+        // console.log(this.specializations)
     },
 
     methods: {
