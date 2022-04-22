@@ -13,28 +13,13 @@
 
         <a href="/search" class="btn btn-primary text-white">Advanced Search</a>
 
-        <div class="ciao">
+        <div>
             <info-card 
             v-for="specialization of specializations" 
             :key="specialization.id" 
             :specialization="specialization">
             </info-card>
         </div>
-
-
-
-
-
-
-        <!-- <div v-for="specialization of specializations" :key="specialization.id">
-            {{ specialization.name }}
-        </div> -->
-
-        <!-- <div v-for="info of infos" :key="info.id">
-            {{ info.user.name }}
-            {{ info.user.surname }}
-            {{ info.phone }}
-        </div> -->
 
     </div>
 </template>

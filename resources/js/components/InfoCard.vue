@@ -1,7 +1,7 @@
 <template>
-  <div>
-      {{ specialization.name }}
-  </div>
+    <div>
+        <a href=""> {{ specialization.name }}</a>
+    </div>
 </template>
 
 <script>
