@@ -179,7 +179,7 @@ class InfoController extends Controller
         //     $info->specializations()->detach();
         // }
 
-        return redirect()->route('admin.infos.index', $id);
+        return redirect()->route('admin.infos.index', $id)->with('status', 'Profile updated successfully!');
     }
 
     /**
