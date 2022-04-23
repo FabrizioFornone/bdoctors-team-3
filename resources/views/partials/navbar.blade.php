@@ -45,8 +45,7 @@
                             class="rounded-circle mx-1 profile-pic-nav"
                             style="width:32px;">
                         @endif
-                        <span>Dr.</span> <span>{{ Auth::user()->name }}</span> <span>{{ Auth::user()->surname
-                            }}</span>
+                        <span>Dr.</span> <span>{{ Auth::user()->name }}</span> <span>{{ Auth::user()->surname }}</span>
                     </a>
                     <ul class="dropdown-menu ms_dropdown" aria-labelledby="navbarScrollingDropdown">
                         <li>
