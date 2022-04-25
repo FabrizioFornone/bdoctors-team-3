@@ -26,15 +26,13 @@ class SpecializationController extends Controller
         $specializations = Specialization::join('info_specialization', 'info_specialization.specialization_id', '=', 'specializations.id' )
         ->join('infos', 'info_specialization.info_id', '=', 'infos.id')
         ->join('users', 'infos.user_id', '=', 'users.id')
-        ->where("specializations.name", "LIKE", "%$filter%")
+        ->where("specializations.specialization_name", "LIKE", "%$filter%")
         ->get();
 
         $specializations->each(function ($specialization) {
-            // se il post ha una coverImg,
-            // allora sostituisco il valore con l'url completo per quell'immagine
             if ($specialization->photo) {
                 $specialization->photo = asset("storage/" . $specialization->photo);
-            }else{
+            } else {
                 $specialization->photo = "https://via.placeholder.com/1024x480";
             }
         });

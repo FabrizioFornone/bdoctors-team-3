@@ -56,7 +56,7 @@
                         @foreach ($specializations as $specialization)
                         <div class="form-check form-check-inline mb-3">
                             <label class="form-check-label ms-1" for="specialization_{{$specialization->id}}">{{
-                                $specialization->name }}</label>
+                                $specialization->specialization_name }}</label>
                             <input type="checkbox" class="form-check-input" value="{{ $specialization->id }}"
                                 id="specialization_{{$specialization->id}}" name="specializations[]" {{
                                 $info->specializations->contains($specialization) ? 'checked' : '' }}>
