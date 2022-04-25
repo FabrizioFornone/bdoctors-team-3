@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "./pages/Home.vue";
 import Error from "./pages/Error.vue";
 import AdvancedSearch from "./pages/AdvancedSearch.vue";
+import Message from "./pages/Message.vue";
 
 Vue.use(VueRouter);
 
@@ -26,6 +27,15 @@ const router = new VueRouter({
             meta: {
                 title: "Advanced Search",
                 linkText: "Search"
+            }
+        },
+        {
+            path: "/message",
+            component: Message,
+            name: "message.index",
+            meta: {
+                title: "Message",
+                linkText: "Message"
             }
         },
         {
