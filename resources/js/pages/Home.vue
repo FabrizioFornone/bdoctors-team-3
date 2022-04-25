@@ -14,6 +14,9 @@
                             @keydown.enter="findSearchSubmit()"
                         />
                     </div>
+                    <div v-if="error">
+                        <p>The input field needs at least one specialization selected</p>
+                    </div>
 
                     <div class="btn-group px-2">
                         <button
@@ -22,11 +25,11 @@
                         >
                             Search
                         </button>
-                        <a
+                        <!-- <a
                             href="/search"
                             class="btn rounded btn-primary text-white btn-search"
                             >Advanced Search</a
-                        >
+                        > -->
                     </div>
                 </div>
             </div>
@@ -64,6 +67,7 @@ export default {
             results: [],
             searchText: "",
             boolean: false,
+            error: false
         };
     },
 
@@ -93,9 +97,14 @@ export default {
         },
 
         findSearchSubmit() {
-            this.getSpecialization(this.searchText);
-            this.boolean = true;
-            window.scrollTo(0, 0)
+            if (this.searchText != '') {
+                this.getSpecialization(this.searchText);
+                this.boolean = true;
+                window.scrollTo(0, 0)
+            } else {
+                this.error = true;
+                console.log(this.error);
+            }
         },
         changeBoolean() {
             this.boolean = !this.boolean;
