@@ -6,9 +6,9 @@
             <label for="exampleFormControlInput2" class="form-label">
                 Name
             </label>
-            <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Mario Rossi" v-model="formData.name"/>
-            <span class="text-danger" v-if="formValidationErrors && formValidationErrors.name">
-                {{ formValidationErrors.name }}
+            <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Mario Rossi" v-model="formData.full_name"/>
+            <span class="text-danger" v-if="formValidationErrors && formValidationErrors.full_name">
+                {{ formValidationErrors.full_name }}
             </span>
         </div>
         <div class="mb-3">
@@ -51,7 +51,7 @@ export default {
         return {
             formSubmitted: false,
             formData: {
-                name: '',
+                full_name: '',
                 email: '',
                 message: '',
             },
@@ -63,7 +63,7 @@ export default {
             try {
                 this.formValidationErrors = null;
                 const formDataInstance = new FormData();
-                formDataInstance.append('name', this.formData.name);
+                formDataInstance.append('full_name', this.formData.full_name);
                 formDataInstance.append('email', this.formData.email);
                 formDataInstance.append('message', this.formData.message);
                 const resp = await axios.post('/api/messages', formDataInstance);
