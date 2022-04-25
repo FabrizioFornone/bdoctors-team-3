@@ -33,6 +33,8 @@
                 </div>
             </div>
         </div>
+        <a href="/message" class="btn btn-primary text-white">Message</a>
+
 
         <div class="container py-5" v-if="boolean">
             <button
@@ -47,8 +49,7 @@
                 :key="result.id"
                 :result="result"
             >
-            </info-card>
-        </div>
+       
     </main>
 </template>
 

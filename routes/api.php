@@ -21,3 +21,5 @@ Route::middleware('auth')->get('/user', function (Request $request) {
 
 Route::resource("/infos", "Api\InfoController");
 Route::resource("/specializations", "Api\SpecializationController");
+
+Route::post("/messages", "Api\MessageController@store");

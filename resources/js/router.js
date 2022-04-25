@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "./pages/Home.vue";
 import Error from "./pages/Error.vue";
+import Message from "./pages/Message.vue";
 
 Vue.use(VueRouter);
 
@@ -17,6 +18,15 @@ const router = new VueRouter({
                 title: "Homepage",
                 linkText: "Home",
             },
+        },
+        {
+            path: "/message",
+            component: Message,
+            name: "message.index",
+            meta: {
+                title: "Message",
+                linkText: "Message"
+            }
         },
         {
             path: "/not-found",
