@@ -54,9 +54,9 @@
 
                     @endforeach
 
+                    <div class="mb-3"><strong>Select at least one specialization:</strong> </div>
                     <form action="{{ route('admin.infos.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
-
                         @foreach ($specializations as $specialization)
                         <div class="form-check form-check-inline mb-3">
                             <label class="form-check-label ms-1" for="specialization_{{$specialization->id}}">{{ $specialization->name }}</label>
