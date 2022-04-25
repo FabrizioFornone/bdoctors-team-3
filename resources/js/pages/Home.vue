@@ -23,9 +23,7 @@
                             Search
                         </button>
                     </div>
-                    <a href="/message" class="btn btn-primary text-white"
-                        >Message</a
-                    >
+                    
 
                     <div class="error-div text-danger" v-if="error">
                         <p>
@@ -50,6 +48,10 @@
                 :key="result.id"
                 :result="result"
             />
+
+            <h2 v-if="results.length = []">
+                There aren't results.
+            </h2>
         </div>
     </main>
 </template>

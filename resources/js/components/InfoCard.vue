@@ -4,11 +4,7 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <img
-                            :src="result.photo"
-                            class="card-img"
-                            alt="..."
-                        />
+                        <img :src="result.photo" class="card-img" alt="..." />
                     </div>
                     <div>
                         <span> {{ result.name }} </span>
@@ -17,6 +13,9 @@
                     </div>
                 </div>
                 <a href="#" class="card-title">Dettagli Dottore</a>
+                <a href="/message" class="btn btn-primary text-white"
+                    >Message</a
+                >
             </div>
         </div>
     </div>
@@ -47,8 +46,6 @@ export default {
 //         object-fit: cover;
 //     }
 // }
-
-
 
 .card-img {
     max-width: 120px;

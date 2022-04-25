@@ -2013,7 +2013,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     result: Object
@@ -2126,6 +2125,8 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
 //
 //
 //
@@ -4615,6 +4616,15 @@ var render = function () {
         _c("a", { staticClass: "card-title", attrs: { href: "#" } }, [
           _vm._v("Dettagli Dottore"),
         ]),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-primary text-white",
+            attrs: { href: "/message" },
+          },
+          [_vm._v("Message")]
+        ),
       ]),
     ]),
   ])
@@ -4668,7 +4678,7 @@ var render = function () {
                         staticClass: "nav-link active",
                         attrs: { href: "/login" },
                       },
-                      [_vm._v("Sei già registrato?")]
+                      [_vm._v("Login Dr.")]
                     )
                   : _vm._e(),
                 _vm._v(" "),
@@ -4679,7 +4689,7 @@ var render = function () {
                         staticClass: "nav-link active",
                         attrs: { href: "/register" },
                       },
-                      [_vm._v("Sei un dottore?")]
+                      [_vm._v("Register")]
                     )
                   : _c(
                       "a",
@@ -4843,15 +4853,6 @@ var render = function () {
                 ),
               ]),
               _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn-primary text-white",
-                  attrs: { href: "/message" },
-                },
-                [_vm._v("Message")]
-              ),
-              _vm._v(" "),
               _vm.error
                 ? _c("div", { staticClass: "error-div text-danger" }, [
                     _c("p", [
@@ -4890,6 +4891,12 @@ var render = function () {
                 attrs: { result: result },
               })
             }),
+            _vm._v(" "),
+            (_vm.results.length = [])
+              ? _c("h2", [
+                  _vm._v("\n            There aren't results.\n        "),
+                ])
+              : _vm._e(),
           ],
           2
         )

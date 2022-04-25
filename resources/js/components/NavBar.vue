@@ -9,8 +9,8 @@
                 <ul class="navbar-nav mb-2 mb-lg-0 text-white">
 
                     <li class="nav-item d-flex">
-                        <a class="nav-link active" href="/login" v-if="!user">Sei già registrato?</a>
-                        <a class="nav-link active" href="/register" v-if="!user">Sei un dottore?</a>
+                        <a class="nav-link active" href="/login" v-if="!user">Login Dr.</a>
+                        <a class="nav-link active" href="/register" v-if="!user">Register</a>
                         <a class="nav-link active" href="/home" v-else> {{ user.name }} {{ user.surname}} </a>
                     </li>
 
