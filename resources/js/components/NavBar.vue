@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-1">
+    <nav class="navbar navbar-expand-lg navbar-dark py-1">
         <div class="container">
             <a class="navbar-brand" href="/">BDoctors</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,9 +9,9 @@
                 <ul class="navbar-nav mb-2 mb-lg-0 text-white">
 
                     <li class="nav-item d-flex">
-                        <a class="nav-link" href="/login" v-if="!user">Sei già registrato?</a>
-                        <a class="nav-link" href="/register" v-if="!user">Sei un dottore?</a>
-                        <a class="nav-link" href="/home" v-else> {{ user.name }} {{ user.surname}} </a>
+                        <a class="nav-link active" href="/login" v-if="!user">Sei già registrato?</a>
+                        <a class="nav-link active" href="/register" v-if="!user">Sei un dottore?</a>
+                        <a class="nav-link active" href="/home" v-else> {{ user.name }} {{ user.surname}} </a>
                     </li>
 
                 </ul>
@@ -48,4 +48,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.navbar {
+    background: #59A7B8;
+}
 </style>

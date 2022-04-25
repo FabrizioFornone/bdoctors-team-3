@@ -1,36 +1,58 @@
 <template>
-    <div>
-        <div class="input-group my-3">
-                <input type="text" 
-                class="form-control" 
-                aria-label="Sizing example input" 
-                aria-describedby="inputGroup-sizing-default" 
-                placeholder="Inserisci parola chiave." 
-                v-model="searchText" 
-                @keydown.enter="findSearchSubmit()" />
+    <main>
+        <div v-if="!boolean" class="jumbotron">
+            <div class="container">
+                <div class="search-group col-7 d-flex">
+                    <div class="input-group">
+                        <input
+                            type="text"
+                            class="form-control"
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                            placeholder="Inserisci parola chiave."
+                            v-model="searchText"
+                            @keydown.enter="findSearchSubmit()"
+                        />
+                    </div>
+
+                    <div class="btn-group px-2">
+                        <button
+                            class="btn btn-primary rounded text-white me-2"
+                            @click="findSearchSubmit()"
+                        >
+                            Search
+                        </button>
+                        <a
+                            href="/search"
+                            class="btn rounded btn-primary text-white btn-search"
+                            >Advanced Search</a
+                        >
+                    </div>
+                </div>
             </div>
-        <div class="my-3">
-            <button class="btn btn-primary text-white" @click="findSearchSubmit()">Search</button>
-            <a href="/search" class="btn btn-primary text-white">Advanced Search</a>
         </div>
 
-       
+        <div class="container py-5" v-if="boolean">
+            <button
+                class="btn btn-primary rounded text-white my-2"
+                @click="changeBoolean()"
+            >
+                Back to filter
+            </button>
 
-        <div>
-            <info-card 
-            v-for="specialization of specializations" 
-            :key="specialization.id" 
-            :specialization="specialization">
+            <info-card
+                v-for="result of results"
+                :key="result.id"
+                :result="result"
+            >
             </info-card>
         </div>
-
-    </div>
+    </main>
 </template>
 
 <script>
-
 import axios from "axios";
-import InfoCard from '../components/InfoCard.vue';
+import InfoCard from "../components/InfoCard.vue";
 
 export default {
     components: { InfoCard },
@@ -38,10 +60,11 @@ export default {
     data() {
         return {
             infos: [],
-            users:[],
-            specializations: [],
-            searchText: '',
-        }
+            users: [],
+            results: [],
+            searchText: "",
+            boolean: false,
+        };
     },
 
     mounted() {
@@ -58,7 +81,7 @@ export default {
         // },
 
         getInfos() {
-            axios.get("/api/infos").then(resp => {
+            axios.get("/api/infos").then((resp) => {
                 this.infos = resp.data;
             });
         },
@@ -70,7 +93,7 @@ export default {
                         filter: searchText,
                     },
                 });
-                this.specializations = resp.data;
+                this.results = resp.data;
             } catch (er) {
                 console.log(er);
             }
@@ -78,22 +101,41 @@ export default {
 
         findSearchSubmit() {
             this.getSpecialization(this.searchText);
-            // console.log(this.specializations)
-            // console.log(this.searchText);
+            this.boolean = true;
         },
-
+        changeBoolean() {
+            this.boolean = !this.boolean;
+            this.searchText = "";
+        },
     },
-}
+};
 </script>
 
 <style lang="scss" scoped>
+// .ms_main {
+//     min-height: 800px;
 
-    .ms_main {
-        min-height: 800px;
+//     .ms_button {
+//         margin-bottom: 30px;
+//     }
+// }
+.jumbotron {
+    height: calc(100vh - 64px);
+    background-image: url('/imgs/jumbotron.png');
+    background-size: cover;
+    position: relative;
 
-        .ms_button {
-            margin-bottom: 30px;
-        }
+    .search-group {
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        transform: translate(-50%, -50%);
     }
 
+    .btn-group {
+        .btn-search {
+            min-width: 150px;
+        }
+    }
+}
 </style>

@@ -1,30 +1,30 @@
 <template>
     <div class="col">
         <div class="card">
-            <img :src="specialization.photo" class="card-img-top" alt="..." />
             <div class="card-body">
-                <h5 class="card-title">Dettagli Dottore</h5>
-                <span> {{ specialization.name }} {{ specialization.surname }}</span>
-                <br/>
-                <div>
-                    <span></span>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <img
+                            :src="result.photo"
+                            class="card-img"
+                            alt="..."
+                        />
+                    </div>
+                    <div>
+                        <span> {{ result.name }} </span>
+                        <span> {{ result.surname }}</span>
+                    </div>
                 </div>
-                <div>
-                    <span></span>
-                </div>
-            </div>
-            <div class="card-footer">
-                <!-- <router-link :to="{ name:'post.show', params: { post: post.slug } }">Dettagli</router-link> -->
+                <a href="#" class="card-title">Dettagli Dottore</a>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-
 export default {
     props: {
-        specialization: Object
+        result: Object,
     },
 
     methods: {
@@ -34,17 +34,22 @@ export default {
         //         "https://www.logistec.com/wp-content/uploads/2017/12/placeholder.png"
         //     );
         // }
-    }
-}
-
+    },
+};
 </script>
 
 <style lang="scss" scoped>
-.post-card {
-    min-height: 100%;
-    .card-img-top {
-        max-height: 250px;
-        object-fit: cover;
-    }
+// .post-card {
+//     min-height: 100%;
+//     .card-img-top {
+//         max-height: 250px;
+//         object-fit: cover;
+//     }
+// }
+
+
+
+.card-img {
+    max-width: 120px;
 }
 </style>
