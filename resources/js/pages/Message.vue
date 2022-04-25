@@ -1,5 +1,6 @@
 <template>
 <div>
+    <div class="container">
     <h1>Send an message to your doctor</h1>
     <div v-if="!formSubmitted">
         <div class="mb-3">
@@ -47,6 +48,7 @@
     </div>
     <div v-else class="alert alert-success py-5">
         <h4>Your message was sent successfully.</h4>
+    </div>
     </div>
 </div>
 </template>

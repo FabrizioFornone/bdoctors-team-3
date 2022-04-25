@@ -23,6 +23,9 @@
                             Search
                         </button>
                     </div>
+                    <a href="/message" class="btn btn-primary text-white"
+                        >Message</a
+                    >
 
                     <div class="error-div text-danger" v-if="error">
                         <p>
@@ -33,8 +36,6 @@
                 </div>
             </div>
         </div>
-        <a href="/message" class="btn btn-primary text-white">Message</a>
-
 
         <div class="container py-5" v-if="boolean">
             <button
@@ -48,8 +49,8 @@
                 v-for="result of results"
                 :key="result.id"
                 :result="result"
-            >
-       
+            />
+        </div>
     </main>
 </template>
 
