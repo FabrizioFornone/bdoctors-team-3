@@ -14,9 +14,6 @@
                             @keydown.enter="findSearchSubmit()"
                         />
                     </div>
-                    <div v-if="error">
-                        <p>The input field needs at least one specialization selected</p>
-                    </div>
 
                     <div class="btn-group px-2">
                         <button
@@ -25,11 +22,13 @@
                         >
                             Search
                         </button>
-                        <!-- <a
-                            href="/search"
-                            class="btn rounded btn-primary text-white btn-search"
-                            >Advanced Search</a
-                        > -->
+                    </div>
+
+                    <div class="error-div text-danger" v-if="error">
+                        <p>
+                            The input field needs at least one specialization
+                            selected
+                        </p>
                     </div>
                 </div>
             </div>
@@ -67,7 +66,7 @@ export default {
             results: [],
             searchText: "",
             boolean: false,
-            error: false
+            error: false,
         };
     },
 
@@ -96,10 +95,11 @@ export default {
         },
 
         findSearchSubmit() {
-            if (this.searchText != '') {
+            if (this.searchText != "") {
                 this.getSpecialization(this.searchText);
                 this.boolean = true;
-                window.scrollTo(0, 0)
+                this.error = false;
+                window.scrollTo(0, 0);
             } else {
                 this.error = true;
                 console.log(this.error);
@@ -123,7 +123,7 @@ export default {
 // }
 .jumbotron {
     height: calc(100vh - 64px);
-    background-image: url("/imgs/jumbotron.png");
+    background: url("/imgs/jumbotron.png") center center;
     background-size: cover;
     position: relative;
 
@@ -132,11 +132,17 @@ export default {
         top: 50%;
         left: 40%;
         transform: translate(-50%, -50%);
-    }
 
-    .btn-group {
-        .btn-search {
-            min-width: 150px;
+        .btn-group {
+            .btn-search {
+                min-width: 150px;
+            }
+        }
+
+        .error-div {
+            position: absolute;
+            top: 40px;
+            left: 0;
         }
     }
 }

@@ -1928,6 +1928,55 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -1941,6 +1990,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -2128,6 +2178,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2140,19 +2192,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       users: [],
       results: [],
       searchText: "",
-      "boolean": false
+      "boolean": false,
+      error: false
     };
   },
   mounted: function mounted() {
     this.getInfos();
-    this.getSpecialization(); // console.log(this.specializations)
   },
   methods: {
-    // getSpecialization() {
-    //     axios.get("/api/specializations").then(resp => {
-    //         this.specialization = resp.data;
-    //     });
-    // },
     getInfos: function getInfos() {
       var _this = this;
 
@@ -2199,8 +2246,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     findSearchSubmit: function findSearchSubmit() {
-      this.getSpecialization(this.searchText);
-      this["boolean"] = true;
+      if (this.searchText != "") {
+        this.getSpecialization(this.searchText);
+        this["boolean"] = true;
+        this.error = false;
+        window.scrollTo(0, 0);
+      } else {
+        this.error = true;
+        console.log(this.error);
+      }
     },
     changeBoolean: function changeBoolean() {
       this["boolean"] = !this["boolean"];
@@ -2293,7 +2347,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jumbotron[data-v-b3c5cf30] {\n  height: calc(100vh - 64px);\n  background-image: url(\"/imgs/jumbotron.png\");\n  background-size: cover;\n  position: relative;\n}\n.jumbotron .search-group[data-v-b3c5cf30] {\n  position: absolute;\n  top: 50%;\n  left: 40%;\n  transform: translate(-50%, -50%);\n}\n.jumbotron .btn-group .btn-search[data-v-b3c5cf30] {\n  min-width: 150px;\n}", ""]);
+exports.push([module.i, ".jumbotron[data-v-b3c5cf30] {\n  height: calc(100vh - 64px);\n  background: url(\"/imgs/jumbotron.png\") center center;\n  background-size: cover;\n  position: relative;\n}\n.jumbotron .search-group[data-v-b3c5cf30] {\n  position: absolute;\n  top: 50%;\n  left: 40%;\n  transform: translate(-50%, -50%);\n}\n.jumbotron .search-group .btn-group .btn-search[data-v-b3c5cf30] {\n  min-width: 150px;\n}\n.jumbotron .search-group .error-div[data-v-b3c5cf30] {\n  position: absolute;\n  top: 40px;\n  left: 0;\n}", ""]);
 
 // exports
 
@@ -4242,9 +4296,139 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("footer", [
-      _c("div", { staticClass: "container" }, [
-        _c("h3", [_vm._v("Il mio footer")]),
-      ]),
+      _c(
+        "div",
+        {
+          staticClass:
+            "container d-flex justify-content-between align-items-center",
+        },
+        [
+          _c("div", { staticClass: "d-flex list-container" }, [
+            _c("div", { staticClass: "px-3 py-1" }, [
+              _c("h5", [_vm._v("Servizi")]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Privacy e cookies"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Chi siamo")]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Contatti")]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Lavoro ASSUMIAMO!"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Condizioni di Servizio"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Ufficio stampa")]),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "px-3 py-1" }, [
+              _c("h5", [_vm._v("Per i pazienti")]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Dottori")]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Struttura")]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Chiedi al dottore"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Prestazioni")]),
+                ]),
+                _vm._v(" "),
+                _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("FAQ")])]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("App mobile")]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Diagnostica per immagini"),
+                  ]),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "px-3 py-1" }, [
+              _c("h5", [_vm._v("Per i professionisti sanitari")]),
+              _vm._v(" "),
+              _c("ul", [
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Area professionisti sanitari"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Prezzi")]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Risorse gratuite"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Pulsante di prenotazione"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Centro Assistenza per Professionisti"),
+                  ]),
+                ]),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "d-flex flex-column align-items-center" }, [
+            _c("img", {
+              staticClass: "logo",
+              attrs: { src: "imgs/logo-wide.png", alt: "" },
+            }),
+            _vm._v(" "),
+            _c("ul", [
+              _c("li", { staticClass: "footer-text" }, [
+                _vm._v("Da qualche parte, Italia"),
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "footer-text" }, [
+                _vm._v("P.IVA: Tutto in nero"),
+              ]),
+            ]),
+          ]),
+        ]
+      ),
     ])
   },
 ]
@@ -4287,6 +4471,10 @@ var render = function () {
               _c("span", [_vm._v(" " + _vm._s(_vm.result.name) + " ")]),
               _vm._v(" "),
               _c("span", [_vm._v(" " + _vm._s(_vm.result.surname))]),
+              _vm._v(" "),
+              _c("span", [
+                _vm._v(" " + _vm._s(_vm.result.specialization_name)),
+              ]),
             ]),
           ]
         ),
@@ -4520,17 +4708,17 @@ var render = function () {
                     ),
                   ]
                 ),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    staticClass:
-                      "btn rounded btn-primary text-white btn-search",
-                    attrs: { href: "/search" },
-                  },
-                  [_vm._v("Advanced Search")]
-                ),
               ]),
+              _vm._v(" "),
+              _vm.error
+                ? _c("div", { staticClass: "error-div text-danger" }, [
+                    _c("p", [
+                      _vm._v(
+                        "\n                        The input field needs at least one specialization\n                        selected\n                    "
+                      ),
+                    ]),
+                  ])
+                : _vm._e(),
             ]),
           ]),
         ])
