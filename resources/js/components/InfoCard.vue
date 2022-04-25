@@ -13,6 +13,7 @@
                     <div>
                         <span> {{ result.name }} </span>
                         <span> {{ result.surname }}</span>
+                        <span> {{ result.specialization_name }}</span>
                     </div>
                 </div>
                 <a href="#" class="card-title">Dettagli Dottore</a>
