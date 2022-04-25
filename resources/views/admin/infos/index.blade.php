@@ -69,7 +69,7 @@
                             @if ($info->specializations->count()!=0)
                             <div> Specializations:
                                 @foreach ($info->specializations as $specialization)
-                                <span class="pr-1">{{ $specialization->name }}</span>
+                                <span class="pr-1">{{ $specialization->specialization_name }}</span>
                                 @endforeach
                             </div>
                             @endif
