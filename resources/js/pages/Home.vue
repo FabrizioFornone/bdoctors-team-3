@@ -70,16 +70,9 @@ export default {
     mounted() {
         this.getInfos();
         this.getSpecialization();
-        // console.log(this.specializations)
     },
 
     methods: {
-        // getSpecialization() {
-        //     axios.get("/api/specializations").then(resp => {
-        //         this.specialization = resp.data;
-        //     });
-        // },
-
         getInfos() {
             axios.get("/api/infos").then((resp) => {
                 this.infos = resp.data;
@@ -102,6 +95,7 @@ export default {
         findSearchSubmit() {
             this.getSpecialization(this.searchText);
             this.boolean = true;
+            window.scrollTo(0, 0)
         },
         changeBoolean() {
             this.boolean = !this.boolean;
@@ -121,7 +115,7 @@ export default {
 // }
 .jumbotron {
     height: calc(100vh - 64px);
-    background-image: url('/imgs/jumbotron.png');
+    background-image: url("/imgs/jumbotron.png");
     background-size: cover;
     position: relative;
 
