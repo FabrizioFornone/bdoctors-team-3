@@ -14,8 +14,8 @@
             <a href="/search" class="btn btn-primary text-white">Advanced Search</a>
         </div>
 
+        <a href="/message" class="btn btn-primary text-white">Message</a>
        
-
         <div>
             <info-card 
             v-for="specialization of specializations" 
