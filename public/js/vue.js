@@ -4714,7 +4714,7 @@ var render = function () {
                 ? _c("div", { staticClass: "error-div text-danger" }, [
                     _c("p", [
                       _vm._v(
-                        "\n                        The input field needs at least one specialization\n                        selected\n                    "
+                        "\n                        The input field needs at least one specialization\n                        selected.\n                    "
                       ),
                     ]),
                   ])

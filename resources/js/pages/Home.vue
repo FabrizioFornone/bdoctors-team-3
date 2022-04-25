@@ -27,7 +27,7 @@
                     <div class="error-div text-danger" v-if="error">
                         <p>
                             The input field needs at least one specialization
-                            selected
+                            selected.
                         </p>
                     </div>
                 </div>
