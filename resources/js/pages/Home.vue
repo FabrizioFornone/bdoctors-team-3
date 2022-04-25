@@ -2,28 +2,28 @@
     <main>
         <div v-if="!boolean" class="jumbotron">
             <div class="container">
-                <div class="search-group col-7 d-flex">
+                <div class="search-group col-7">
+                    <h1 class="py-5">Look for your healthcare professional</h1>
                     <div class="input-group">
                         <input
                             type="text"
                             class="form-control"
                             aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-default"
-                            placeholder="Inserisci parola chiave."
+                            placeholder="Search by specialization"
                             v-model="searchText"
                             @keydown.enter="findSearchSubmit()"
                         />
-                    </div>
 
-                    <div class="btn-group px-2">
-                        <button
-                            class="btn btn-primary rounded text-white me-2"
-                            @click="findSearchSubmit()"
-                        >
-                            Search
-                        </button>
+                        <div class="btn-group px-2">
+                            <button
+                                class="btn btn-primary rounded text-white me-2"
+                                @click="findSearchSubmit()"
+                            >
+                                Search
+                            </button>
+                        </div>
                     </div>
-                    
 
                     <div class="error-div text-danger" v-if="error">
                         <p>
@@ -49,9 +49,7 @@
                 :result="result"
             />
 
-            <h2 v-if="results.length = []">
-                There aren't results.
-            </h2>
+            <h2 v-if="(results.length = [])">There aren't results.</h2>
         </div>
     </main>
 </template>
@@ -134,8 +132,12 @@ export default {
     .search-group {
         position: absolute;
         top: 50%;
-        left: 40%;
+        left: 35%;
         transform: translate(-50%, -50%);
+
+        h1 {
+            color: #fff;
+        }
 
         .btn-group {
             .btn-search {
@@ -145,7 +147,7 @@ export default {
 
         .error-div {
             position: absolute;
-            top: 40px;
+            top: 90px;
             left: 0;
         }
     }

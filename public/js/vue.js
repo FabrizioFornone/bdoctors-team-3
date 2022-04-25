@@ -2181,8 +2181,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2481,7 +2479,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jumbotron[data-v-b3c5cf30] {\n  height: calc(100vh - 64px);\n  background: url(\"/imgs/jumbotron.png\") center center;\n  background-size: cover;\n  position: relative;\n}\n.jumbotron .search-group[data-v-b3c5cf30] {\n  position: absolute;\n  top: 50%;\n  left: 40%;\n  transform: translate(-50%, -50%);\n}\n.jumbotron .search-group .btn-group .btn-search[data-v-b3c5cf30] {\n  min-width: 150px;\n}\n.jumbotron .search-group .error-div[data-v-b3c5cf30] {\n  position: absolute;\n  top: 40px;\n  left: 0;\n}", ""]);
+exports.push([module.i, ".jumbotron[data-v-b3c5cf30] {\n  height: calc(100vh - 64px);\n  background: url(\"/imgs/jumbotron.png\") center center;\n  background-size: cover;\n  position: relative;\n}\n.jumbotron .search-group[data-v-b3c5cf30] {\n  position: absolute;\n  top: 50%;\n  left: 35%;\n  transform: translate(-50%, -50%);\n}\n.jumbotron .search-group h1[data-v-b3c5cf30] {\n  color: #fff;\n}\n.jumbotron .search-group .btn-group .btn-search[data-v-b3c5cf30] {\n  min-width: 150px;\n}\n.jumbotron .search-group .error-div[data-v-b3c5cf30] {\n  position: absolute;\n  top: 90px;\n  left: 0;\n}", ""]);
 
 // exports
 
@@ -4795,7 +4793,11 @@ var render = function () {
     !_vm.boolean
       ? _c("div", { staticClass: "jumbotron" }, [
           _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "search-group col-7 d-flex" }, [
+            _c("div", { staticClass: "search-group col-7" }, [
+              _c("h1", { staticClass: "py-5" }, [
+                _vm._v("Look for your healthcare professional"),
+              ]),
+              _vm._v(" "),
               _c("div", { staticClass: "input-group" }, [
                 _c("input", {
                   directives: [
@@ -4811,7 +4813,7 @@ var render = function () {
                     type: "text",
                     "aria-label": "Sizing example input",
                     "aria-describedby": "inputGroup-sizing-default",
-                    placeholder: "Inserisci parola chiave.",
+                    placeholder: "Search by specialization",
                   },
                   domProps: { value: _vm.searchText },
                   on: {
@@ -4832,25 +4834,25 @@ var render = function () {
                     },
                   },
                 }),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "btn-group px-2" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary rounded text-white me-2",
-                    on: {
-                      click: function ($event) {
-                        return _vm.findSearchSubmit()
+                _vm._v(" "),
+                _c("div", { staticClass: "btn-group px-2" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary rounded text-white me-2",
+                      on: {
+                        click: function ($event) {
+                          return _vm.findSearchSubmit()
+                        },
                       },
                     },
-                  },
-                  [
-                    _vm._v(
-                      "\n                        Search\n                    "
-                    ),
-                  ]
-                ),
+                    [
+                      _vm._v(
+                        "\n                            Search\n                        "
+                      ),
+                    ]
+                  ),
+                ]),
               ]),
               _vm._v(" "),
               _vm.error
@@ -4893,9 +4895,7 @@ var render = function () {
             }),
             _vm._v(" "),
             (_vm.results.length = [])
-              ? _c("h2", [
-                  _vm._v("\n            There aren't results.\n        "),
-                ])
+              ? _c("h2", [_vm._v("There aren't results.")])
               : _vm._e(),
           ],
           2
