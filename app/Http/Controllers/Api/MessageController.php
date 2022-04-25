@@ -13,6 +13,7 @@ class MessageController extends Controller
             'full_name' => 'required|string',
             'email' => 'required|email',
             'message' => 'required|string',
+            'user_id' => 'required',
         ]);
         $message = new Message();
         $message->fill($data);

@@ -7787,6 +7787,43 @@ readers do not read off random characters that represent icons */
   color: #f0f0f0;
 }
 
+.navbar .profile-pic-nav {
+  width: 35px;
+  height: 35px;
+  border: 1px solid black;
+}
+
+.navbar .ms_dropdown {
+  padding: 0 0;
+}
+
+.navbar .ms_dropdown .ms_dropdown-item {
+  color: black;
+}
+
+.navbar .ms_dropdown .ms_logout {
+  border-top: 1px solid black;
+  margin-top: 2px;
+}
+
+.ms_infos .photo-box {
+  width: 220px;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.ms_infos .photo-box img {
+  min-width: 100%;
+  min-height: 100%;
+  flex-shrink: 0;
+}
+
 footer {
   height: 190px;
   background-color: #03b6dd;
@@ -7817,7 +7854,8 @@ footer .footer-text {
 }
 
 .ms_card-div .btn {
-  width: 150px;
+  width: 125px;
+  margin: 0 3px;
 }
 
 .ms_text-box .ms_text {
