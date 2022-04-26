@@ -30,7 +30,7 @@ const router = new VueRouter({
             }
         },
         {
-            path: "/review",
+            path: "/review/:result",
             component: Review,
             name: "review.index",
             meta: {
