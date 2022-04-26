@@ -30,15 +30,6 @@
                 {{ formValidationErrors.message }}
             </span>
         </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">
-                User_id
-            </label>
-            <input type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="formData.user_id"></input>
-            <span class="text-danger" v-if="formValidationErrors && formValidationErrors.user_id">
-                {{ formValidationErrors.user_id }}
-            </span>
-        </div>
         
         <div>
             <button type="submit" class="btn btn-primary text-white mb-3" @click="formSubmit">
@@ -65,11 +56,12 @@ export default {
                 full_name: '',
                 email: '',
                 message: '',
-                user_id: '',
+                user_id: this.$route.params.result,
             },
             formValidationErrors: null
         }
     },
+
     methods: {
         async formSubmit() {
             try {
@@ -85,7 +77,7 @@ export default {
                 alert("Try again! Your message wasn't sent successfully or the fields are not compiled correctly.");
             }
         },
-    }
+    },
 }
 </script>
 

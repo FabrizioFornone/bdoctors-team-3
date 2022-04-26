@@ -57,7 +57,6 @@ export default {
             try {
                 const response = await axios.get("/api/specializations/" + this.$route.params.result);
                 this.info = response.data;
-                console.log(this.info)
             } catch(er) {
                 this.$router.replace({
                     name: "error"
