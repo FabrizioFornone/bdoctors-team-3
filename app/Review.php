@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
-    public function user() {
+
+    protected $fillable = ['full_name', 'email', 'text', 'vote', 'user_id'];
+
+    public function user() 
+    {
         return $this->belongsTo('App\User');
     }
 }
