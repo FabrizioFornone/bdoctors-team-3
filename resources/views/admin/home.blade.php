@@ -35,15 +35,15 @@
 
                         <div class="row d-flex ms_text-box">
                             <div class="col-10 offset-1">
+                                
+                                @foreach ($messages as $message)
                                 <div class="ms_text my-2 py-2">
-                                    
-                                    @foreach ($messages as $message)
-                                        <div>Name: {{ $message->full_name }}</div>
-                                        <div>Email: {{ $message->email }}</div>
-                                        <div>Message: {{ $message->message }}</div>
-                                    @endforeach
-
+                                    <div>Name: {{ $message->full_name }}</div>
+                                    <div>Email: {{ $message->email }}</div>
+                                    <div>Message: {{ $message->message }}</div>
                                 </div>
+                                @endforeach
+
                             </div>
                         </div>
 
