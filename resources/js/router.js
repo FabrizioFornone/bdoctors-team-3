@@ -34,15 +34,15 @@ const router = new VueRouter({
                 title: "Doctor's details",
             }
         },
-        {
-            path: "/review/:result",
-            component: Review,
-            name: "review.index",
-            meta: {
-                title: "Review",
-                linkText: "Review"
-            }
-        },
+        // {
+        //     path: "/review/:result",
+        //     component: Review,
+        //     name: "review.index",
+        //     meta: {
+        //         title: "Review",
+        //         linkText: "Review"
+        //     }
+        // },
         {
             path: "/not-found",
             alias: "*",
