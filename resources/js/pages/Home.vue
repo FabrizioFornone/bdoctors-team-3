@@ -63,7 +63,6 @@ export default {
 
     data() {
         return {
-            infos: [],
             users: [],
             results: [],
             searchText: "",
@@ -77,12 +76,6 @@ export default {
     },
 
     methods: {
-        getInfos() {
-            axios.get("/api/infos").then((resp) => {
-                this.infos = resp.data;
-            });
-        },
-
         async getSpecialization(searchText = null) {
             try {
                 const resp = await axios.get("/api/specializations", {

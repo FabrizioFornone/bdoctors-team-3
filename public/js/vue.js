@@ -2189,7 +2189,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   data: function data() {
     return {
-      infos: [],
       users: [],
       results: [],
       searchText: "",
@@ -2201,16 +2200,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     this.getInfos();
   },
   methods: {
-    getInfos: function getInfos() {
-      var _this = this;
-
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/infos").then(function (resp) {
-        _this.infos = resp.data;
-      });
-    },
     getSpecialization: function getSpecialization() {
       var _arguments = arguments,
-          _this2 = this;
+          _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var searchText, resp;
@@ -2229,7 +2221,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 4:
                 resp = _context.sent;
-                _this2.results = resp.data;
+                _this.results = resp.data;
                 _context.next = 11;
                 break;
 
