@@ -84,7 +84,7 @@ export default {
                     },
                 });
                 this.results = resp.data;
-                console.log(this.results);
+                
                 if(this.results.length == 0) {
                     this.results = null;
                     console.log(this.results)
