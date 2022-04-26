@@ -13,9 +13,12 @@
                     </div>
                 </div>
                 <a href="#" class="card-title">Dettagli Dottore</a>
-                <a href="/message" class="btn btn-primary text-white"
-                    >Message</a
-                >
+                <a href="/message" class="btn btn-primary text-white">
+                Message
+                </a>
+                <a href="/review" class="btn btn-primary text-white">
+                Review
+                </a>
             </div>
         </div>
     </div>
