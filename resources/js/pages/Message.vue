@@ -49,6 +49,21 @@
         <div v-else class="alert alert-success py-5">
             <h4>Your message was sent successfully.</h4>
         </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">
+                Message
+            </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="formData.message"></textarea>
+            <span class="text-danger" v-if="formValidationErrors && formValidationErrors.message">
+                {{ formValidationErrors.message }}
+            </span>
+        </div>
+        
+        <div>
+            <button type="submit" class="btn btn-primary text-white mb-3" @click="formSubmit">
+                Submit
+            </button>
+        </div>
     </div>
 </div>
 </template>
@@ -65,11 +80,12 @@ export default {
                 full_name: '',
                 email: '',
                 message: '',
-                user_id: '',
+                user_id: this.$route.params.result,
             },
             formValidationErrors: null
         }
     },
+
     methods: {
         async formSubmit() {
             try {
@@ -85,7 +101,7 @@ export default {
                 alert("Try again! Your message wasn't sent successfully or the fields are not compiled correctly.");
             }
         },
-    }
+    },
 }
 </script>
 

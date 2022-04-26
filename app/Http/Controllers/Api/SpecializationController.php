@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Info;
 use App\Specialization;
 use Illuminate\Http\Request;
 
@@ -69,7 +70,21 @@ class SpecializationController extends Controller
      */
     public function show($id)
     {
-        //
+        $info = Info::where("id", $id)
+        ->with(["user", "specializations"])
+        ->first();
+
+        if(!$info) {
+            abort(404);
+        };
+
+        if ($info->photo) {
+            $info->photo = asset("storage/" . $info->photo);
+        } else {
+            $info->photo = "https://via.placeholder.com/1024x480";
+        };
+    
+        return response()->json($info);
     }
 
     /**

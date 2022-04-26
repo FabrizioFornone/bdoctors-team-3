@@ -12,13 +12,9 @@
                         <span> {{ result.specialization_name }}</span>
                     </div>
                 </div>
-                <a href="#" class="card-title">Dettagli Dottore</a>
-                <a href="/message" class="btn btn-primary text-white">
-                Message
-                </a>
-                <a href="/review" class="btn btn-primary text-white">
-                Review
-                </a>
+                <router-link :to="{ name:'message.index', params: { result: result.id } }">Message</router-link>
+                <!-- <a href="/message" class="btn btn-primary text-white">Message</a> -->
+                <router-link :to="{ name:'results.show', params: { result: result.id } }">Details</router-link>
             </div>
         </div>
     </div>
@@ -31,24 +27,12 @@ export default {
     },
 
     methods: {
-        // getInfoCardImg(specialization) {
-        //     return (
-        //         specialization.photo ??
-        //         "https://www.logistec.com/wp-content/uploads/2017/12/placeholder.png"
-        //     );
-        // }
+    
     },
 };
 </script>
 
 <style lang="scss" scoped>
-// .post-card {
-//     min-height: 100%;
-//     .card-img-top {
-//         max-height: 250px;
-//         object-fit: cover;
-//     }
-// }
 
 .card-img {
     max-width: 120px;

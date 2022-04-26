@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import Home from "./pages/Home.vue";
 import Error from "./pages/Error.vue";
 import Message from "./pages/Message.vue";
-import Review from "./pages/Review.vue";
+import Show from "./pages/infos/Show.vue";
 
 Vue.use(VueRouter);
 
@@ -21,12 +21,17 @@ const router = new VueRouter({
             },
         },
         {
-            path: "/message",
+            path: "/message/:result",
             component: Message,
             name: "message.index",
             meta: {
                 title: "Message",
                 linkText: "Message"
+            }
+        },
+        { path: "/results/:result", component: Show, name: "results.show",
+            meta: {
+                title: "Doctor's details",
             }
         },
         {
