@@ -29,40 +29,17 @@
                 <span class="text-danger" v-if="formValidationErrors && formValidationErrors.message">
                     {{ formValidationErrors.message }}
                 </span>
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">
-                    User_id
-                </label>
-                <input type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="formData.user_id">
-                <span class="text-danger" v-if="formValidationErrors && formValidationErrors.user_id">
-                    {{ formValidationErrors.user_id }}
-                </span>
-            </div>
-            
-            <div>
-                <button type="submit" class="btn btn-primary text-white mb-3" @click="formSubmit">
-                    Submit
-                </button>
-            </div>
-        </div>
-        <div v-else class="alert alert-success py-5">
-            <h4>Your message was sent successfully.</h4>
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">
-                Message
-            </label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="formData.message"></textarea>
-            <span class="text-danger" v-if="formValidationErrors && formValidationErrors.message">
-                {{ formValidationErrors.message }}
-            </span>
-        </div>
-        
+            </div>  
         <div>
+            
+        </div>
             <button type="submit" class="btn btn-primary text-white mb-3" @click="formSubmit">
                 Submit
             </button>
+        </div>
+
+        <div v-else class="alert alert-success py-5">
+            <h4>Your message was sent successfully.</h4>
         </div>
     </div>
 </div>
