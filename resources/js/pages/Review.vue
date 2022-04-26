@@ -86,8 +86,8 @@ export default {
                 const formDataInstance = new FormData();
                 formDataInstance.append('full_name', this.formData.full_name);
                 formDataInstance.append('email', this.formData.email);
-                formDataInstance.append('message', this.formData.text);
-                formDataInstance.append('message', this.formData.vote);
+                formDataInstance.append('text', this.formData.text);
+                formDataInstance.append('vote', this.formData.vote);
                 formDataInstance.append('user_id', this.formData.user_id);
                 await axios.post('/api/reviews', formDataInstance);
                 this.formSubmitted = true;
