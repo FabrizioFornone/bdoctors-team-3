@@ -35,19 +35,15 @@
 
                         <div class="row d-flex ms_text-box">
                             <div class="col-10 offset-1">
-                                <div class="ms_text my-2 py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, necessitatibus optio illo repellat est odio quia accusantium voluptatibus eos blanditiis explicabo ratione maxime eius dolorum reiciendis facere sint incidunt possimus!</div>
-                            </div>
-                            <div class="col-10 offset-1">
-                                <div class="ms_text my-2 py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate quasi quis vero iure quos? Veritatis ullam ipsam pariatur obcaecati reprehenderit expedita odio quod ducimus, recusandae tempora cumque aliquid dolorem.</div>
-                            </div>
-                            <div class="col-10 offset-1">
-                                <div class="ms_text my-2 py-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius alias qui ipsam accusantium, impedit, ex eum eaque facilis earum natus vitae sint molestiae nihil doloremque sapiente aut libero eveniet adipisci! Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate distinctio quos ipsa architecto nisi, quas culpa harum voluptatem modi sint omnis esse a nihil ipsum ab voluptatum nesciunt. Consectetur, natus.</div>
-                            </div>
-                            <div class="col-10 offset-1">
-                                <div class="ms_text my-2 py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi minima labore magnam nemo cum dolores architecto corporis ut velit autem? Tempora blanditiis ad recusandae placeat, rem culpa rerum iste iusto?</div>
-                            </div>
-                            <div class="py-3">
-                                <a href="{{ route('admin.messages.index') }}" class="btn btn-primary text-white fw-bold">All messages</a>
+                                <div class="ms_text my-2 py-2">
+                                    
+                                    @foreach ($messages as $message)
+                                        <div>Name: {{ $message->full_name }}</div>
+                                        <div>Email: {{ $message->email }}</div>
+                                        <div>Message: {{ $message->message }}</div>
+                                    @endforeach
+
+                                </div>
                             </div>
                         </div>
 
