@@ -21,7 +21,7 @@ const router = new VueRouter({
             },
         },
         {
-            path: "/message",
+            path: "/message/:result",
             component: Message,
             name: "message.index",
             meta: {
