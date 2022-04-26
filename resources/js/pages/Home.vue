@@ -49,7 +49,7 @@
                 :result="result"
             />
 
-            <h2 v-if="(results.length = [])">There aren't results.</h2>
+            <h2 v-if="(!results)">There aren't results.</h2>
         </div>
     </main>
 </template>
@@ -64,7 +64,7 @@ export default {
     data() {
         return {
             users: [],
-            results: [],
+            results: null,
             searchText: "",
             boolean: false,
             error: false,
@@ -84,6 +84,11 @@ export default {
                     },
                 });
                 this.results = resp.data;
+                console.log(this.results);
+                if(this.results.length == 0) {
+                    this.results = null;
+                    console.log(this.results)
+                }
             } catch (er) {
                 console.log(er);
             }
