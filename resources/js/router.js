@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "./pages/Home.vue";
 import Error from "./pages/Error.vue";
 import Message from "./pages/Message.vue";
+import Review from "./pages/Review.vue";
 
 Vue.use(VueRouter);
 
@@ -26,6 +27,15 @@ const router = new VueRouter({
             meta: {
                 title: "Message",
                 linkText: "Message"
+            }
+        },
+        {
+            path: "/review",
+            component: Review,
+            name: "review.index",
+            meta: {
+                title: "Review",
+                linkText: "Review"
             }
         },
         {
