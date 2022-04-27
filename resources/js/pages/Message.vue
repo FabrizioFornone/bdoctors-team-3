@@ -46,7 +46,6 @@
 </template>
 
 <script>
-
 import axios from "axios";
 
 export default {
@@ -62,7 +61,6 @@ export default {
             formValidationErrors: null
         }
     },
-
     methods: {
         async formSubmit() {
             try {
@@ -72,7 +70,7 @@ export default {
                 formDataInstance.append('email', this.formData.email);
                 formDataInstance.append('message', this.formData.message);
                 formDataInstance.append('user_id', this.formData.user_id);
-                 await axios.post('/api/messages', formDataInstance);
+                await axios.post('/api/messages', formDataInstance);
                 this.formSubmitted = true;
             } catch (error) {
                 alert("Try again! Your message wasn't sent successfully or the fields are not compiled correctly.");
