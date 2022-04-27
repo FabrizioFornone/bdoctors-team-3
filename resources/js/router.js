@@ -4,6 +4,7 @@ import Home from "./pages/Home.vue";
 import Error from "./pages/Error.vue";
 import Message from "./pages/Message.vue";
 import Show from "./pages/infos/Show.vue";
+import Review from "./pages/Review.vue";
 
 Vue.use(VueRouter);
 
@@ -29,20 +30,23 @@ const router = new VueRouter({
                 linkText: "Message"
             }
         },
-        { path: "/results/:result", component: Show, name: "results.show",
+        { 
+            path: "/results/:result",
+            component: Show, 
+            name: "results.show",
             meta: {
                 title: "Doctor's details",
             }
         },
-        // {
-        //     path: "/review/:result",
-        //     component: Review,
-        //     name: "review.index",
-        //     meta: {
-        //         title: "Review",
-        //         linkText: "Review"
-        //     }
-        // },
+        {
+            path: "/review/:result",
+            component: Review,
+            name: "review.index",
+            meta: {
+                title: "Review",
+                linkText: "Review"
+            }
+        },
         {
             path: "/not-found",
             alias: "*",
