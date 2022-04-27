@@ -21,14 +21,15 @@ class SpecializationController extends Controller
     //     return response()->json($specializations);
     // }
 
-    public function index(Request $request) {
+    public function index(Request $request)
+    {
         $filter = $request->input("filter");
 
-        $specializations = Specialization::join('info_specialization', 'info_specialization.specialization_id', '=', 'specializations.id' )
-        ->join('infos', 'info_specialization.info_id', '=', 'infos.id')
-        ->join('users', 'infos.user_id', '=', 'users.id')
-        ->where("specializations.specialization_name", "LIKE", "%$filter%")
-        ->get();
+        $specializations = Specialization::join('info_specialization', 'info_specialization.specialization_id', '=', 'specializations.id')
+            ->join('infos', 'info_specialization.info_id', '=', 'infos.id')
+            ->join('users', 'infos.user_id', '=', 'users.id')
+            ->where("specializations.specialization_name", "LIKE", "%$filter%")
+            ->get();
 
         $specializations->each(function ($specialization) {
             if ($specialization->photo) {
@@ -38,7 +39,14 @@ class SpecializationController extends Controller
             }
         });
 
-        return response()->json($specializations);
+        // tentativo di filtro avanzato per città
+
+        // $advancedFilter = $specializations->where("infos.city", "LIKE", "Torino")->get();
+
+
+        // compact con 2 variabili
+
+        return response()->json(compact('specializations', 'advancedFilter'));
     }
 
     /**
@@ -71,10 +79,10 @@ class SpecializationController extends Controller
     public function show($id)
     {
         $info = Info::where("id", $id)
-        ->with(["user", "specializations"])
-        ->first();
+            ->with(["user", "specializations"])
+            ->first();
 
-        if(!$info) {
+        if (!$info) {
             abort(404);
         };
 
@@ -83,7 +91,7 @@ class SpecializationController extends Controller
         } else {
             $info->photo = "https://via.placeholder.com/1024x480";
         };
-    
+
         return response()->json($info);
     }
 
