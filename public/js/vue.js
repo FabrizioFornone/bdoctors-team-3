@@ -2156,6 +2156,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2165,6 +2174,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       advancedResults: "",
+      searchText: "",
       searchCity: ""
     };
   },
@@ -2214,7 +2224,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     findSearchSubmit: function findSearchSubmit() {
-      if (this.searchText != "") {
+      if (this.searchCity != "") {
         this.getAdvancedResults(this.searchCity); // this.boolean = true;
         // this.error = false;
 

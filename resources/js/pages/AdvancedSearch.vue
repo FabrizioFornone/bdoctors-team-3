@@ -3,6 +3,15 @@
         <div class="container my-5">
             <div class="search-group col-6">
                 <div class="input-group">
+                    <!-- <input
+                        type="text"
+                        class="form-control"
+                        aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default"
+                        placeholder="Search by specialization"
+                        v-model="searchText"
+                        @keydown.enter="findSearchSubmit()"
+                    /> -->
                     <input
                         type="text"
                         class="form-control"
@@ -48,6 +57,7 @@ export default {
     data() {
         return {
             advancedResults: "",
+            searchText: "",
             searchCity: "",
         };
     },
@@ -71,7 +81,7 @@ export default {
             }
         },
         findSearchSubmit() {
-            if (this.searchText != "") {
+            if (this.searchCity != "") {
                 this.getAdvancedResults(this.searchCity);
                 // this.boolean = true;
                 // this.error = false;
