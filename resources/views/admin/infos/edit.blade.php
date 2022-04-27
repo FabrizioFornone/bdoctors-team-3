@@ -96,6 +96,17 @@
                             @enderror
                         </div>
 
+                        {{-- City --}}
+                        <div class="mb-3">
+                            <label>City</label>
+                            <input type="text" name="city"
+                                class="form-control @error('city') is-invalid @enderror"
+                                value="{{ old('city', $info->city) }}" required>
+                            @error('city')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
                         {{-- Phone Number --}}
                         <div class="mb-3">
                             <label>Phone Number</label>

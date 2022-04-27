@@ -60,6 +60,7 @@ class InfoController extends Controller
             'CV' => 'nullable|file|max:500',
             'photo' => 'nullable|max:10000',
             'address' => 'nullable|min:5',
+            'city' => 'required|min:2',
             'phone' => 'nullable|numeric|digits:10',
             'performances' => 'nullable',
             'specializations' => 'required'
@@ -139,6 +140,7 @@ class InfoController extends Controller
             'CV' => 'nullable|file|max:500',
             'photo' => 'nullable|max:10000',
             'address' => 'nullable|min:5',
+            'city' => 'required|min:2',
             'phone' => 'nullable|numeric|digits:10',
             'performances' => 'nullable',
             'specializations' => 'required|exists:specializations,id'

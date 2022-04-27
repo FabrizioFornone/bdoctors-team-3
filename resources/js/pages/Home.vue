@@ -2,7 +2,7 @@
     <main>
         <div v-if="!boolean" class="jumbotron">
             <div class="container">
-                <div class="search-group col-7">
+                <div class="search-group col-6">
                     <h1 class="py-5">Look for your healthcare professional</h1>
                     <div class="input-group">
                         <input
@@ -22,6 +22,9 @@
                             >
                                 Search
                             </button>
+                            <a href="/search" class="btn btn-primary rounded text-white me-2">
+                                Advanced Search
+                            </a>
                         </div>
                     </div>
 
@@ -44,6 +47,7 @@
             </button>
 
             <!-- results.specializations oggetto innestato -->
+            <a href="/search" class="btn btn-primary rounded text-white my-2">Advanced Search</a>
 
             <info-card
                 v-for="result of results.specializations"
