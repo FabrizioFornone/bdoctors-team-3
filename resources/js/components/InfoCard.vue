@@ -10,11 +10,30 @@
                         <span> {{ result.name }} </span>
                         <span> {{ result.surname }}</span>
                         <span> {{ result.specialization_name }}</span>
+                        <span> {{ result.city }}</span>
                     </div>
                 </div>
-                <router-link :to="{ name:'message.index', params: { result: result.id } }">Message</router-link>
-                <router-link :to="{ name:'review.index', params: { result: result.id } }">Review</router-link>
-                <router-link :to="{ name:'results.show', params: { result: result.id } }">Details</router-link>
+                <router-link
+                    :to="{
+                        name: 'message.index',
+                        params: { result: result.id },
+                    }"
+                    >Message</router-link
+                >
+                <router-link
+                    :to="{
+                        name: 'review.index',
+                        params: { result: result.id },
+                    }"
+                    >Review</router-link
+                >
+                <router-link
+                    :to="{
+                        name: 'results.show',
+                        params: { result: result.id },
+                    }"
+                    >Details</router-link
+                >
             </div>
         </div>
     </div>
@@ -26,14 +45,11 @@ export default {
         result: Object,
     },
 
-    methods: {
-    
-    },
+    methods: {},
 };
 </script>
 
 <style lang="scss" scoped>
-
 .card-img {
     max-width: 120px;
 }

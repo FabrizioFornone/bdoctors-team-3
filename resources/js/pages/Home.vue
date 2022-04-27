@@ -22,7 +22,10 @@
                             >
                                 Search
                             </button>
-                            <a href="/search" class="btn btn-primary rounded text-white me-2">
+                            <a
+                                href="/search"
+                                class="btn btn-primary rounded text-white me-2"
+                            >
                                 Advanced Search
                             </a>
                         </div>
@@ -46,8 +49,9 @@
                 Back to filter
             </button>
 
-            <!-- results.specializations oggetto innestato -->
-            <a href="/search" class="btn btn-primary rounded text-white my-2">Advanced Search</a>
+            <a href="/search" class="btn btn-primary rounded text-white my-2"
+                >Advanced Search</a
+            >
 
             <info-card
                 v-for="result of results.specializations"
@@ -55,7 +59,7 @@
                 :result="result"
             />
 
-            <h2 v-if="(!results)">There aren't results.</h2>
+            <h2 v-if="!results">There aren't results.</h2>
         </div>
     </main>
 </template>
@@ -90,10 +94,10 @@ export default {
                     },
                 });
                 this.results = resp.data;
+                console.log(this.results);
 
-                if(this.results.length == 0) {
+                if (this.results.length == 0) {
                     this.results = null;
-                    console.log(this.results)
                 }
             } catch (er) {
                 console.log(er);
@@ -108,7 +112,6 @@ export default {
                 window.scrollTo(0, 0);
             } else {
                 this.error = true;
-                console.log(this.error);
             }
         },
         changeBoolean() {

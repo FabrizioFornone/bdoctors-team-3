@@ -41,12 +41,28 @@ class SpecializationController extends Controller
 
         // tentativo di filtro avanzato per città
 
-        // $advancedFilter = $specializations->where("infos.city", "LIKE", "Torino")->get();
+        $advancedFilter = $request->input("advancedFilter");
+
+
+        $advancedRes = Specialization::join('info_specialization', 'info_specialization.specialization_id', '=', 'specializations.id')
+            ->join('infos', 'info_specialization.info_id', '=', 'infos.id')
+            ->join('users', 'infos.user_id', '=', 'users.id')
+            ->where("infos.city", "LIKE", "%$advancedFilter%")
+            ->get();
+
+        $advancedRes->each(function ($result) {
+            if ($result->photo) {
+                $result->photo = asset("storage/" . $result->photo);
+            } else {
+                $result->photo = "https://via.placeholder.com/1024x480";
+            }
+        });
+
 
 
         // compact con 2 variabili
 
-        return response()->json(compact('specializations', 'advancedFilter'));
+        return response()->json(compact('specializations', 'advancedRes'));
     }
 
     /**
