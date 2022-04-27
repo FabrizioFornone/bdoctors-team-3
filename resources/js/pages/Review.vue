@@ -39,15 +39,6 @@
                     {{ formValidationErrors.vote }}
                 </span>
             </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">
-                    User_id
-                </label>
-                <input type="text" class="form-control" id="exampleFormControlTextarea1" v-model="formData.user_id">
-                <span class="text-danger" v-if="formValidationErrors && formValidationErrors.user_id">
-                    {{ formValidationErrors.user_id }}
-                </span>
-            </div>
             
             <div>
                 <button type="submit" class="btn btn-primary text-white mb-3" @click="formSubmit">
@@ -74,7 +65,7 @@ export default {
                 email: '',
                 text: '',
                 vote: '',
-                user_id: '',
+                user_id: this.$route.params.result,
             },
             formValidationErrors: null
         }
