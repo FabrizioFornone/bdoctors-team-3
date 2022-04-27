@@ -15,10 +15,18 @@
                     <input
                         type="text"
                         class="form-control"
+                        placeholder="Search by specialization"
+                        v-model="searchText"
+                        @keydown.enter="findSearchSubmit()"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
                         placeholder="Search by city"
                         v-model="searchCity"
                         @keydown.enter="findSearchSubmit()"
                     />
+                    
                     <button
                         class="btn btn-primary rounded text-white ms-2"
                         @click="findSearchSubmit()"
@@ -62,27 +70,25 @@ export default {
         };
     },
     methods: {
-        async getAdvancedResults(searchCity = null) {
+        async getAdvancedResults(searchCity = null, searchText = null) {
             try {
-                const resp = await axios.get("/api/specializations", {
-                    params: {
-                        advancedFilter: searchCity,
-                    },
+                await axios.get('/api/specializations' + '?advancedFilter=' + searchCity + '&' + 'filter=' + searchText).then((resp) => {
+    
+                    this.advancedResults = resp.data;
+    
+                    console.log(this.advancedResults.advancedRes);
+    
+                    if (this.advancedResults.length == 0) {
+                        this.advancedResults = null;
+                    }
                 });
-                this.advancedResults = resp.data;
-
-                console.log(this.advancedResults.advancedRes);
-
-                if (this.advancedResults.length == 0) {
-                    this.advancedResults = null;
-                }
             } catch (er) {
                 console.log(er);
             }
         },
         findSearchSubmit() {
-            if (this.searchCity != "") {
-                this.getAdvancedResults(this.searchCity);
+            if (this.searchCity != "" && this.searchText != "") {
+                this.getAdvancedResults(this.searchCity, this.searchText);
                 // this.boolean = true;
                 // this.error = false;
                 window.scrollTo(0, 0);
@@ -90,8 +96,24 @@ export default {
                 // this.error = true;
             }
         },
+
+
+        // callAPI(searchCity, searchText, criteriaThree) {
+        // axios.get('/api/specializations' + '?advancedFilter=' + searchCity + '&' + 'filter=' + searchText ).then((res) => {
+        //         this.sumResults = this.shuffleResult(this.sumResults);
+        //         });
+        //     },
+        //     // Method linked to Home button
+        //     homeMix() {
+        //         this.sumResults = [];
+        //         this.callAPI("movie", "popular");
+        //         this.callAPI("tv", "popular");
+        //     },
     },
+
+    // var outputUrl = redirectUrl + '?url=' + url + '&title=' + title;
 };
+
 </script>
 
 <style lang="scss" scoped></style>
