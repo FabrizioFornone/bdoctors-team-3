@@ -9,7 +9,7 @@
 
                     @foreach ($messages as $message)
                         <div class="card-body">
-                            <div>Name: {{ $message->full_name }}</div>
+                            <div>Full Name: {{ $message->full_name }}</div>
                             <div>Email: {{ $message->email }}</div>
                             <div>Message: {{ $message->message }}</div>
                         </div>

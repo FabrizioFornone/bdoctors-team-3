@@ -38,7 +38,7 @@
                                 
                                 @foreach ($messages as $message)
                                 <div class="ms_text my-2 py-2">
-                                    <div>Name: {{ $message->full_name }}</div>
+                                    <div>Full Name: {{ $message->full_name }}</div>
                                     <div>Email: {{ $message->email }}</div>
                                     <div>Message: {{ $message->message }}</div>
                                 </div>
@@ -61,23 +61,18 @@
                         <h3 class="py-2 fw-bold">REVIEWS</h3>
 
                         <div class="row d-flex ms_text-box">
-                           
-                            <div class="col-6">
-                                <div class="ms_text my-2 py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate quasi quis vero iure quos? Veritatis ullam ipsam pariatur obcaecati reprehenderit expedita odio quod ducimus, recusandae tempora cumque aliquid dolorem.</div>
+                            <div class="col-10 offset-1">
+
+                                @foreach ($reviews as $review)
+                                <div class="ms_text my-2 py-2">
+                                    <div>Full Name: {{ $review->full_name }}</div>
+                                    <div>Email: {{ $review->email }}</div>
+                                    <div>Review Text: {{ $review->text }}</div>
+                                    <div>Vote: {{ $review->vote }}</div>
+                                </div>
+                                @endforeach
+
                             </div>
-                            <div class="col-6">
-                                <div class="ms_text my-2 py-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius alias qui ipsam accusantium, impedit, ex eum eaque facilis earum natus vitae sint molestiae nihil doloremque sapiente aut libero eveniet adipisci! Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate distinctio quos ipsa architecto nisi, quas culpa harum voluptatem modi sint omnis esse a nihil ipsum ab voluptatum nesciunt. Consectetur, natus.</div>
-                            </div>
-                            <div class="col-6">
-                                <div class="ms_text my-2 py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi minima labore magnam nemo cum dolores architecto corporis ut velit autem? Tempora blanditiis ad recusandae placeat, rem culpa rerum iste iusto?</div>
-                            </div>
-                            <div class="col-6">
-                                <div class="ms_text my-2 py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate quasi quis vero iure quos? Veritatis ullam ipsam pariatur obcaecati reprehenderit expedita odio quod ducimus, recusandae tempora cumque aliquid dolorem.</div>
-                            </div>
-                            <div class="py-3">
-                                <a href="{{ route('admin.reviews.index') }}" class="btn btn-primary text-white fw-bold">All reviews</a>
-                            </div>
-                            
                         </div>
 
                     </div>
