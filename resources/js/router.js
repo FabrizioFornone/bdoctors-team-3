@@ -5,6 +5,7 @@ import Error from "./pages/Error.vue";
 import Message from "./pages/Message.vue";
 import Show from "./pages/infos/Show.vue";
 import Review from "./pages/Review.vue";
+import AdavancedSearch from "./pages/AdvancedSearch.vue";
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,15 @@ const router = new VueRouter({
             meta: {
                 title: "Review",
                 linkText: "Review"
+            }
+        },
+        {
+            path: "/search",
+            component: AdavancedSearch,
+            name: "search.index",
+            meta: {
+                title: "Advanced Search",
+                linkText: "Advanced Search"
             }
         },
         {
