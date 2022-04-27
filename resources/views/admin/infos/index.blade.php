@@ -60,6 +60,9 @@
                                 Address: {{$info->address}}
                             </h5>
                             <h5 class="py-2">
+                                City: {{$info->city}}
+                            </h5>
+                            <h5 class="py-2">
                                 Phone: {{$info->phone}}
                             </h5>
                             <h5 class="py-2">
@@ -73,8 +76,6 @@
                                 @endforeach
                             </div>
                             @endif
-
-
 
                             @endforeach
                         </div>
