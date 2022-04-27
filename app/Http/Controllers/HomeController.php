@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Message;
+use App\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,7 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $messages = Message::where("user_id", Auth::user()->id)->get();
-        return view('admin.home', compact('messages'));
+        $messages = Message::where('user_id', Auth::user()->id)->get();
+        $reviews = Review::where('user_id', Auth::user()->id)->get();
+        return view('admin.home', compact('messages', 'reviews'));
     }
 }
