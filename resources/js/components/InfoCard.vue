@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <router-link :to="{ name:'message.index', params: { result: result.id } }">Message</router-link>
-                <!-- <a href="/message" class="btn btn-primary text-white">Message</a> -->
+                <router-link :to="{ name:'review.index', params: { result: result.id } }">Review</router-link>
                 <router-link :to="{ name:'results.show', params: { result: result.id } }">Details</router-link>
             </div>
         </div>
