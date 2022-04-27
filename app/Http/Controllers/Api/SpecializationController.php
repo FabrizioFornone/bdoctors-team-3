@@ -47,8 +47,11 @@ class SpecializationController extends Controller
         $advancedRes = Specialization::join('info_specialization', 'info_specialization.specialization_id', '=', 'specializations.id')
             ->join('infos', 'info_specialization.info_id', '=', 'infos.id')
             ->join('users', 'infos.user_id', '=', 'users.id')
-            ->where("infos.city", "LIKE", "%$advancedFilter%" && "specializations.specialization_name", "LIKE", "%$filter%")
+            ->where("infos.city", "LIKE", "%$advancedFilter%" )
+            ->where("specializations.specialization_name", "LIKE","%$filter%")
             ->get();
+
+            // ->where("infos.city", "LIKE", "%$advancedFilter%") ->andWhere("specializations.specialization_name", "LIKE","%$filter%")
 
         $advancedRes->each(function ($result) {
             if ($result->photo) {
