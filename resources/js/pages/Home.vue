@@ -43,8 +43,10 @@
                 Back to filter
             </button>
 
+            <!-- results.specializations oggetto innestato -->
+
             <info-card
-                v-for="result of results"
+                v-for="result of results.specializations"
                 :key="result.id"
                 :result="result"
             />
@@ -84,7 +86,7 @@ export default {
                     },
                 });
                 this.results = resp.data;
-                
+
                 if(this.results.length == 0) {
                     this.results = null;
                     console.log(this.results)
