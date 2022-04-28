@@ -1,5 +1,4 @@
 footer {
-    height: 190px;
     background-color: #03b6dd;
     color: #f0f0f0;
     font-size: 12px;
@@ -20,5 +19,30 @@ footer {
         font-size: 18px;
         font-weight: bold;
         text-align: center;
+    }
+
+    .wr-m {
+        flex-direction: column;
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .disp-no {
+        display: none;
+    }
+
+    .wr-m {
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .disp-no {
+        display: none;
+    }
+
+    .wr-m {
+        margin: auto;
     }
 }

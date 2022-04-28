@@ -1,8 +1,6 @@
 <template>
     <footer>
-        <div
-            class="container d-flex justify-content-between align-items-center"
-        >
+        <div class="d-flex justify-content-between align-items-center">
             <div class="d-flex list-container">
                 <div class="px-3 py-1">
                     <h5>Servizi</h5>
@@ -41,11 +39,7 @@
                 </div>
             </div>
             <div class="d-flex flex-column align-items-center">
-                <img
-                    class="logo"
-                    src="imgs/logo-wide.png"
-                    alt=""
-                />
+                <img class="logo" src="imgs/logo-wide.png" alt="" />
                 <ul>
                     <li class="footer-text">Da qualche parte, Italia</li>
                     <li class="footer-text">P.IVA: Tutto in nero</li>

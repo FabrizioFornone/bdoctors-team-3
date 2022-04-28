@@ -2,16 +2,29 @@
     width: 70%;
 
     .btn {
-        width: 125px;
-        margin: 0 3px;
+        padding: 10px;
+        margin: 6px 4px;
+    }
+
+    .bott-mq {
+        margin: auto;
     }
 }
 
 .ms_text-box {
-
     .ms_text {
         background-color: #c7eaf2;
         border-radius: 15px;
         overflow-y: auto;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .bott-mq {
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .bott-mq {
     }
 }
