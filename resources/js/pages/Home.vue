@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="error-div text-danger" v-if="error">
-                        <p>
+                        <p class="fw-bold">
                             The input field needs at least one specialization
                             selected.
                         </p>
