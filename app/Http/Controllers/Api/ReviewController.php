@@ -13,7 +13,7 @@ class ReviewController extends Controller
             'full_name' => 'required|string',
             'email' => 'required|email',
             'text' => 'required|string',
-            'vote' => 'required|string',
+            'vote' => 'required|numeric|between:1,5',
             'user_id' => 'required',
         ]);
         $review = new Review();
