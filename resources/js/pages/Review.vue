@@ -83,7 +83,10 @@ export default {
                 await axios.post('/api/reviews', formDataInstance);
                 this.formSubmitted = true;
             } catch (error) {
-                alert("Try again! Your review wasn't sent successfully or the fields are not compiled correctly.");
+                if (error.response.status === 422) { 
+                    this.formValidationErrors = error.response.data.errors; 
+                }
+                // alert("Try again! Your review wasn't sent successfully or the fields are not compiled correctly.");
             }
         },
     }
