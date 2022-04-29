@@ -15,6 +15,13 @@
                             @keydown.enter="findSearchSubmit()"
                         />
 
+                        <div class="error-div text-danger" v-if="error">
+                            <p class="fw-bold">
+                                The input field needs at least one specialization
+                                selected.
+                            </p>
+                        </div>
+
                         <div class="btn-group px-2">
                             <button
                                 class="btn btn-primary rounded text-white me-2"
@@ -29,13 +36,6 @@
                                 Advanced Search
                             </a>
                         </div>
-                    </div>
-
-                    <div class="error-div text-danger" v-if="error">
-                        <p class="fw-bold">
-                            The input field needs at least one specialization
-                            selected.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -154,9 +154,24 @@ export default {
 
         .error-div {
             position: absolute;
-            top: 90px;
+            top: 60px;
             left: 0;
         }
+
+        input {
+            min-width: 200px;
+        }
+    }
+}
+
+@media screen and (max-width: 876px) { 
+    .btn-group {
+        margin-top: 15px;
+    }
+
+    .error-div {
+        position: absolute;
+        padding-top: 60px;
     }
 }
 </style>
