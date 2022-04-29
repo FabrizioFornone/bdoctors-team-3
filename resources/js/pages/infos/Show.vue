@@ -3,14 +3,45 @@
         <div class="container ms_infos">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">
+
+                    <!-- Back Arrow -->
+                    <a href="javascript:history.back()">
+                        <i class="fa-solid fa-arrow-left ms_back-arrow mt-3"></i>
+                    </a>
+                    <!-- Profile Card -->
+                    <div class="card my-3">
+                        <div class="card-header d-flex justify-content-between align-items-center">
                             <div
                                 class="d-flex justify-content-between align-items-center"
                             >
                                 <h4 class="mb-0">
                                     <strong>Doctor's Profile</strong>
                                 </h4>
+                            </div>
+                            <div class="d-flex">
+                            <!-- Message Button -->
+                                    <div>
+                                        <router-link
+                                        class="btn btn-primary rounded text-white my-2 me-3"
+                                        :to="{
+                                            name: 'message.index',
+                                            params: { result: info.id },
+                                        }"
+                                        >Message</router-link
+                                    >
+                                    </div>
+                                    
+                                    <!-- Review Buttton -->
+                                    <div>
+                                        <router-link
+                                        class="btn btn-primary rounded text-white my-2"
+                                            :to="{
+                                                name: 'review.index',
+                                                params: { result: info.id },
+                                            }"
+                                            >Review</router-link
+                                        >
+                                    </div>
                             </div>
                         </div>
 
@@ -101,6 +132,7 @@ export default {
 <style lang="scss" scoped>
 main {
     min-height: calc(100vh - 279px);
+
     .spec-sty {
         background-color: aqua;
         border-radius: 15px;
