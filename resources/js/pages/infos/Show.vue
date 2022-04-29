@@ -67,7 +67,7 @@
 
                                     <h5 class="py-2">
                                         <strong>Address:</strong>
-                                        {{ info.address }}
+                                        {{ info.user.business_address }}
                                     </h5>
                                     <h5 class="py-2">
                                         <strong>Phone Number:</strong>
@@ -80,14 +80,16 @@
 
                                     <h5>
                                         <strong>Specializations:</strong>
-                                        <div
-                                            v-for="specialization of info.specializations"
-                                            :key="specialization.id"
-                                        >
-                                            {{
-                                                specialization.specialization_name
-                                            }}
-                                        </div>
+                                        <li>
+                                            <ul
+                                                v-for="specialization of info.specializations"
+                                                :key="specialization.id"
+                                            >
+                                                - {{
+                                                    specialization.specialization_name
+                                                }}
+                                            </ul>
+                                        </li>
                                     </h5>
                                 </div>
                             </div>
@@ -134,10 +136,8 @@ export default {
 main {
     min-height: calc(100vh - 279px);
 
-    .spec-sty {
-        background-color: aqua;
-        border-radius: 15px;
-        padding: 3px 6px;
-    }
+   li {
+       list-style: none;
+   }
 }
 </style>
