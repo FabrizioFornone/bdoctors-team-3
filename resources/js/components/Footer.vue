@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <div class="d-flex justify-content-between align-items-center">
+        <div class="container d-flex justify-content-between align-items-center pt-3">
             <div class="d-flex list-container">
                 <div class="px-3 py-1">
                     <h5>Servizi</h5>
@@ -53,4 +53,10 @@
 export default {};
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+
+footer {
+    height: 215px;
+}
+
+</style>

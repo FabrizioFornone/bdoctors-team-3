@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="container my-5">
+    <main>
+        <div class="container py-5">
             <div class="search-group col-6">
                 <div class="input-group">
                     <!-- <input
@@ -52,7 +52,7 @@
 
         <!-- <select name="" id=""></select> -->
         <!-- filtro per numero di recensioni del dottore. -->
-    </div>
+    </main>
 </template>
 
 <script>
@@ -116,4 +116,10 @@ export default {
 
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+main {
+    min-height: calc(100vh - 279px);
+}
+
+</style>
