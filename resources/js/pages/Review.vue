@@ -2,7 +2,11 @@
     <main>
         <div>
             <div class="container">
-                <h1>Send a review to a doctor</h1>
+                <!-- Back Arrow -->
+                <a href="javascript:history.back()">
+                    <i class="fa-solid fa-arrow-left ms_back-arrow mt-3"></i>
+                </a>
+                <h1 class="pt-2">Review the doctor</h1>
                 <div v-if="!formSubmitted">
                     <div class="mb-3">
                         <label
@@ -15,7 +19,7 @@
                             type="text"
                             class="form-control"
                             id="exampleFormControlInput2"
-                            placeholder="Mario Rossi"
+                            placeholder="Example: Mario Rossi"
                             v-model="formData.full_name"
                         />
                         <span
@@ -39,7 +43,7 @@
                             type="email"
                             class="form-control"
                             id="exampleFormControlInput1"
-                            placeholder="name@example.com"
+                            placeholder="Example: name@example.com"
                             v-model="formData.email"
                         />
                         <span

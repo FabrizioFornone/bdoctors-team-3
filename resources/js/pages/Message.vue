@@ -2,7 +2,11 @@
     <main>
         <div>
             <div class="container">
-                <h1>Send a message to your doctor.</h1>
+                <!-- Back Arrow -->
+                <a href="javascript:history.back()">
+                    <i class="fa-solid fa-arrow-left ms_back-arrow mt-3"></i>
+                </a>
+                <h1 class="pt-2">Contact the healthcare professional</h1>
                 <div v-if="!formSubmitted">
                     <div class="mb-3">
                         <label
