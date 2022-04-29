@@ -44,7 +44,8 @@
                                     </div>
                             </div>
                         </div>
-
+                        
+                        <!-- Card Body -->
                         <div class="card-body">
                             <div class="row my-2">
                                 <div class="col-6">

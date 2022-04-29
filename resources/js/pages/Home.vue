@@ -42,12 +42,14 @@
         </div>
 
         <div class="container py-5" v-if="boolean">
+            
+            
             <!-- Back Arrow -->
             <a class="align-middle me-3">
                 <i class="fa-solid fa-arrow-left ms_back-arrow" @click="changeBoolean()"></i>
             </a>
             
-            <a href="/search" class="btn btn-primary rounded text-white my-2"
+            <a href="/search" class="btn btn-primary rounded text-white my-2 mx-auto"
                 >Advanced Search</a
             >
 
