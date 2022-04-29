@@ -37,11 +37,11 @@
                         <div class="col-6">
                             @if($info->photo)
                             <div class="photo-box">
-                                <img class="w-50 h-50" src={{asset('storage/' . $info->photo) }} alt="">
+                                <img src={{asset('storage/' . $info->photo) }} alt="">
                             </div>
                             @else
                             <div class="photo-box">
-                                <img class="w-50 h-50" src="https://keytokids.com.au/wp-content/uploads/2017/09/placeholder-face-big.png" alt="">
+                                <img src="https://keytokids.com.au/wp-content/uploads/2017/09/placeholder-face-big.png" alt="">
                             </div>
                             @endif
                         </div>
