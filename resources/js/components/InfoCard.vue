@@ -1,9 +1,8 @@
 <template>
-    <div class="col-12 col-md-8 offset-md-2">
+    <div class="col-sm-12 col-lg-8 offset-lg-2">
         <div class="card my-3 py-2">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
-                   
                     <!-- Doctor information on left side of card -->
                     <div class="d-flex">
                         <div class="card-img">
@@ -25,20 +24,21 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Details button on right side of card -->
-                    <div>
-                       <router-link
-                        class="btn btn-primary rounded text-white my-2 me-3"
-                            :to="{
-                                name: 'results.show',
-                                params: { result: result.id },
-                            }"
-                            >Details</router-link
-                        >
-                    </div>
+                    
+                    
                 </div>
-               
+                <!-- Details button on right side of card -->
+                <div class="d-flex justify-content-center">
+                    <router-link
+                        class="btn btn-primary rounded text-white my-2 me-3"
+                        :to="{
+                            name: 'results.show',
+                            params: { result: result.id },
+                        }"
+                    >
+                        Details
+                    </router-link>
+                </div>
             </div>
         </div>
     </div>

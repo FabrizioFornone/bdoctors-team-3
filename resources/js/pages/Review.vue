@@ -1,120 +1,88 @@
 <template>
     <main>
-        <div>
-            <div class="container">
-                <!-- Back Arrow -->
-                <a href="javascript:history.back()">
-                    <i class="fa-solid fa-arrow-left ms_back-arrow mt-3"></i>
-                </a>
-                <h1 class="pt-2">Review the doctor</h1>
-                <div v-if="!formSubmitted">
-                    <div class="mb-3">
-                        <label
-                            for="exampleFormControlInput2"
-                            class="form-label"
-                        >
-                            Full Name
-                        </label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="exampleFormControlInput2"
-                            placeholder="Example: Mario Rossi"
-                            v-model="formData.full_name"
-                        />
-                        <span
-                            class="text-danger"
-                            v-if="
-                                formValidationErrors &&
-                                formValidationErrors.full_name
-                            "
-                        >
-                            {{ formValidationErrors.full_name }}
-                        </span>
-                    </div>
-                    <div class="mb-3">
-                        <label
-                            for="exampleFormControlInput1"
-                            class="form-label"
-                        >
-                            Email address
-                        </label>
-                        <input
-                            type="email"
-                            class="form-control"
-                            id="exampleFormControlInput1"
-                            placeholder="Example: name@example.com"
-                            v-model="formData.email"
-                        />
-                        <span
-                            class="text-danger"
-                            v-if="
-                                formValidationErrors &&
-                                formValidationErrors.email
-                            "
-                        >
-                            {{ formValidationErrors.email }}
-                        </span>
-                    </div>
-                    <div class="mb-3">
-                        <label
-                            for="exampleFormControlTextarea1"
-                            class="form-label"
-                        >
-                            Review Text
-                        </label>
-                        <textarea
-                            class="form-control"
-                            id="exampleFormControlTextarea1"
-                            rows="3"
-                            v-model="formData.text"
-                        ></textarea>
-                        <span
-                            class="text-danger"
-                            v-if="
-                                formValidationErrors &&
-                                formValidationErrors.text
-                            "
-                        >
-                            {{ formValidationErrors.text }}
-                        </span>
-                    </div>
-                    <div class="mb-3">
-                        <label
-                            for="exampleFormControlTextarea1"
-                            class="form-label"
-                        >
-                            Vote
-                        </label>
-                        <input
-                            class="form-control"
-                            id="exampleFormControlTextarea1"
-                            v-model="formData.vote"
-                        />
-                        <span
-                            class="text-danger"
-                            v-if="
-                                formValidationErrors &&
-                                formValidationErrors.vote
-                            "
-                        >
-                            {{ formValidationErrors.vote }}
-                        </span>
-                    </div>
-
-                    <div>
-                        <button
-                            type="submit"
-                            class="btn btn-primary text-white mb-3"
-                            @click="formSubmit"
-                        >
-                            Submit
-                        </button>
-                    </div>
+        <div class="container">
+            <!-- Back Arrow -->
+            <a href="javascript:history.back()">
+                <i class="fa-solid fa-arrow-left ms_back-arrow mt-3"></i>
+            </a>
+            <h1 class="pt-2 text-white">Write a review of the healthcare professional.</h1>
+            <div v-if="!formSubmitted">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput2" class="form-label text-white fw-bold">
+                        Full Name *
+                    </label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="exampleFormControlInput2"
+                        placeholder="Es. Mario Rossi"
+                        v-model="formData.full_name"
+                        required
+                    />
+                    <span class="text-danger fw-bold" v-if="formValidationErrors && formValidationErrors.full_name">
+                        {{ formValidationErrors.full_name }}
+                    </span>
                 </div>
-                <div v-else class="alert alert-success py-5">
-                    <h4>Your review was sent successfully.</h4>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label text-white fw-bold">
+                        Email address *
+                    </label>
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="exampleFormControlInput1"
+                        placeholder="Es. name@example.com"
+                        v-model="formData.email"
+                        required
+                    />
+                    <span class="text-danger fw-bold" v-if="formValidationErrors && formValidationErrors.email">
+                        {{ formValidationErrors.email }}
+                    </span>
                 </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label text-white fw-bold">
+                        Review *
+                    </label>
+                    <textarea
+                        class="form-control"
+                        id="exampleFormControlTextarea1"
+                        rows="3"
+                        v-model="formData.text"
+                        placeholder="Write here your review..."
+                        required
+                    >
+                    </textarea>
+                    <span class="text-danger fw-bold" v-if="formValidationErrors && formValidationErrors.text">
+                        {{ formValidationErrors.text }}
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label text-white fw-bold">
+                        Vote *
+                    </label>
+                    <input
+                        class="form-control"
+                        id="exampleFormControlTextarea1"
+                        v-model="formData.vote"
+                        placeholder="Es. 1-5"
+                        required
+                    />
+                    <span class="text-danger fw-bold" v-if="formValidationErrors && formValidationErrors.vote">
+                        {{ formValidationErrors.vote }}
+                    </span>
+                </div>
+                <div>
+                    <button
+                        type="submit"
+                        class="btn btn-success text-white mb-3"
+                        @click="formSubmit"
+                    >
+                        Submit
+                    </button>
+                </div>
+            </div>
+            <div v-else class="alert alert-success py-5">
+                <h4>Your review was sent successfully.</h4>
             </div>
         </div>
     </main>
@@ -162,6 +130,7 @@ export default {
 
 <style lang="scss" scoped>
 main {
-    min-height: calc(100vh - 279px);
+    background-color: #59A7B8;
+    height: calc(100vh - 47px); 
 }
 </style>

@@ -3,48 +3,18 @@
         <div class="container ms_infos">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-
                     <!-- Back Arrow -->
                     <a href="javascript:history.back()">
                         <i class="fa-solid fa-arrow-left ms_back-arrow mt-3"></i>
                     </a>
                     <!-- Profile Card -->
                     <div class="card my-3">
-                        <div class="card-header d-flex justify-content-between align-items-center">
-                            <div
-                                class="d-flex justify-content-between align-items-center"
-                            >
-                                <h4 class="mb-0">
-                                    <strong>Doctor's Profile</strong>
-                                </h4>
-                            </div>
-                            <div class="d-flex">
-                            <!-- Message Button -->
-                                    <div>
-                                        <router-link
-                                        class="btn btn-primary rounded text-white my-2 me-3"
-                                        :to="{
-                                            name: 'message.index',
-                                            params: { result: info.id },
-                                        }"
-                                        >Message</router-link
-                                    >
-                                    </div>
-                                    
-                                    <!-- Review Buttton -->
-                                    <div>
-                                        <router-link
-                                        class="btn btn-primary rounded text-white my-2"
-                                            :to="{
-                                                name: 'review.index',
-                                                params: { result: info.id },
-                                            }"
-                                            >Review</router-link
-                                        >
-                                    </div>
-                            </div>
+                        <!-- Card Header -->
+                        <div class="card-header text-center">
+                            <h4 class="mb-0 fw-bold">
+                                Doctor's Profile
+                            </h4>
                         </div>
-                        
                         <!-- Card Body -->
                         <div class="card-body">
                             <div class="row my-2">
@@ -57,17 +27,18 @@
                                         />
                                     </div>
                                 </div>
-
                                 <div class="col-6">
                                     <h3 class="py-2">
                                         <strong>Name:</strong>
                                         {{ info.user.name }}
+                                    </h3>
+                                    <h3 class="py-2">
+                                        <strong>Surname:</strong>
                                         {{ info.user.surname }}
                                     </h3>
-
                                     <h5 class="py-2">
-                                        <strong>Address:</strong>
-                                        {{ info.address }}
+                                        <strong>Business Address:</strong>
+                                        {{ info.user.business_address }}
                                     </h5>
                                     <h5 class="py-2">
                                         <strong>Phone Number:</strong>
@@ -84,11 +55,36 @@
                                             v-for="specialization of info.specializations"
                                             :key="specialization.id"
                                         >
-                                            {{
-                                                specialization.specialization_name
-                                            }}
+                                            {{ specialization.specialization_name }}
                                         </div>
                                     </h5>
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="fw-bold">More Infos</h4>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                            <!-- Message Button -->
+                                <div>
+                                    <router-link class="btn btn-primary rounded-5 text-white mx-3"
+                                        :to="{
+                                            name: 'message.index',
+                                            params: { result: info.id },
+                                        }"
+                                    >
+                                        Message
+                                    </router-link>
+                                </div> 
+                                <!-- Review Buttton -->
+                                <div>
+                                    <router-link class="btn btn-primary rounded text-white mx-3"
+                                        :to="{
+                                            name: 'review.index',
+                                            params: { result: info.id },
+                                        }"
+                                    >
+                                        Review
+                                    </router-link>
                                 </div>
                             </div>
                         </div>
@@ -132,12 +128,7 @@ export default {
 
 <style lang="scss" scoped>
 main {
-    min-height: calc(100vh - 279px);
-
-    .spec-sty {
-        background-color: aqua;
-        border-radius: 15px;
-        padding: 3px 6px;
-    }
+    background-color: #59A7B8;
+    height: calc(100vh - 47px); 
 }
 </style>
