@@ -1,6 +1,6 @@
 <template>
     <main>
-        <div class="container">
+        <div class="container ms_review">
             <!-- Back Arrow -->
             <a href="javascript:history.back()">
                 <i class="fa-solid fa-arrow-left ms_back-arrow mt-3"></i>

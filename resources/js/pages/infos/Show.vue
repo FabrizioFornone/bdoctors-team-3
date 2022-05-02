@@ -133,8 +133,6 @@ export default {
 <style lang="scss" scoped>
 main {
     background-color: #59A7B8;
-    height: calc(100vh - 47px); 
-    min-height: calc(100vh - 279px);
 
    li {
        list-style: none;
