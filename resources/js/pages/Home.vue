@@ -3,19 +3,10 @@
         <div v-if="!boolean" class="jumbotron">
             <div class="container">
                 <div class="col-6 input-box">
-                    <h1 class="py-5 text-uppercase text-black">
+                    <h2 class="py-5 text-uppercase">
                         look for your healthcare professionals
-                    </h1>
+                    </h2>
                     <div class="input-group">
-                        <!-- <input
-                            type="text"
-                            class="form-control"
-                            aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-default"
-                            placeholder="Search by specialization"
-                            v-model="searchText"
-                            @keydown.enter="findSearchSubmit()"
-                        /> -->
                         <select
                             v-model="selected"
                             class="form-select"
@@ -168,8 +159,8 @@ main {
 
         .input-box {
             position: absolute;
-            top: 40%;
-            left: 40%;
+            top: 50%;
+            left: 35%;
             transform: translate(-50%, -50%);
 
             button {
@@ -177,7 +168,7 @@ main {
             }
         }
 
-        h1 {
+        h2 {
             color: #fff;
             min-width: 150px;
         }
