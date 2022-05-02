@@ -1,5 +1,5 @@
 <template>
-    <footer class="py-4">
+    <footer class="py-3">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="d-flex list-container">
                 <div class="px-3 disp-no">
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="d-flex flex-column align-items-center">
-                <img class="img-fluid" src="imgs/logo-wide.png" alt="" />
+                <img src="imgs/logo-wide.png" alt="" />
                 <ul class="text-center fw-bold">
                     <li class="footer-text">Da qualche parte, Italia</li>
                     <li class="footer-text">P.IVA: Tutto in nero</li>
@@ -53,6 +53,10 @@ export default {};
 
 <style scoped lang="scss">
 footer {
-    background-color: #696969;
+    background-color: #2d3035;
+
+    img {
+        width: 300px;
+    }
 }
 </style>

@@ -21,7 +21,7 @@
                     </select>
                     <input
                         type="text"
-                        class="form-control"
+                        class="form-control mx-2"
                         placeholder="Search by city"
                         v-model="searchCity"
                         @keydown.enter="findSearchSubmit()"

@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="container py-5" v-if="boolean">
-            <div class="col-sm-12 col-lg-8 offset-lg-2">
+            <div class="col-sm-12 col-lg-8 offset-lg-2 py-5">
                 <div class="d-flex justify-content-between mb-3">
                     <!-- Back Arrow -->
                     <div>
@@ -122,7 +122,6 @@ export default {
             try {
                 await axios.get("/api/specializations").then((resp) => {
                     this.allSpecializations = resp.data.allSpec
-                    console.log(this.allSpecializations);
                 });
                 
             }
@@ -142,7 +141,7 @@ main {
     background-color: #59A7B8;
 
     .jumbotron {
-        height: calc(100vh - 47px);
+        height: calc(100vh);
         background: url("/imgs/jumbotron.png") center center;
         background-size: cover;
         position: relative;
