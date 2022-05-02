@@ -55,10 +55,6 @@ a {
     text-decoration: none;
 }
 
-i {
-    width: 19px;
-}
-
 .ms_back-arrow {
     font-size: 30px;
     cursor: pointer;
@@ -84,4 +80,8 @@ i {
 .bg-message,
 .bg-review {
     background-color: #c7eaf2;
+}
+
+.icon-size {
+    width: 19px;
 }

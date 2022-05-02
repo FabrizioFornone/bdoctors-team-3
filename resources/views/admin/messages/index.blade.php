@@ -9,25 +9,45 @@
                     @foreach ($messages as $message)
                     <div class="card mx-2 my-2">
                         <div class="card-body bg-review">
-                            <div>
-                                <strong>Date:</strong>
-                                <br />  
-                                {{ $message->created_at }}
+                            <div class="d-flex align-items-center">
+                                <div class="pe-4">
+                                    <i class="fa-solid fa-calendar fs-2 icon-size"></i>
+                                </div>
+                                <div>
+                                    <strong>Date:</strong>
+                                    <br />   
+                                    {{ $message->created_at }}
+                                </div>
                             </div>
-                            <div>
-                                <strong>Full Name:</strong>
-                                <br />  
-                                {{ $message->full_name }}
+                            <div class="d-flex align-items-center">
+                                <div class="pe-4">
+                                <i class="fa-solid fa-user fs-2 icon-size"></i>
+                                </div>
+                                <div>
+                                    <strong>Full Name:</strong>
+                                    <br />   
+                                    {{ $message->full_name }}
+                                </div>
                             </div>
-                            <div>
-                                <strong>Email:</strong>
-                                <br />
-                                {{ $message->email }}
+                            <div class="d-flex align-items-center">
+                                <div class="pe-4">
+                                    <i class="fa-solid fa-envelope fs-2 icon-size"></i>
+                                </div>
+                                <div>
+                                    <strong>Email:</strong>
+                                    <br /> 
+                                    {{ $message->email }}
+                                </div>
                             </div>
-                            <div>
-                                <strong>Message:</strong>
-                                <br />
-                                {{ $message->message }}
+                            <div class="d-flex align-items-center">
+                                <div class="pe-4">
+                                    <i class="fa-solid fa-message fs-2 icon-size"></i>
+                                </div>
+                                <div>
+                                    <strong>Message:</strong>
+                                    <br />
+                                    {{ $message->message }}
+                                </div>
                             </div>
                         </div>
                     </div>
