@@ -19,15 +19,15 @@
                                 <i class="fa-solid fa-address-card pe-2"></i>
                                 PROFILE
                             </a>
-                            <a href="{{ route('admin.reviews.index') }}"
-                                class="btn btn-primary text-white fw-bold">
-                                <i class="fa-solid fa-file-pen pe-2"></i>
-                                REVIEWS
-                            </a>
                             <a href="{{ route('admin.messages.index') }}"
                                 class="btn btn-primary text-white fw-bold">
                                 <i class="fa-solid fa-message pe-2"></i>
                                 MESSAGES
+                            </a>
+                            <a href="{{ route('admin.reviews.index') }}"
+                                class="btn btn-primary text-white fw-bold">
+                                <i class="fa-solid fa-file-pen pe-2"></i>
+                                REVIEWS
                             </a>
                             <!-- <a class="btn btn-primary text-white fw-bold">ADVERTISING</a> -->
                         </div>
@@ -43,7 +43,7 @@
                         @if ($messages !== [])
                         <div class="row  ms_text-box">
                             @foreach ($messages as $message)
-                            <div class="col-6">
+                            <div class="col-sm-12 col-md-12 col-lg-6">
                                 <div class="ms_text my-2 py-2">
                                     <div>
                                         <strong>Date:</strong>
@@ -86,7 +86,7 @@
 
                         <div class="row d-flex ms_text-box">
                             @foreach ($reviews as $review)
-                            <div class="col-6">
+                            <div class="col-sm-12 col-md-12 col-lg-6">
                                 <div class="ms_text my-2 py-2">
                                     <div>
                                         <strong>Date:</strong>
