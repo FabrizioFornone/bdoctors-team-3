@@ -23,6 +23,7 @@ class SpecializationController extends Controller
 
     public function index(Request $request)
     {
+        $allSpec = Specialization::all();
         $filter = $request->input("filter");
 
         $specializations = Specialization::join('info_specialization', 'info_specialization.specialization_id', '=', 'specializations.id')
@@ -61,11 +62,9 @@ class SpecializationController extends Controller
             }
         });
 
-
-
         // compact con 2 variabili
 
-        return response()->json(compact('specializations', 'advancedRes'));
+        return response()->json(compact('allSpec', 'specializations', 'advancedRes'));
     }
 
     /**
