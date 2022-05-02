@@ -57,7 +57,7 @@
                     <div>
                         <a
                             href="/search"
-                            class="btn btn-primary text-white rounded my-2 mx-auto"
+                            class="btn btn-primary text-white fw-bold rounded my-2 mx-auto"
                         >
                             Advanced Search
                         </a>
