@@ -38,6 +38,7 @@
                                     </h3>
                                     <h5 class="py-2">
                                         <strong>Business Address:</strong>
+                                        <strong>Address:</strong>
                                         {{ info.user.business_address }}
                                     </h5>
                                     <h5 class="py-2">
@@ -57,6 +58,16 @@
                                         >
                                             {{ specialization.specialization_name }}
                                         </div>
+                                        <li>
+                                            <ul
+                                                v-for="specialization of info.specializations"
+                                                :key="specialization.id"
+                                            >
+                                                - {{
+                                                    specialization.specialization_name
+                                                }}
+                                            </ul>
+                                        </li>
                                     </h5>
                                 </div>
                                 <div class="text-center">
@@ -130,5 +141,10 @@ export default {
 main {
     background-color: #59A7B8;
     height: calc(100vh - 47px); 
+    min-height: calc(100vh - 279px);
+
+   li {
+       list-style: none;
+   }
 }
 </style>

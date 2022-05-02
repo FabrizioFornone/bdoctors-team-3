@@ -70,11 +70,13 @@
                             </h5>
 
                             @if ($info->specializations->count()!=0)
-                            <div> Specializations:
-                                @foreach ($info->specializations as $specialization)
-                                <span class="pe-1 btn-sty">{{ $specialization->specialization_name }}</span>
-                                @endforeach
-                            </div>
+                            <h5> Specializations:
+                                <li>
+                                    @foreach ($info->specializations as $specialization)
+                                    <ul class="mb-0 py-1">- {{ $specialization->specialization_name }}</ul>
+                                    @endforeach
+                                </li>
+                            </h5>
                             @endif
 
                             @endforeach
