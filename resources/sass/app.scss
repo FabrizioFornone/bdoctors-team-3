@@ -36,7 +36,8 @@ body {
 }
 
 main {
-    min-height: calc(100vh - 254px);
+    min-height: calc(100vh - 59px);
+    background-color: #696969;
 }
 
 ul {
@@ -51,5 +52,9 @@ a {
 .ms_back-arrow {
     font-size: 30px;
     cursor: pointer;
-    color: #03b6dd;
+    color: #fff;
+
+    &:hover {
+        color: #000;
+    }
 }

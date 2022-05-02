@@ -1,6 +1,5 @@
 .navbar {
     background-color: #03b6dd;
-    height: 64px;
 
     a {
         color: #f0f0f0;
@@ -14,14 +13,12 @@
 
     .ms_dropdown {
 
-        padding: 0 0;
-
         .ms_dropdown-item {
             color: black;
         }
 
         .ms_logout {
-            border-top: 1px solid black;
+            border-top: 1px solid #dcdcdc;
             margin-top: 2px;
         }
     }
