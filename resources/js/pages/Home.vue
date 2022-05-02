@@ -42,19 +42,27 @@
             </div>
         </div>
         <div class="container py-5" v-if="boolean">
-            <!-- Back Arrow -->
-            <a class="align-middle me-3">
-                <i class="fa-solid fa-arrow-left ms_back-arrow" @click="changeBoolean()"></i>
-            </a>
-            <a href="/search" class="btn btn-primary rounded text-white my-2 mx-auto">
-                Advanced Search
-            </a>
-            <info-card
-                v-for="result of results.specializations"
-                :key="result.id"
-                :result="result"
-            />
-            <h2 v-if="!results.specializations" class="text-center text-white fw-bold">There aren't results.</h2>
+            <div class="col-sm-12 col-lg-8 offset-lg-2">
+                <div class="d-flex justify-content-between mb-3">
+                    <!-- Back Arrow -->
+                    <div>
+                        <a class="align-middle me-3">
+                            <i class="fa-solid fa-arrow-left ms_back-arrow" @click="changeBoolean()"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/search" class="btn btn-primary rounded my-2 mx-auto fw-bold">
+                            Advanced Search
+                        </a>
+                    </div>
+                </div>
+                <info-card
+                    v-for="result of results.specializations"
+                    :key="result.id"
+                    :result="result"
+                />
+                <h2 v-if="!results.specializations" class="text-center text-danger fw-bold">We're sorry, there aren't any registered doctors with that specialization.</h2>
+            </div>
         </div>
     </main>
 </template>

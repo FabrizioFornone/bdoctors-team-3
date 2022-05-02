@@ -1,5 +1,5 @@
 <template>
-    <div class="col-sm-12 col-lg-8 offset-lg-2">
+    <div>
         <div class="card my-3 py-2">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
