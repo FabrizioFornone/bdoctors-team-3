@@ -1,9 +1,11 @@
 <template>
     <main>
-        <div v-if="!boolean" class="jumbotron col-12">
+        <div v-if="!boolean" class="jumbotron">
             <div class="container">
                 <div class="col-6 input-box">
-                    <h1 class="py-5 text-uppercase">look for your healthcare professional</h1>
+                    <h1 class="py-5 text-uppercase">
+                        look for your healthcare professional
+                    </h1>
                     <div class="input-group">
                         <!-- <input
                             type="text"
@@ -14,10 +16,16 @@
                             v-model="searchText"
                             @keydown.enter="findSearchSubmit()"
                         /> -->
-                        <select v-model="selected" class="form-select" aria-label="Example select with button addon">
-                            <option disabled value="">Choose one specialization...</option>
-                            <option  
-                                v-for="specialization of allSpecializations" 
+                        <select
+                            v-model="selected"
+                            class="form-select"
+                            aria-label="Example select with button addon"
+                        >
+                            <option disabled value="">
+                                Choose one specialization...
+                            </option>
+                            <option
+                                v-for="specialization of allSpecializations"
                                 :key="specialization.id"
                                 :value="specialization.specialization_name"
                             >
@@ -29,7 +37,9 @@
                                 class="btn btn-primary rounded text-white"
                                 @click="findSearchSubmit()"
                             >
-                                <i class="fa-solid fa-magnifying-glass px-2"></i>
+                                <i
+                                    class="fa-solid fa-magnifying-glass px-2"
+                                ></i>
                             </button>
                         </div>
                     </div>
@@ -47,11 +57,17 @@
                     <!-- Back Arrow -->
                     <div>
                         <a class="align-middle me-3">
-                            <i class="fa-solid fa-arrow-left ms_back-arrow" @click="changeBoolean()"></i>
+                            <i
+                                class="fa-solid fa-arrow-left ms_back-arrow"
+                                @click="changeBoolean()"
+                            ></i>
                         </a>
                     </div>
                     <div>
-                        <a href="/search" class="btn btn-primary rounded my-2 mx-auto fw-bold">
+                        <a
+                            href="/search"
+                            class="btn btn-primary rounded my-2 mx-auto fw-bold"
+                        >
                             Advanced Search
                         </a>
                     </div>
@@ -61,7 +77,13 @@
                     :key="result.id"
                     :result="result"
                 />
-                <h2 v-if="!results.specializations" class="text-center text-danger fw-bold">We're sorry, there aren't any registered doctors with that specialization.</h2>
+                <h2
+                    v-if="!results.specializations"
+                    class="text-center text-danger fw-bold"
+                >
+                    We're sorry, there aren't any registered doctors with that
+                    specialization.
+                </h2>
             </div>
         </div>
     </main>
@@ -121,28 +143,26 @@ export default {
         async getAllSpec() {
             try {
                 await axios.get("/api/specializations").then((resp) => {
-                    this.allSpecializations = resp.data.allSpec
+                    this.allSpecializations = resp.data.allSpec;
                 });
-                
-            }
-            catch (er) {
+            } catch (er) {
                 console.log(er);
             }
-        }
+        },
     },
     mounted() {
         this.getAllSpec();
-    }
+    },
 };
 </script>
 
 <style lang="scss" scoped>
 main {
-    background-color: #59A7B8;
+    background-color: #59a7b8;
 
     .jumbotron {
-        height: calc(100vh);
-        background: url("/imgs/jumbotron.png") center center;
+        height: 100vh;
+        background: url("/imgs/jumbotron.png") 65% 50%;
         background-size: cover;
         position: relative;
 
@@ -151,7 +171,7 @@ main {
             top: 40%;
             left: 40%;
             transform: translate(-50%, -50%);
-            
+
             button {
                 margin-left: 15px;
             }
@@ -164,31 +184,33 @@ main {
     }
 }
 
-@media (max-width: 575.98px) {
+@media screen and (max-width: 991px) {
+    main {
+        .jumbotron {
+            background: url("/imgs/jumbo-mobile.png") center center no-repeat;
+            background-size: cover;
+            position: relative;
 
-    .jumbotron {
-        background: url("/imgs/jumbotron.png") center center;
+            .input-group {
+                flex-direction: column;
 
-        .input-group {
-            flex-direction: column;
-
-            select {
-                width: 100%;
-                min-width: 225px;
-            }
-
-            .btn-group {
-                
-                button {
-                    margin-left: 0;
-                    margin-top: 30px;
+                select {
                     width: 100%;
+                    min-width: 225px;
+                }
+
+                .btn-group {
+                    button {
+                        margin-left: 0;
+                        margin-top: 30px;
+                        width: 100%;
+                    }
                 }
             }
-        }
 
-        input {
-            min-width: 200px;
+            input {
+                min-width: 200px;
+            }
         }
     }
 }

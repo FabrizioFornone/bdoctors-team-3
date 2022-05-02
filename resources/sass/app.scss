@@ -1,7 +1,7 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Nunito");
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 
 // Variables
 @import "partials/variables";
@@ -38,7 +38,7 @@
 
 body {
     background-color: #f0f0f0;
-    font-family:  'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 main {
@@ -65,6 +65,14 @@ a {
     }
 }
 
-.ms_message, .ms_review {
+.ms_message,
+.ms_review {
     padding: 100px 0;
+}
+
+.ms_not {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
