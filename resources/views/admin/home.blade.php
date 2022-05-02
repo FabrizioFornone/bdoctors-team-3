@@ -15,11 +15,20 @@
                         @endif
                         <div class="bott-mq">
                             <a href="{{ route('admin.infos.index') }}"
-                                class="btn btn-primary text-white fw-bold">PROFILE</a>
+                                class="btn btn-primary text-white fw-bold">
+                                <i class="fa-solid fa-address-card pe-2"></i>
+                                PROFILE
+                            </a>
                             <a href="{{ route('admin.reviews.index') }}"
-                                class="btn btn-primary text-white fw-bold">REVIEWS</a>
+                                class="btn btn-primary text-white fw-bold">
+                                <i class="fa-solid fa-file-pen pe-2"></i>
+                                REVIEWS
+                            </a>
                             <a href="{{ route('admin.messages.index') }}"
-                                class="btn btn-primary text-white fw-bold">MESSAGES</a>
+                                class="btn btn-primary text-white fw-bold">
+                                <i class="fa-solid fa-message pe-2"></i>
+                                MESSAGES
+                            </a>
                             <!-- <a class="btn btn-primary text-white fw-bold">ADVERTISING</a> -->
                         </div>
                     </div>
@@ -32,10 +41,14 @@
                         @endif
                         <h3 class="py-2 fw-bold">MESSAGES</h3>
                         @if ($messages !== [])
-                        <div class="row d-flex ms_text-box">
-                            <div class="col-10 offset-1">
-                                @foreach ($messages as $message)
+                        <div class="row  ms_text-box">
+                            @foreach ($messages as $message)
+                            <div class="col-6">
                                 <div class="ms_text my-2 py-2">
+                                    <div>
+                                        <strong>Date:</strong>
+                                        {{ $message->created_at }}
+                                    </div>
                                     <div>
                                         <strong>Full Name:</strong>
                                         {{ $message->full_name }}
@@ -49,8 +62,8 @@
                                         {{ $message->message }}
                                     </div>
                                 </div>
-                                @endforeach
                             </div>
+                            @endforeach
                         </div>
                         @endif
 
@@ -72,9 +85,13 @@
                         @if ($reviews !== [])
 
                         <div class="row d-flex ms_text-box">
-                            <div class="col-10 offset-1">
-                                @foreach ($reviews as $review)
+                            @foreach ($reviews as $review)
+                            <div class="col-6">
                                 <div class="ms_text my-2 py-2">
+                                    <div>
+                                        <strong>Date:</strong>
+                                        {{ $message->created_at }}
+                                    </div>
                                     <div>
                                         <strong>Full Name:</strong>
                                         {{ $review->full_name }}
@@ -92,8 +109,8 @@
                                         {{ $review->vote }}
                                     </div>
                                 </div>
-                                @endforeach
                             </div>
+                            @endforeach
                         </div>
                         @endif
                         @if (count($reviews) == 0)

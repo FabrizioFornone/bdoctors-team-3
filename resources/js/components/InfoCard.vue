@@ -6,21 +6,25 @@
                     <!-- Doctor information on left side of card -->
                     <div class="d-flex">
                         <div class="card-img">
-                        <img :src="result.photo" alt="..." />
+                            <img :src="result.photo" alt="..." />
                         </div>
                         <div class="ps-4 fs-5">
                             <div>
                                 <i class="fa-solid fa-user-doctor"></i>
-                                <span> {{ result.name }} </span>
-                                <span> {{ result.surname }}</span>
+                                <span>{{ result.name }}</span>
+                                <span>{{ result.surname }}</span>
                             </div>
                             <div>
                                 <i class="fa-solid fa-briefcase-medical"></i>
                                 <span> {{ result.specialization_name }}</span>
                             </div>
                             <div>
+                                <i class="fa-solid fa-city"></i>
+                                <span>{{ result.city }}</span>
+                            </div>
+                            <div>
                                 <i class="fa-solid fa-house-chimney-medical"></i>
-                                <span> {{ result.city }}</span>
+                                <span>{{ result.business_address }}</span>
                             </div>
                         </div>
                     </div>

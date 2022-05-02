@@ -2,7 +2,7 @@
     <footer class="py-3">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="d-flex list-container">
-                <div class="px-3 disp-no">
+                <div class="px-3">
                     <h5>Services</h5>
                     <ul>
                         <li><a href="#">Privacy and Cookies</a></li>
@@ -13,7 +13,7 @@
                         <li><a href="#">Press Office</a></li>
                     </ul>
                 </div>
-                <div class="px-3 disp-no">
+                <div class="px-3">
                     <h5>For Patients</h5>
                     <ul>
                         <li><a href="#">Doctors</a></li>
@@ -25,7 +25,7 @@
                         <li><a href="#">Diagnostic for images</a></li>
                     </ul>
                 </div>
-                <div class="px-3 disp-no">
+                <div class="px-3">
                     <h5>For Healthcare Professionals</h5>
                     <ul>
                         <li><a href="#">Healthcare Professionals Area</a></li>
@@ -36,9 +36,9 @@
                     </ul>
                 </div>
             </div>
-            <div class="d-flex flex-column align-items-center wr-m">
-                <img src="imgs/logo-wide.png" alt="" />
-                <ul class="text-center fw-bold">
+            <div class="d-flex flex-column align-items-center wr-m ">
+                <img src="imgs/logo-wide.png" class="disp-no" alt="" />
+                <ul class="text-center fw-bold disp-no">
                     <li class="footer-text">Rome, Italy</li>
                     <li class="footer-text">P.IVA: 12345678910</li>
                 </ul>

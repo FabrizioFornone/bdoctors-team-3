@@ -23,7 +23,7 @@ footer {
 
 @media screen and (max-width: 575px) {
     .disp-no {
-        display: none;
+        display: none !important;
     }
 
     .wr-m {
@@ -33,7 +33,7 @@ footer {
 
 @media screen and (min-width: 576px) and (max-width: 991px) {
     .disp-no {
-        display: none;
+        display: none !important;
     }
 
     .wr-m {
