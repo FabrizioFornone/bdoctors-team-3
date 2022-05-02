@@ -10,7 +10,7 @@ class MessageController extends Controller
 {
     public function store(Request $request) {
         $data = $request->validate([
-            'full_name' => 'required|alpha',
+            'full_name' => 'required',
             'email' => 'required|email',
             'message' => 'required|string',
             'user_id' => 'required',
