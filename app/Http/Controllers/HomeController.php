@@ -28,6 +28,8 @@ class HomeController extends Controller
     {
         $messages = Message::where('user_id', Auth::user()->id)->get();
         $reviews = Review::where('user_id', Auth::user()->id)->get();
+
+
         return view('admin.home', compact('messages', 'reviews'));
     }
 }
