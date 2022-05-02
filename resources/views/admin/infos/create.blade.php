@@ -123,6 +123,8 @@
                         {{-- Performances --}}
                         <div class="mb-3">
                             <label>Performances</label>
+                            </br>
+                            <label>Write what kind of services you'll be providing patients</label>
                             <input type="text" name="performances"
                                 class="form-control @error('performances') is-invalid @enderror"
                                 placeholder="{{$user->performances}}" value="{{ old('performances') }}" required>
