@@ -127,8 +127,8 @@ class InfoController extends Controller
     public function update(Request $request, $id)
     {
         $dataUser = $request->validate([
-            'name' => 'required|min:3',
-            'surname' => 'required|min:3',
+            'name' => 'required|alpha|min:3',
+            'surname' => 'required|alpha|min:3',
             'business_address' => 'nullable|min:5'
         ]);
 

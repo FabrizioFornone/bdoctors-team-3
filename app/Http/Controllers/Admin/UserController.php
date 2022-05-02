@@ -74,8 +74,8 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $data = $request->validate([
-            'name' => 'required|min:2',
-            'surname' => 'required|min:2',
+            'name' => 'required|alpha|min:2',
+            'surname' => 'required|alpha|min:2',
             'email' => 'required|email|unique:users,email,' . $id,
             'business_address' => 'nullable|min:5',
         ]);

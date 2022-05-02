@@ -3,7 +3,7 @@
         <div class="container py-5">
             <div class="search-group col-6">
                 <div class="input-group">
-                    <!-- <input
+                    <input
                         type="text"
                         class="form-control"
                         aria-label="Sizing example input"
@@ -11,7 +11,7 @@
                         placeholder="Search by specialization"
                         v-model="searchText"
                         @keydown.enter="findSearchSubmit()"
-                    /> -->
+                    />
                     <input
                         type="text"
                         class="form-control"
@@ -31,12 +31,13 @@
                         class="btn btn-primary rounded text-white ms-2"
                         @click="findSearchSubmit()"
                     >
-                        Search
+                        <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
             </div>
 
-            <div class="my-5">
+            <div v-if="boolean" class="my-5">
+                <h2 v-if="!advancedResults.advancedRes" class="text-center text-white fw-bold">There aren't results.</h2>
                 <info-card
                     v-for="advancedResult of advancedResults.advancedRes"
                     :key="advancedResult.id"
@@ -64,9 +65,10 @@ export default {
 
     data() {
         return {
-            advancedResults: "",
+            advancedResults: null,
             searchText: "",
             searchCity: "",
+            boolean: false
         };
     },
     methods: {
@@ -75,11 +77,10 @@ export default {
                 await axios.get('/api/specializations' + '?advancedFilter=' + searchCity + '&' + 'filter=' + searchText).then((resp) => {
     
                     this.advancedResults = resp.data;
+                    this.boolean = true;
     
-                    console.log(this.advancedResults.advancedRes);
-    
-                    if (this.advancedResults.length == 0) {
-                        this.advancedResults = null;
+                    if (this.advancedResults.advancedRes.length == 0) {
+                        this.advancedResults.advancedRes = null;
                     }
                 });
             } catch (er) {
@@ -117,9 +118,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 main {
-    min-height: calc(100vh - 279px);
+    background-color: #59A7B8;
+    height: calc(100vh - 47px);  
 }
-
 </style>

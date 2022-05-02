@@ -10,7 +10,7 @@ class ReviewController extends Controller
 {
     public function store(Request $request) {
         $data = $request->validate([
-            'full_name' => 'required|string',
+            'full_name' => 'required|alpha',
             'email' => 'required|email',
             'text' => 'required|string',
             'vote' => 'required|numeric|between:1,5',

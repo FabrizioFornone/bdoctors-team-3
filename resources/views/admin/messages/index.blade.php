@@ -5,16 +5,27 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header d-flex">Messages List</div>
-
+                    <div class="card-header text-center fw-bold">Messages List</div>
                     @foreach ($messages as $message)
                         <div class="card-body">
-                            <div>Full Name: {{ $message->full_name }}</div>
-                            <div>Email: {{ $message->email }}</div>
-                            <div>Message: {{ $message->message }}</div>
+                            <div>
+                                <strong>Full Name:</strong>
+                                <br />  
+                                {{ $message->full_name }}
+                            </div>
+                            <div>
+                                <strong>Email:</strong>
+                                <br />
+                                {{ $message->email }}
+                            </div>
+                            <div>
+                                <strong>Message:</strong>
+                                <br />
+                                {{ $message->message }}
+                            </div>
                         </div>
+                        <hr />
                     @endforeach
-
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-<nav class="navbar py-1 navbar-expand-lg">
+<nav class="navbar navbar-expand-lg navbar-dark py-1">
     <div class="container">
         {{-- Nabar Brand --}}
         <a class="navbar-brand" href="/">BDoctors</a>
@@ -9,10 +9,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             {{-- Navbar left --}}
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto">
                 @auth
                 <li class="nav-item">
-                    <a href="{{route('home')}}" class="nav-link" role="button">Home</a>
+                    <a href="{{route('home')}}" class="nav-link" role="button">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('admin.messages.index')}}" class="nav-link" role="button">Messages</a>
@@ -23,7 +23,7 @@
                 @endauth
             </ul>
             {{-- Navbar right --}}
-            <ul class="navbar-nav mb-2 mb-lg-0">
+            <ul class="navbar-nav">
                 <!-- Authentication Links -->
                 @guest
                 <li class="nav-item">
@@ -38,14 +38,15 @@
                 {{-- Dropdown --}}
                 <li class="nav-item dropdown">
                     {{-- User --}}
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarScrollingDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         @if(Auth::user()->infos != null)
-                        <img src="{{ asset('storage/' . Auth::user()->infos->photo) ?? 'https://keytokids.com.au/wp-content/uploads/2017/09/placeholder-face-big.png' }}"
-                            class="rounded-circle mx-1 profile-pic-nav"
-                            style="width:32px;">
+                        <div class="profile-pic-box mx-1">
+                            <img src="{{ asset('storage/' . Auth::user()->infos->photo) ?? 'https://keytokids.com.au/wp-content/uploads/2017/09/placeholder-face-big.png' }}"
+                                class="profile-pic-nav">
+                        </div>
                         @endif
-                        <span>Dr.</span> <span>{{ Auth::user()->name }}</span> <span>{{ Auth::user()->surname }}</span>
+                        <span class="me-1">Dr.</span> <span class="me-1">{{ Auth::user()->name }}</span> <span class="me-1">{{ Auth::user()->surname }}</span>
                     </a>
                     <ul class="dropdown-menu ms_dropdown" aria-labelledby="navbarScrollingDropdown">
                         <li>

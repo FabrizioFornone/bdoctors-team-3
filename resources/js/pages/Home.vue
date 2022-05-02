@@ -1,11 +1,11 @@
 <template>
     <main>
-        <div v-if="!boolean" class="jumbotron">
+        <div v-if="!boolean" class="jumbotron col-12">
             <div class="container">
-                <div class="search-group col-6">
-                    <h1 class="py-5">Look for your healthcare professional</h1>
+                <div class="col-6 input-box">
+                    <h1 class="py-5 text-uppercase">look for your healthcare professional</h1>
                     <div class="input-group">
-                        <input
+                        <!-- <input
                             type="text"
                             class="form-control"
                             aria-label="Sizing example input"
@@ -13,53 +13,48 @@
                             placeholder="Search by specialization"
                             v-model="searchText"
                             @keydown.enter="findSearchSubmit()"
-                        />
-
-                        <div class="error-div text-danger" v-if="error">
-                            <p class="fw-bold">
-                                The input field needs at least one specialization
-                                selected.
-                            </p>
-                        </div>
-
-                        <div class="btn-group px-2">
+                        /> -->
+                        <select v-model="selected" class="form-select" aria-label="Example select with button addon">
+                            <option disabled value="">Choose one specialization...</option>
+                            <option  
+                                v-for="specialization of allSpecializations" 
+                                :key="specialization.id"
+                                :value="specialization.specialization_name"
+                            >
+                                {{ specialization.specialization_name }}
+                            </option>
+                        </select>
+                        <div class="btn-group">
                             <button
-                                class="btn btn-primary rounded text-white me-2"
+                                class="btn btn-primary rounded text-white"
                                 @click="findSearchSubmit()"
                             >
-                                Search
+                                <i class="fa-solid fa-magnifying-glass px-2"></i>
                             </button>
-                            <a
-                                href="/search"
-                                class="btn btn-primary rounded text-white me-2"
-                            >
-                                Advanced Search
-                            </a>
                         </div>
+                    </div>
+                    <div class="text-danger" v-if="error">
+                        <p class="fw-bold">
+                            You need at least one specialization selected.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="container py-5" v-if="boolean">
-            <button
-                class="btn btn-primary rounded text-white my-2"
-                @click="changeBoolean()"
-            >
-                Back to filter
-            </button>
-
-            <a href="/search" class="btn btn-primary rounded text-white my-2"
-                >Advanced Search</a
-            >
-
+            <!-- Back Arrow -->
+            <a class="align-middle me-3">
+                <i class="fa-solid fa-arrow-left ms_back-arrow" @click="changeBoolean()"></i>
+            </a>
+            <a href="/search" class="btn btn-primary rounded text-white my-2 mx-auto">
+                Advanced Search
+            </a>
             <info-card
                 v-for="result of results.specializations"
                 :key="result.id"
                 :result="result"
             />
-
-            <h2 v-if="!results">There aren't results.</h2>
+            <h2 v-if="!results.specializations" class="text-center text-white fw-bold">There aren't results.</h2>
         </div>
     </main>
 </template>
@@ -73,6 +68,8 @@ export default {
 
     data() {
         return {
+            allSpecializations: [],
+            selected: '',
             users: [],
             results: null,
             searchText: "",
@@ -81,23 +78,18 @@ export default {
         };
     },
 
-    mounted() {
-        this.getInfos();
-    },
-
     methods: {
-        async getSpecialization(searchText = null) {
+        async getSpecialization(selected = null) {
             try {
                 const resp = await axios.get("/api/specializations", {
                     params: {
-                        filter: searchText,
+                        filter: selected,
                     },
                 });
                 this.results = resp.data;
-                console.log(this.results);
 
-                if (this.results.length == 0) {
-                    this.results = null;
+                if (this.results.specializations.length == 0) {
+                    this.results.specializations = null;
                 }
             } catch (er) {
                 console.log(er);
@@ -105,8 +97,8 @@ export default {
         },
 
         findSearchSubmit() {
-            if (this.searchText != "") {
-                this.getSpecialization(this.searchText);
+            if (this.selected != "") {
+                this.getSpecialization(this.selected);
                 this.boolean = true;
                 this.error = false;
                 window.scrollTo(0, 0);
@@ -116,46 +108,77 @@ export default {
         },
         changeBoolean() {
             this.boolean = !this.boolean;
-            this.searchText = "";
+            this.selected = "";
         },
+        async getAllSpec() {
+            try {
+                await axios.get("/api/specializations").then((resp) => {
+                    this.allSpecializations = resp.data.allSpec
+                    console.log(this.allSpecializations);
+                });
+                
+            }
+            catch (er) {
+                console.log(er);
+            }
+        }
     },
+    mounted() {
+        this.getAllSpec();
+    }
 };
 </script>
 
 <style lang="scss" scoped>
-// .ms_main {
-//     min-height: 800px;
+main {
+    background-color: #59A7B8;
+    height: calc(100vh - 47px); 
 
-//     .ms_button {
-//         margin-bottom: 30px;
-//     }
-// }
-.jumbotron {
-    height: calc(100vh - 64px);
-    background: url("/imgs/jumbotron.png") center center;
-    background-size: cover;
-    position: relative;
+    .jumbotron {
+        height: calc(100vh - 47px);
+        background: url("/imgs/jumbotron.png") center center;
+        background-size: cover;
+        position: relative;
 
-    .search-group {
-        position: absolute;
-        top: 50%;
-        left: 35%;
-        transform: translate(-50%, -50%);
-
-        h1 {
-            color: #fff;
-        }
-
-        .btn-group {
-            .btn-search {
-                min-width: 150px;
+        .input-box {
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            
+            button {
+                margin-left: 15px;
             }
         }
 
-        .error-div {
-            position: absolute;
-            top: 60px;
-            left: 0;
+        h1 {
+            color: #fff;
+            min-width: 150px;
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    .jumbotron {
+        background: url("/imgs/jumbotron.png") center center;
+
+        .input-group {
+            flex-direction: column;
+
+            select {
+                width: 100%;
+                min-width: 225px;
+            }
+
+            .btn-group {
+                
+                button {
+                    margin-left: 0;
+                    margin-top: 30px;
+                    width: 100%;
+                }
+            }
         }
 
         input {
@@ -173,5 +196,9 @@ export default {
         position: absolute;
         padding-top: 60px;
     }
+
+    
 }
+
+
 </style>

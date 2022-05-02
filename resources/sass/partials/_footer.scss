@@ -8,7 +8,8 @@ footer {
     }
 
     .logo {
-        width: 300px;
+        min-width: 250px;
+        height: 100px;
     }
 
     a {
@@ -17,13 +18,6 @@ footer {
 
     .footer-text {
         font-size: 18px;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    .wr-m {
-        flex-direction: column;
-        display: flex;
     }
 }
 

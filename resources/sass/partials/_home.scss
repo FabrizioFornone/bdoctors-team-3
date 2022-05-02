@@ -9,6 +9,7 @@
     .bott-mq {
         margin: auto;
     }
+
 }
 
 .ms_text-box {
@@ -16,15 +17,5 @@
         background-color: #c7eaf2;
         border-radius: 15px;
         overflow-y: auto;
-    }
-}
-
-@media screen and (max-width: 575px) {
-    .bott-mq {
-    }
-}
-
-@media screen and (min-width: 576px) and (max-width: 767px) {
-    .bott-mq {
     }
 }

@@ -1,8 +1,8 @@
 <template>
-    <footer>
-        <div class="container d-flex justify-content-between align-items-center pt-3">
+    <footer class="py-4">
+        <div class="container d-flex justify-content-between align-items-center">
             <div class="d-flex list-container">
-                <div class="px-3 py-1">
+                <div class="px-3 disp-no">
                     <h5>Servizi</h5>
                     <ul>
                         <li><a href="#">Privacy e cookies</a></li>
@@ -13,7 +13,7 @@
                         <li><a href="#">Ufficio stampa</a></li>
                     </ul>
                 </div>
-                <div class="px-3 py-1">
+                <div class="px-3 disp-no">
                     <h5>Per i pazienti</h5>
                     <ul>
                         <li><a href="#">Dottori</a></li>
@@ -25,22 +25,20 @@
                         <li><a href="#">Diagnostica per immagini</a></li>
                     </ul>
                 </div>
-                <div class="px-3 py-1">
+                <div class="px-3 disp-no">
                     <h5>Per i professionisti sanitari</h5>
                     <ul>
                         <li><a href="#">Area professionisti sanitari</a></li>
                         <li><a href="#">Prezzi</a></li>
                         <li><a href="#">Risorse gratuite</a></li>
                         <li><a href="#">Pulsante di prenotazione</a></li>
-                        <li>
-                            <a href="#">Centro Assistenza per Professionisti</a>
-                        </li>
+                        <li><a href="#">Centro Assistenza per Professionisti</a></li>
                     </ul>
                 </div>
             </div>
             <div class="d-flex flex-column align-items-center">
-                <img class="logo" src="imgs/logo-wide.png" alt="" />
-                <ul>
+                <img class="img-fluid" src="imgs/logo-wide.png" alt="" />
+                <ul class="text-center fw-bold">
                     <li class="footer-text">Da qualche parte, Italia</li>
                     <li class="footer-text">P.IVA: Tutto in nero</li>
                 </ul>
@@ -54,9 +52,7 @@ export default {};
 </script>
 
 <style scoped lang="scss">
-
 footer {
-    height: 215px;
+    background-color: #696969;
 }
-
 </style>

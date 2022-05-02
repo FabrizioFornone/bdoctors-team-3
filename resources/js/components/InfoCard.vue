@@ -1,39 +1,44 @@
 <template>
-    <div class="col">
-        <div class="card">
+    <div class="col-sm-12 col-lg-8 offset-lg-2">
+        <div class="card my-3 py-2">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <img :src="result.photo" class="card-img" alt="..." />
+                    <!-- Doctor information on left side of card -->
+                    <div class="d-flex">
+                        <div class="card-img">
+                        <img :src="result.photo" alt="..." />
+                        </div>
+                        <div class="ps-4 fs-5">
+                            <div>
+                                <i class="fa-solid fa-user-doctor"></i>
+                                <span> {{ result.name }} </span>
+                                <span> {{ result.surname }}</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-briefcase-medical"></i>
+                                <span> {{ result.specialization_name }}</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-house-chimney-medical"></i>
+                                <span> {{ result.city }}</span>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <span> {{ result.name }} </span>
-                        <span> {{ result.surname }}</span>
-                        <span> {{ result.specialization_name }}</span>
-                        <span> {{ result.city }}</span>
-                    </div>
+                    
+                    
                 </div>
-                <router-link
-                    :to="{
-                        name: 'message.index',
-                        params: { result: result.id },
-                    }"
-                    >Message</router-link
-                >
-                <router-link
-                    :to="{
-                        name: 'review.index',
-                        params: { result: result.id },
-                    }"
-                    >Review</router-link
-                >
-                <router-link
-                    :to="{
-                        name: 'results.show',
-                        params: { result: result.id },
-                    }"
-                    >Details</router-link
-                >
+                <!-- Details button on right side of card -->
+                <div class="d-flex justify-content-center">
+                    <router-link
+                        class="btn btn-primary rounded text-white my-2 me-3"
+                        :to="{
+                            name: 'results.show',
+                            params: { result: result.id },
+                        }"
+                    >
+                        Details
+                    </router-link>
+                </div>
             </div>
         </div>
     </div>
@@ -50,7 +55,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card-img {
-    max-width: 120px;
+
+.card {
+
+    &:hover{
+        background-color: #f5f5f5;
+    }
+
+    .card-img {
+        height: 175px;
+        width: 150px;
+        border: 0.5px solid #ccc;
+        border-radius: 5px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    }
+
+    i {
+        width: 19px;
+    }
 }
 </style>

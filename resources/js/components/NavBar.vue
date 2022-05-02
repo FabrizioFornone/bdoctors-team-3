@@ -7,13 +7,15 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0 text-white">
-
-                    <li class="nav-item d-flex">
-                        <a class="nav-link active" href="/login" v-if="!user">Login Dr.</a>
-                        <a class="nav-link active" href="/register" v-if="!user">Register</a>
-                        <a class="nav-link active" href="/home" v-else> {{ user.name }} {{ user.surname}} </a>
+                    <li class="nav-item" v-if="!user">
+                        <a class="nav-link fw-bold" href="/login">Doctor Login</a>
                     </li>
-
+                    <li class="nav-item" v-if="!user">
+                        <a class="nav-link fw-bold" href="/register">Register as a Doctor</a>
+                    </li>
+                    <li class="nav-item" v-else>
+                        <a class="nav-link fw-bold" href="/home"> {{ user.name }} {{ user.surname}} </a>
+                    </li>
                 </ul>
             </div>
         </div>
