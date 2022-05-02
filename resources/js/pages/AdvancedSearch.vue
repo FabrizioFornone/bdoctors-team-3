@@ -3,22 +3,22 @@
         <div class="container py-5">
             <div class="search-group col-6">
                 <div class="input-group">
-                    <input
-                        type="text"
-                        class="form-control"
-                        aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-default"
-                        placeholder="Search by specialization"
-                        v-model="searchText"
-                        @keydown.enter="findSearchSubmit()"
-                    />
-                    <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Search by specialization"
-                        v-model="searchText"
-                        @keydown.enter="findSearchSubmit()"
-                    />
+                    <select
+                        v-model="selected"
+                        class="form-select"
+                        aria-label="Example select with button addon"
+                    >
+                        <option disabled value="">
+                            Choose one specialization...
+                        </option>
+                        <option
+                            v-for="specialization of allSpecializations"
+                            :key="specialization.id"
+                            :value="specialization.specialization_name"
+                        >
+                            {{ specialization.specialization_name }}
+                        </option>
+                    </select>
                     <input
                         type="text"
                         class="form-control"
@@ -26,7 +26,7 @@
                         v-model="searchCity"
                         @keydown.enter="findSearchSubmit()"
                     />
-                    
+
                     <button
                         class="btn btn-primary rounded text-white ms-2"
                         @click="findSearchSubmit()"
@@ -37,7 +37,12 @@
             </div>
 
             <div v-if="boolean" class="my-5">
-                <h2 v-if="!advancedResults.advancedRes" class="text-center text-white fw-bold">There aren't results.</h2>
+                <h2
+                    v-if="!advancedResults.advancedRes"
+                    class="text-center text-white fw-bold"
+                >
+                    There aren't results.
+                </h2>
                 <info-card
                     v-for="advancedResult of advancedResults.advancedRes"
                     :key="advancedResult.id"
@@ -45,14 +50,6 @@
                 />
             </div>
         </div>
-        <!-- <input type="text" /> -->
-        <!-- ricerca per specializzazione es. allergy, surgery, etc... -->
-
-        <!-- <select name="" id=""></select> -->
-        <!-- filtro per media voti delle recensioni del dottore. -->
-
-        <!-- <select name="" id=""></select> -->
-        <!-- filtro per numero di recensioni del dottore. -->
     </main>
 </template>
 
@@ -65,61 +62,62 @@ export default {
 
     data() {
         return {
+            allSpecializations: [],
+            selected: "",
             advancedResults: null,
-            searchText: "",
             searchCity: "",
-            boolean: false
+            boolean: false,
         };
     },
     methods: {
-        async getAdvancedResults(searchCity = null, searchText = null) {
+        async getAdvancedResults(searchCity = null, selected = null) {
             try {
-                await axios.get('/api/specializations' + '?advancedFilter=' + searchCity + '&' + 'filter=' + searchText).then((resp) => {
-    
-                    this.advancedResults = resp.data;
-                    this.boolean = true;
-    
-                    if (this.advancedResults.advancedRes.length == 0) {
-                        this.advancedResults.advancedRes = null;
-                    }
-                });
+                await axios
+                    .get(
+                        "/api/specializations" +
+                            "?advancedFilter=" +
+                            searchCity +
+                            "&" +
+                            "filter=" +
+                            selected
+                    )
+                    .then((resp) => {
+                        this.advancedResults = resp.data;
+                        this.boolean = true;
+
+                        if (this.advancedResults.advancedRes.length == 0) {
+                            this.advancedResults.advancedRes = null;
+                        }
+                    });
             } catch (er) {
                 console.log(er);
             }
         },
         findSearchSubmit() {
-            if (this.searchCity != "" && this.searchText != "") {
-                this.getAdvancedResults(this.searchCity, this.searchText);
-                // this.boolean = true;
-                // this.error = false;
+            if (this.searchCity != "" && this.selected != "") {
+                this.getAdvancedResults(this.searchCity, this.selected);
                 window.scrollTo(0, 0);
-            } else {
-                // this.error = true;
             }
         },
-
-
-        // callAPI(searchCity, searchText, criteriaThree) {
-        // axios.get('/api/specializations' + '?advancedFilter=' + searchCity + '&' + 'filter=' + searchText ).then((res) => {
-        //         this.sumResults = this.shuffleResult(this.sumResults);
-        //         });
-        //     },
-        //     // Method linked to Home button
-        //     homeMix() {
-        //         this.sumResults = [];
-        //         this.callAPI("movie", "popular");
-        //         this.callAPI("tv", "popular");
-        //     },
+        async getAllSpec() {
+            try {
+                await axios.get("/api/specializations").then((resp) => {
+                    this.allSpecializations = resp.data.allSpec;
+                });
+            } catch (er) {
+                console.log(er);
+            }
+        },
     },
-
-    // var outputUrl = redirectUrl + '?url=' + url + '&title=' + title;
+    mounted() {
+        this.getAllSpec();
+    },
 };
-
 </script>
 
 <style lang="scss" scoped>
 main {
-    background-color: #59A7B8;
-    height: calc(100vh - 47px);  
+    background-color: #59a7b8;
+    height: calc(100vh - 47px);
 }
 </style>

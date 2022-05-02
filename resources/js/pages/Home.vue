@@ -77,7 +77,7 @@ export default {
     data() {
         return {
             allSpecializations: [],
-            selected: '',
+            selected: "",
             users: [],
             results: null,
             searchText: "",
