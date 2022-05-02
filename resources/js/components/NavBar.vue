@@ -32,7 +32,7 @@
                     </li>
                     <li class="nav-item" v-else>
                         <a class="nav-link fw-bold" href="/home">
-                            {{ user.name }} {{ user.surname }}
+                           Dr. {{ user.name }} {{ user.surname }}
                         </a>
                     </li>
                 </ul>
