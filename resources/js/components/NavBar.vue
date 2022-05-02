@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1 fs-5">
-        <div class="container">
+        <div class="container-fluid">
             <a href="/">
                 <img src="/imgs/logo-wide-black.svg" alt="" />
             </a>
