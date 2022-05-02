@@ -18,11 +18,11 @@
                         <div>
                             @if ($boolean)
                             <a href="{{ route('admin.infos.create') }}"
-                                class="btn btn-primary ms-auto text-white">Create</a>
+                                class="btn btn-primary ms-auto text-white fw-bold">Create</a>
                             @else
                             @foreach ( $infos as $info)
                             <a href="{{ route('admin.infos.edit', $info->id) }}"
-                                class="btn btn-primary ms-auto text-white">Edit</a>
+                                class="btn btn-primary ms-auto text-white fw-bold">Edit</a>
                             @endforeach
 
                             @endif
