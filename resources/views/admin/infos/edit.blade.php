@@ -130,9 +130,9 @@
                             @enderror
                         </div>
 
-                        <div class="form-group">
-                            <a href="{{ route('admin.infos.index') }}" class="btn btn-secondary">Back</a>
-                            <button type="submit" class="btn btn-success">Update</button>
+                        <div class="form-group d-flex justify-content-center">
+                            <a href="{{ route('admin.infos.index') }}" class="btn btn-secondary mx-2">Back</a>
+                            <button type="submit" class="btn btn-success mx-2">Update</button>
                         </div>
                     </form>
                 </div>

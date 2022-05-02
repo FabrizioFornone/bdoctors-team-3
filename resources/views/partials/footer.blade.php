@@ -35,7 +35,7 @@
                 </ul>
             </div>
         </div>
-        <div class="d-flex flex-column align-items-center">
+        <div class="d-flex flex-column align-items-center wr-m">
             <img class="img-fluid" src="{{asset('imgs/logo-wide.png')}}" alt="">
             <ul class="text-center fw-bold">
                 <li class="footer-text">Rome, Italy</li>
