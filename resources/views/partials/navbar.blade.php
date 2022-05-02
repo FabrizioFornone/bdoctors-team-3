@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark navbar-back fixed-top py-1">
     <div class="container">
         {{-- Nabar Brand --}}
-        <a class="navbar-brand" href="/">BDoctors</a>
+        <a class="navbar-brand" href="/">
+            <img src="{{asset('imgs/logo-wide-white.svg')}}" alt="">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
             aria-label="Toggle navigation">

@@ -7783,6 +7783,10 @@ readers do not read off random characters that represent icons */
   background-color: #03b6dd;
 }
 
+.navbar-back img {
+  width: 200px;
+}
+
 .navbar-back a {
   color: #f0f0f0;
 }
