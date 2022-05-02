@@ -11,7 +11,7 @@
                         <div class="card-body bg-message">
                             <div class="d-flex align-items-center">
                                 <div class="pe-4">
-                                    <i class="fa-solid fa-calendar fs-2"></i>
+                                    <i class="fa-solid fa-calendar fs-2 icon-size"></i>
                                 </div>
                                 <div>
                                     <strong>Date:</strong>
@@ -21,7 +21,7 @@
                             </div>
                             <div class="d-flex align-items-center">
                                 <div class="pe-4">
-                                <i class="fa-solid fa-user fs-2"></i>
+                                <i class="fa-solid fa-user fs-2 icon-size"></i>
                                 </div>
                                 <div>
                                     <strong>Full Name:</strong>
@@ -31,7 +31,7 @@
                             </div>
                             <div class="d-flex align-items-center">
                                 <div class="pe-4">
-                                    <i class="fa-solid fa-envelope fs-2"></i>
+                                    <i class="fa-solid fa-envelope fs-2 icon-size"></i>
                                 </div>
                                 <div>
                                     <strong>Email:</strong>
@@ -41,17 +41,17 @@
                             </div>
                             <div class="d-flex align-items-center">
                                 <div class="pe-4">
-                                    <i class="fa-solid fa-file-pen fs-2"></i>
+                                    <i class="fa-solid fa-file-pen fs-2 icon-size"></i>
                                 </div>
                                 <div>
                                     <strong>Review Text:</strong>
                                     <br />
                                     {{ $review->text }}
                                 </div>
-                                </div>
+                            </div>
                             <div class="d-flex align-items-center">
                                 <div class="pe-4">
-                                    <i class="fa-solid fa-star fs-2"></i>
+                                    <i class="fa-solid fa-star fs-2 icon-size"></i>
                                 </div>
                                 <div>
                                     <strong>Vote:</strong>
