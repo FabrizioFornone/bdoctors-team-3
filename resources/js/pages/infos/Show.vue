@@ -38,7 +38,6 @@
                                     </h3>
                                     <h5 class="py-2">
                                         <strong>Business Address:</strong>
-                                        <strong>Address:</strong>
                                         {{ info.user.business_address }}
                                     </h5>
                                     <h5 class="py-2">
@@ -52,13 +51,7 @@
 
                                     <h5>
                                         <strong>Specializations:</strong>
-                                        <div
-                                            v-for="specialization of info.specializations"
-                                            :key="specialization.id"
-                                        >
-                                            {{ specialization.specialization_name }}
-                                        </div>
-                                        <li>
+                                        <li class="mt-2">
                                             <ul
                                                 v-for="specialization of info.specializations"
                                                 :key="specialization.id"
