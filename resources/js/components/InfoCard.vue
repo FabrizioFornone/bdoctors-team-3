@@ -10,20 +10,20 @@
                         </div>
                         <div class="ps-4 fs-5">
                             <div>
-                                <i class="fa-solid fa-user-doctor"></i>
+                                <i class="fa-solid fa-user-doctor icon-size"></i>
                                 <span>{{ result.name }}</span>
                                 <span>{{ result.surname }}</span>
                             </div>
                             <div>
-                                <i class="fa-solid fa-briefcase-medical"></i>
+                                <i class="fa-solid fa-briefcase-medical icon-size"></i>
                                 <span> {{ result.specialization_name }}</span>
                             </div>
                             <div>
-                                <i class="fa-solid fa-city"></i>
+                                <i class="fa-solid fa-city icon-size"></i>
                                 <span>{{ result.city }}</span>
                             </div>
                             <div>
-                                <i class="fa-solid fa-house-chimney-medical"></i>
+                                <i class="fa-solid fa-house-chimney-medical icon-size"></i>
                                 <span>{{ result.business_address }}</span>
                             </div>
                         </div>
@@ -78,10 +78,6 @@ export default {
             object-fit: cover;
             border-radius: 5px;
         }
-    }
-
-    i {
-        width: 19px;
     }
 }
 </style>
