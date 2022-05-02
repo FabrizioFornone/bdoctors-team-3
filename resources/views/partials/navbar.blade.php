@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark navbar-back fixed-top py-1">
-    <div class="container">
+    <div class="container-fluid">
         {{-- Nabar Brand --}}
         <a class="navbar-brand" href="/">
             <img src="{{asset('imgs/logo-wide-white.svg')}}" alt="">
