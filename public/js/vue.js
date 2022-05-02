@@ -3121,7 +3121,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".navbar[data-v-5dd24bca] {\n  z-index: 1001;\n}\n.navbar .nav-link[data-v-5dd24bca] {\n  color: #2d3035;\n}\n.navbar .nav-link[data-v-5dd24bca]:hover {\n  color: #454952;\n}\n.navbar img[data-v-5dd24bca] {\n  width: 200px;\n}", ""]);
+exports.push([module.i, ".navbar[data-v-5dd24bca] {\n  z-index: 1001;\n}\n.navbar .nav-link[data-v-5dd24bca] {\n  color: #2d3035;\n  border-bottom: 2px solid transparent;\n}\n.navbar .nav-link[data-v-5dd24bca]:hover {\n  color: #454952;\n  border-bottom: 2px solid #454952;\n}\n.navbar img[data-v-5dd24bca] {\n  width: 200px;\n}", ""]);
 
 // exports
 
@@ -5373,106 +5373,98 @@ var staticRenderFns = [
         [
           _c("div", { staticClass: "d-flex list-container" }, [
             _c("div", { staticClass: "px-3 disp-no" }, [
-              _c("h5", [_vm._v("Servizi")]),
+              _c("h5", [_vm._v("Services")]),
               _vm._v(" "),
               _c("ul", [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Privacy e cookies"),
+                    _vm._v("Privacy and Cookies"),
                   ]),
                 ]),
                 _vm._v(" "),
                 _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Chi siamo")]),
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("About Us")]),
                 ]),
                 _vm._v(" "),
                 _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Contatti")]),
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Contacts")]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Work with Us")]),
                 ]),
                 _vm._v(" "),
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Lavoro ASSUMIAMO!"),
+                    _vm._v("Terms of Service"),
                   ]),
                 ]),
                 _vm._v(" "),
                 _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Condizioni di Servizio"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Ufficio stampa")]),
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Press Office")]),
                 ]),
               ]),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "px-3 disp-no" }, [
-              _c("h5", [_vm._v("Per i pazienti")]),
+              _c("h5", [_vm._v("For Patients")]),
               _vm._v(" "),
               _c("ul", [
                 _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Dottori")]),
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Doctors")]),
                 ]),
                 _vm._v(" "),
                 _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Struttura")]),
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Structure")]),
                 ]),
                 _vm._v(" "),
                 _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Chiedi al dottore"),
-                  ]),
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Ask the Doctor")]),
                 ]),
                 _vm._v(" "),
                 _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Prestazioni")]),
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("performances")]),
                 ]),
                 _vm._v(" "),
                 _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("FAQ")])]),
                 _vm._v(" "),
                 _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("App mobile")]),
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Mobile App")]),
                 ]),
                 _vm._v(" "),
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Diagnostica per immagini"),
+                    _vm._v("Diagnostic for images"),
                   ]),
                 ]),
               ]),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "px-3 disp-no" }, [
-              _c("h5", [_vm._v("Per i professionisti sanitari")]),
+              _c("h5", [_vm._v("For Healthcare Professionals")]),
               _vm._v(" "),
               _c("ul", [
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Area professionisti sanitari"),
+                    _vm._v("Healthcare Professionals Area"),
                   ]),
                 ]),
                 _vm._v(" "),
                 _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Prezzi")]),
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Prices")]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Free Resources")]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("Booking Button")]),
                 ]),
                 _vm._v(" "),
                 _c("li", [
                   _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Risorse gratuite"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Pulsante di prenotazione"),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Centro Assistenza per Professionisti"),
+                    _vm._v("Service Center for Professionals"),
                   ]),
                 ]),
               ]),
@@ -5483,9 +5475,7 @@ var staticRenderFns = [
             _c("img", { attrs: { src: "imgs/logo-wide.png", alt: "" } }),
             _vm._v(" "),
             _c("ul", { staticClass: "text-center fw-bold" }, [
-              _c("li", { staticClass: "footer-text" }, [
-                _vm._v("Da qualche parte, Italia"),
-              ]),
+              _c("li", { staticClass: "footer-text" }, [_vm._v("Rome, Italy")]),
               _vm._v(" "),
               _c("li", { staticClass: "footer-text" }, [
                 _vm._v("P.IVA: Tutto in nero"),

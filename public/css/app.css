@@ -7787,10 +7787,6 @@ readers do not read off random characters that represent icons */
   width: 200px;
 }
 
-.navbar-back a {
-  color: #f0f0f0;
-}
-
 .navbar-back .profile-pic-box {
   width: 35px;
   height: 35px;
@@ -7814,6 +7810,16 @@ readers do not read off random characters that represent icons */
 .navbar-back .ms_dropdown .ms_logout {
   border-top: 1px solid #dcdcdc;
   margin-top: 2px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff !important;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover:not(.dropdown-toggle) {
+  color: rgba(240, 240, 240, 0.5803921569) !important;
+  border-bottom: 2px solid #fff;
 }
 
 .ms_infos {

@@ -71,9 +71,11 @@ export default {
 
     .nav-link {
         color: #2d3035;
+        border-bottom: 2px solid transparent;
 
         &:hover {
             color: #454952;
+            border-bottom: 2px solid #454952;
         }
     }
 

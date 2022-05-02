@@ -14,13 +14,13 @@
             <ul class="navbar-nav me-auto">
                 @auth
                 <li class="nav-item">
-                    <a href="{{route('home')}}" class="nav-link" role="button">Dashboard</a>
+                    <a href="{{route('home')}}" class="nav-link fw-bold" role="button">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('admin.messages.index')}}" class="nav-link" role="button">Messages</a>
+                    <a href="{{route('admin.messages.index')}}" class="nav-link fw-bold" role="button">Messages</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('admin.reviews.index')}}" class="nav-link" role="button">Reviews</a>
+                    <a href="{{route('admin.reviews.index')}}" class="nav-link fw-bold" role="button">Reviews</a>
                 </li>
                 @endauth
             </ul>
@@ -29,18 +29,18 @@
                 <!-- Authentication Links -->
                 @guest
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <a class="nav-link fw-bold" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
                 @if (Route::has('register'))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <a class="nav-link fw-bold" href="{{ route('register') }}">{{ __('Register') }}</a>
                 </li>
                 @endif
                 @else
                 {{-- Dropdown --}}
                 <li class="nav-item dropdown">
                     {{-- User --}}
-                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarScrollingDropdown" role="button"
+                    <a class="nav-link fw-bold dropdown-toggle d-flex align-items-center" href="#" id="navbarScrollingDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         @if(Auth::user()->infos != null)
                         <div class="profile-pic-box mx-1">
