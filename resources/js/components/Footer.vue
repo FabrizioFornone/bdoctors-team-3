@@ -3,43 +3,43 @@
         <div class="container d-flex justify-content-between align-items-center">
             <div class="d-flex list-container">
                 <div class="px-3 disp-no">
-                    <h5>Servizi</h5>
+                    <h5>Services</h5>
                     <ul>
-                        <li><a href="#">Privacy e cookies</a></li>
-                        <li><a href="#">Chi siamo</a></li>
-                        <li><a href="#">Contatti</a></li>
-                        <li><a href="#">Lavoro ASSUMIAMO!</a></li>
-                        <li><a href="#">Condizioni di Servizio</a></li>
-                        <li><a href="#">Ufficio stampa</a></li>
+                        <li><a href="#">Privacy and Cookies</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contacts</a></li>
+                        <li><a href="#">Work with Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Press Office</a></li>
                     </ul>
                 </div>
                 <div class="px-3 disp-no">
-                    <h5>Per i pazienti</h5>
+                    <h5>For Patients</h5>
                     <ul>
-                        <li><a href="#">Dottori</a></li>
-                        <li><a href="#">Struttura</a></li>
-                        <li><a href="#">Chiedi al dottore</a></li>
-                        <li><a href="#">Prestazioni</a></li>
+                        <li><a href="#">Doctors</a></li>
+                        <li><a href="#">Structure</a></li>
+                        <li><a href="#">Ask the Doctor</a></li>
+                        <li><a href="#">performances</a></li>
                         <li><a href="#">FAQ</a></li>
-                        <li><a href="#">App mobile</a></li>
-                        <li><a href="#">Diagnostica per immagini</a></li>
+                        <li><a href="#">Mobile App</a></li>
+                        <li><a href="#">Diagnostic for images</a></li>
                     </ul>
                 </div>
                 <div class="px-3 disp-no">
-                    <h5>Per i professionisti sanitari</h5>
+                    <h5>For Healthcare Professionals</h5>
                     <ul>
-                        <li><a href="#">Area professionisti sanitari</a></li>
-                        <li><a href="#">Prezzi</a></li>
-                        <li><a href="#">Risorse gratuite</a></li>
-                        <li><a href="#">Pulsante di prenotazione</a></li>
-                        <li><a href="#">Centro Assistenza per Professionisti</a></li>
+                        <li><a href="#">Healthcare Professionals Area</a></li>
+                        <li><a href="#">Prices</a></li>
+                        <li><a href="#">Free Resources</a></li>
+                        <li><a href="#">Booking Button</a></li>
+                        <li><a href="#">Service Center for Professionals</a></li>
                     </ul>
                 </div>
             </div>
             <div class="d-flex flex-column align-items-center">
                 <img src="imgs/logo-wide.png" alt="" />
                 <ul class="text-center fw-bold">
-                    <li class="footer-text">Da qualche parte, Italia</li>
+                    <li class="footer-text">Rome, Italy</li>
                     <li class="footer-text">P.IVA: Tutto in nero</li>
                 </ul>
             </div>
