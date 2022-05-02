@@ -140,7 +140,6 @@ export default {
 <style lang="scss" scoped>
 main {
     background-color: #59A7B8;
-    height: calc(100vh - 47px); 
 
     .jumbotron {
         height: calc(100vh - 47px);
@@ -194,19 +193,4 @@ main {
         }
     }
 }
-
-@media screen and (max-width: 876px) { 
-    .btn-group {
-        margin-top: 15px;
-    }
-
-    .error-div {
-        position: absolute;
-        padding-top: 60px;
-    }
-
-    
-}
-
-
 </style>
