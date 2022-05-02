@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header text-center fw-bold">Messages List</div>
                     @foreach ($messages as $message)
-                    <div class="card mx-2 my-2">
+                    <div class="card mx-2 my-3">
                         <div class="card-body bg-review">
                             <div class="d-flex align-items-center">
                                 <div class="pe-4">
