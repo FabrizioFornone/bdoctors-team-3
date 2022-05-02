@@ -8,28 +8,32 @@
                         <div class="card-img">
                             <img :src="result.photo" alt="..." />
                         </div>
-                        <div class="ps-4 fs-5">
-                            <div>
-                                <i class="fa-solid fa-user-doctor icon-size"></i>
+                        <div class="info-box ps-4">
+                            <div class="py-2">
+                                <i
+                                    class="fa-solid fa-user-doctor icon-size"
+                                ></i>
                                 <span>{{ result.name }}</span>
                                 <span>{{ result.surname }}</span>
                             </div>
-                            <div>
-                                <i class="fa-solid fa-briefcase-medical icon-size"></i>
-                                <span> {{ result.specialization_name }}</span>
+                            <div class="py-2">
+                                <i
+                                    class="fa-solid fa-briefcase-medical icon-size"
+                                ></i>
+                                {{ result.specialization_name }}
                             </div>
-                            <div>
+                            <div class="py-2">
                                 <i class="fa-solid fa-city icon-size"></i>
                                 <span>{{ result.city }}</span>
                             </div>
-                            <div>
-                                <i class="fa-solid fa-house-chimney-medical icon-size"></i>
+                            <div class="py-2">
+                                <i
+                                    class="fa-solid fa-house-chimney-medical icon-size"
+                                ></i>
                                 <span>{{ result.business_address }}</span>
                             </div>
                         </div>
                     </div>
-                    
-                    
                 </div>
                 <!-- Details button on right side of card -->
                 <div class="d-flex justify-content-center">
@@ -59,11 +63,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .card {
-
-    &:hover{
+    &:hover {
         background-color: #f5f5f5;
+    }
+
+    .info-box {
+        font-size: 20px;
     }
 
     .card-img {
@@ -77,6 +83,26 @@ export default {
             height: 100%;
             object-fit: cover;
             border-radius: 5px;
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .card-body {
+        padding: 5px !important;
+
+        .card-img {
+            height: 140px !important;
+            width: 120px !important;
+        }
+
+        .info-box {
+            padding-left: 10px !important ;
+            font-size: 14px !important;
+
+            .icon-size {
+                width: 20px;
+            }
         }
     }
 }

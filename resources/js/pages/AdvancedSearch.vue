@@ -36,7 +36,7 @@
                 </div>
             </div>
 
-            <div v-if="boolean" class="my-5">
+            <div v-if="boolean" class="col-10 offset-1 col-lg-8 offset-lg-2 my-5">
                 <i
                     class="fa-solid fa-arrow-left ms_back-arrow"
                     @click="changeBoolean()"

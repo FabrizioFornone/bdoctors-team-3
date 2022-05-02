@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="container py-5" v-if="boolean">
-            <div class="col-sm-12 col-lg-8 offset-lg-2 py-5">
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2 py-5">
                 <div class="d-flex justify-content-between mb-3">
                     <!-- Back Arrow -->
                     <div>
