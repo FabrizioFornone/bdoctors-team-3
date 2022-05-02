@@ -1,7 +1,7 @@
 <template>
     <main>
         <div class="container">
-            <div class="search-group col-6">
+            <div class="search-group col-6" v-if="!boolean">
                 <div class="input-group">
                     <select
                         v-model="selected"
@@ -37,6 +37,10 @@
             </div>
 
             <div v-if="boolean" class="my-5">
+                <i
+                    class="fa-solid fa-arrow-left ms_back-arrow"
+                    @click="changeBoolean()"
+                ></i>
                 <h2
                     v-if="!advancedResults.advancedRes"
                     class="text-center text-white fw-bold"
@@ -108,6 +112,11 @@ export default {
                 console.log(er);
             }
         },
+        changeBoolean() {
+            this.boolean = !this.boolean;
+            this.selected = "";
+            this.searchCity = "";
+        },
     },
     mounted() {
         this.getAllSpec();
@@ -121,6 +130,13 @@ main {
 
     .container {
         padding: 100px 0;
+
+        .search-group {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 }
 </style>
