@@ -1,4 +1,4 @@
-<nav class="navbar py-1 navbar-expand-lg">
+<nav class="navbar navbar-expand-lg navbar-dark py-1">
     <div class="container">
         {{-- Nabar Brand --}}
         <a class="navbar-brand" href="/">BDoctors</a>
@@ -9,10 +9,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             {{-- Navbar left --}}
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto">
                 @auth
                 <li class="nav-item">
-                    <a href="{{route('home')}}" class="nav-link" role="button">Home</a>
+                    <a href="{{route('home')}}" class="nav-link" role="button">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('admin.messages.index')}}" class="nav-link" role="button">Messages</a>
@@ -23,7 +23,7 @@
                 @endauth
             </ul>
             {{-- Navbar right --}}
-            <ul class="navbar-nav mb-2 mb-lg-0">
+            <ul class="navbar-nav">
                 <!-- Authentication Links -->
                 @guest
                 <li class="nav-item">
