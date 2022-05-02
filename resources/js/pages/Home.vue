@@ -3,8 +3,8 @@
         <div v-if="!boolean" class="jumbotron">
             <div class="container">
                 <div class="col-6 input-box">
-                    <h1 class="py-5 text-uppercase">
-                        look for your healthcare professional
+                    <h1 class="py-5 text-uppercase text-black">
+                        look for your healthcare professionals
                     </h1>
                     <div class="input-group">
                         <!-- <input
@@ -66,7 +66,7 @@
                     <div>
                         <a
                             href="/search"
-                            class="btn btn-primary rounded my-2 mx-auto fw-bold"
+                            class="btn btn-primary text-white rounded my-2 mx-auto fw-bold"
                         >
                             Advanced Search
                         </a>
@@ -206,10 +206,6 @@ main {
                         width: 100%;
                     }
                 }
-            }
-
-            input {
-                min-width: 200px;
             }
         }
     }

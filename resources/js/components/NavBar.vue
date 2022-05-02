@@ -68,6 +68,8 @@ export default {
 <style lang="scss" scoped>
 .navbar {
     z-index: 1001;
+    background-color: #fff;
+    opacity: 0.8;
 
     .nav-link {
         color: #2d3035;

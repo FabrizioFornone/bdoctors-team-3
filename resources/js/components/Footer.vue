@@ -36,11 +36,11 @@
                     </ul>
                 </div>
             </div>
-            <div class="d-flex flex-column align-items-center">
+            <div class="d-flex flex-column align-items-center wr-m">
                 <img src="imgs/logo-wide.png" alt="" />
                 <ul class="text-center fw-bold">
                     <li class="footer-text">Rome, Italy</li>
-                    <li class="footer-text">P.IVA: Tutto in nero</li>
+                    <li class="footer-text">P.IVA: 12345678910</li>
                 </ul>
             </div>
         </div>
