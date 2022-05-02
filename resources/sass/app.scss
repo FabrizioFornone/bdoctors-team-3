@@ -46,6 +46,10 @@ main {
     background-color: #C9C9C9;
 }
 
+nav {
+    height: 77px;
+}
+
 ul {
     list-style: none;
     padding-left: 0;
@@ -61,7 +65,7 @@ a {
     color: #fff;
 
     &:hover {
-        color: #000;
+        color: #0d6efd;
     }
 }
 
