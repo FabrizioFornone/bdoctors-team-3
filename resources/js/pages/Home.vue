@@ -43,8 +43,8 @@
                             </button>
                         </div>
                     </div>
-                    <div class="text-danger" v-if="error">
-                        <p class="fw-bold">
+                    <div class="text-danger">
+                        <p class="fw-bold" v-if="error">
                             You need at least one specialization selected.
                         </p>
                     </div>
@@ -181,6 +181,10 @@ main {
             color: #fff;
             min-width: 150px;
         }
+    }
+
+    .text-danger {
+        height: 10px;
     }
 }
 

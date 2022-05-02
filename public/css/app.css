@@ -7823,7 +7823,7 @@ readers do not read off random characters that represent icons */
 }
 
 .ms_infos {
-  padding: 80px 0;
+  padding: 100px 0;
 }
 
 .ms_infos .photo-box {
@@ -7871,7 +7871,7 @@ footer .footer-text {
 
 @media screen and (max-width: 575px) {
   .disp-no {
-    display: none;
+    display: none !important;
   }
 
   .wr-m {
@@ -7879,9 +7879,9 @@ footer .footer-text {
   }
 }
 
-@media screen and (min-width: 576px) and (max-width: 767px) {
+@media screen and (min-width: 576px) and (max-width: 991px) {
   .disp-no {
-    display: none;
+    display: none !important;
   }
 
   .wr-m {
@@ -7939,11 +7939,11 @@ footer .footer-text {
 }
 
 .ms_create {
-  padding: 50px 0;
+  padding: 100px 0;
 }
 
 .ms_edit {
-  padding: 50px 0;
+  padding: 100px 0;
 }
 
 /*!
@@ -20143,6 +20143,10 @@ a {
   text-decoration: none;
 }
 
+i {
+  width: 19px;
+}
+
 .ms_back-arrow {
   font-size: 30px;
   cursor: pointer;
@@ -20156,5 +20160,17 @@ a {
 .ms_message,
 .ms_review {
   padding: 100px 0;
+}
+
+.ms_not {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg-message,
+.bg-review {
+  background-color: #c7eaf2;
 }
 

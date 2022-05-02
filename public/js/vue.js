@@ -2028,6 +2028,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     result: Object
@@ -2307,6 +2311,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2331,6 +2337,28 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2992,7 +3020,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      info: {}
+      info: []
     };
   },
   methods: {
@@ -3121,7 +3149,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".navbar[data-v-5dd24bca] {\n  z-index: 1001;\n}\n.navbar .nav-link[data-v-5dd24bca] {\n  color: #2d3035;\n  border-bottom: 2px solid transparent;\n}\n.navbar .nav-link[data-v-5dd24bca]:hover {\n  color: #454952;\n  border-bottom: 2px solid #454952;\n}\n.navbar img[data-v-5dd24bca] {\n  width: 200px;\n}", ""]);
+exports.push([module.i, ".navbar[data-v-5dd24bca] {\n  z-index: 1001;\n  background-color: #fff;\n  opacity: 0.8;\n}\n.navbar .nav-link[data-v-5dd24bca] {\n  color: #2d3035;\n  border-bottom: 2px solid transparent;\n}\n.navbar .nav-link[data-v-5dd24bca]:hover {\n  color: #454952;\n  border-bottom: 2px solid #454952;\n}\n.navbar img[data-v-5dd24bca] {\n  width: 200px;\n}", ""]);
 
 // exports
 
@@ -3159,7 +3187,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "main[data-v-94ed5362] {\n  background-color: #59A7B8;\n  height: calc(100vh - 47px);\n}", ""]);
+exports.push([module.i, "main[data-v-94ed5362] {\n  background-color: #59a7b8;\n  height: calc(100vh - 47px);\n}", ""]);
 
 // exports
 
@@ -3178,7 +3206,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "main[data-v-b3c5cf30] {\n  background-color: #59A7B8;\n}\nmain .jumbotron[data-v-b3c5cf30] {\n  height: 100vh;\n  background: url(\"/imgs/jumbotron.png\") center center;\n  background-size: cover;\n  position: relative;\n}\nmain .jumbotron .input-box[data-v-b3c5cf30] {\n  position: absolute;\n  top: 40%;\n  left: 40%;\n  transform: translate(-50%, -50%);\n}\nmain .jumbotron .input-box button[data-v-b3c5cf30] {\n  margin-left: 15px;\n}\nmain .jumbotron h1[data-v-b3c5cf30] {\n  color: #fff;\n  min-width: 150px;\n}\n@media (max-width: 575.98px) {\n.jumbotron[data-v-b3c5cf30] {\n    background: url(\"/imgs/jumbotron.png\") center center;\n}\n.jumbotron .input-group[data-v-b3c5cf30] {\n    flex-direction: column;\n}\n.jumbotron .input-group select[data-v-b3c5cf30] {\n    width: 100%;\n    min-width: 225px;\n}\n.jumbotron .input-group .btn-group button[data-v-b3c5cf30] {\n    margin-left: 0;\n    margin-top: 30px;\n    width: 100%;\n}\n.jumbotron input[data-v-b3c5cf30] {\n    min-width: 200px;\n}\n}", ""]);
+exports.push([module.i, "main[data-v-b3c5cf30] {\n  background-color: #59a7b8;\n}\nmain .jumbotron[data-v-b3c5cf30] {\n  height: 100vh;\n  background: url(\"/imgs/jumbotron.png\") 65% 50%;\n  background-size: cover;\n  position: relative;\n}\nmain .jumbotron .input-box[data-v-b3c5cf30] {\n  position: absolute;\n  top: 40%;\n  left: 40%;\n  transform: translate(-50%, -50%);\n}\nmain .jumbotron .input-box button[data-v-b3c5cf30] {\n  margin-left: 15px;\n}\nmain .jumbotron h1[data-v-b3c5cf30] {\n  color: #fff;\n  min-width: 150px;\n}\nmain .text-danger[data-v-b3c5cf30] {\n  height: 10px;\n}\n@media screen and (max-width: 991px) {\nmain .jumbotron[data-v-b3c5cf30] {\n    background: url(\"/imgs/jumbo-mobile.png\") center center no-repeat;\n    background-size: cover;\n    position: relative;\n}\nmain .jumbotron .input-group[data-v-b3c5cf30] {\n    flex-direction: column;\n}\nmain .jumbotron .input-group select[data-v-b3c5cf30] {\n    width: 100%;\n    min-width: 225px;\n}\nmain .jumbotron .input-group .btn-group button[data-v-b3c5cf30] {\n    margin-left: 0;\n    margin-top: 30px;\n    width: 100%;\n}\n}", ""]);
 
 // exports
 
@@ -5372,7 +5400,7 @@ var staticRenderFns = [
         },
         [
           _c("div", { staticClass: "d-flex list-container" }, [
-            _c("div", { staticClass: "px-3 disp-no" }, [
+            _c("div", { staticClass: "px-3" }, [
               _c("h5", [_vm._v("Services")]),
               _vm._v(" "),
               _c("ul", [
@@ -5406,7 +5434,7 @@ var staticRenderFns = [
               ]),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "px-3 disp-no" }, [
+            _c("div", { staticClass: "px-3" }, [
               _c("h5", [_vm._v("For Patients")]),
               _vm._v(" "),
               _c("ul", [
@@ -5440,7 +5468,7 @@ var staticRenderFns = [
               ]),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "px-3 disp-no" }, [
+            _c("div", { staticClass: "px-3" }, [
               _c("h5", [_vm._v("For Healthcare Professionals")]),
               _vm._v(" "),
               _c("ul", [
@@ -5471,17 +5499,26 @@ var staticRenderFns = [
             ]),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "d-flex flex-column align-items-center" }, [
-            _c("img", { attrs: { src: "imgs/logo-wide.png", alt: "" } }),
-            _vm._v(" "),
-            _c("ul", { staticClass: "text-center fw-bold" }, [
-              _c("li", { staticClass: "footer-text" }, [_vm._v("Rome, Italy")]),
+          _c(
+            "div",
+            { staticClass: "d-flex flex-column align-items-center wr-m " },
+            [
+              _c("img", {
+                staticClass: "disp-no",
+                attrs: { src: "imgs/logo-wide.png", alt: "" },
+              }),
               _vm._v(" "),
-              _c("li", { staticClass: "footer-text" }, [
-                _vm._v("P.IVA: Tutto in nero"),
+              _c("ul", { staticClass: "text-center fw-bold disp-no" }, [
+                _c("li", { staticClass: "footer-text" }, [
+                  _vm._v("Rome, Italy"),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "footer-text" }, [
+                  _vm._v("P.IVA: 12345678910"),
+                ]),
               ]),
-            ]),
-          ]),
+            ]
+          ),
         ]
       ),
     ])
@@ -5524,9 +5561,9 @@ var render = function () {
                 _c("div", [
                   _c("i", { staticClass: "fa-solid fa-user-doctor" }),
                   _vm._v(" "),
-                  _c("span", [_vm._v(" " + _vm._s(_vm.result.name) + " ")]),
+                  _c("span", [_vm._v(_vm._s(_vm.result.name))]),
                   _vm._v(" "),
-                  _c("span", [_vm._v(" " + _vm._s(_vm.result.surname))]),
+                  _c("span", [_vm._v(_vm._s(_vm.result.surname))]),
                 ]),
                 _vm._v(" "),
                 _c("div", [
@@ -5538,9 +5575,15 @@ var render = function () {
                 ]),
                 _vm._v(" "),
                 _c("div", [
+                  _c("i", { staticClass: "fa-solid fa-city" }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(_vm.result.city))]),
+                ]),
+                _vm._v(" "),
+                _c("div", [
                   _c("i", { staticClass: "fa-solid fa-house-chimney-medical" }),
                   _vm._v(" "),
-                  _c("span", [_vm._v(" " + _vm._s(_vm.result.city))]),
+                  _c("span", [_vm._v(_vm._s(_vm.result.business_address))]),
                 ]),
               ]),
             ]),
@@ -5875,11 +5918,17 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("main", [
-      _c("div", { staticClass: "d-flex justify-content-center text-white" }, [
-        _c("h1", { staticClass: "fw-bold pt-4" }, [
-          _vm._v("Ci scusiamo per l'imprevisto, riprova più tardi!"),
-        ]),
-      ]),
+      _c(
+        "div",
+        { staticClass: "ms_not d-flex justify-content-center text-white" },
+        [
+          _c("h1", { staticClass: "fw-bold pt-4" }, [
+            _vm._v(
+              "\n            Ci scusiamo per l'imprevisto, riprova più tardi!\n        "
+            ),
+          ]),
+        ]
+      ),
     ])
   },
 ]
@@ -5906,11 +5955,13 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("main", [
     !_vm.boolean
-      ? _c("div", { staticClass: "jumbotron col-12" }, [
+      ? _c("div", { staticClass: "jumbotron" }, [
           _c("div", { staticClass: "container" }, [
             _c("div", { staticClass: "col-6 input-box" }, [
-              _c("h1", { staticClass: "py-5 text-uppercase" }, [
-                _vm._v("look for your healthcare professional"),
+              _c("h1", { staticClass: "py-5 text-uppercase text-black" }, [
+                _vm._v(
+                  "\n                    look for your healthcare professionals\n                "
+                ),
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "input-group" }, [
@@ -5945,7 +5996,9 @@ var render = function () {
                   },
                   [
                     _c("option", { attrs: { disabled: "", value: "" } }, [
-                      _vm._v("Choose one specialization..."),
+                      _vm._v(
+                        "\n                            Choose one specialization...\n                        "
+                      ),
                     ]),
                     _vm._v(" "),
                     _vm._l(_vm.allSpecializations, function (specialization) {
@@ -5990,15 +6043,15 @@ var render = function () {
                 ]),
               ]),
               _vm._v(" "),
-              _vm.error
-                ? _c("div", { staticClass: "text-danger" }, [
-                    _c("p", { staticClass: "fw-bold" }, [
+              _c("div", { staticClass: "text-danger" }, [
+                _vm.error
+                  ? _c("p", { staticClass: "fw-bold" }, [
                       _vm._v(
                         "\n                        You need at least one specialization selected.\n                    "
                       ),
-                    ]),
-                  ])
-                : _vm._e(),
+                    ])
+                  : _vm._e(),
+              ]),
             ]),
           ]),
         ])
@@ -6041,7 +6094,7 @@ var render = function () {
               !_vm.results.specializations
                 ? _c("h2", { staticClass: "text-center text-danger fw-bold" }, [
                     _vm._v(
-                      "We're sorry, there aren't any registered doctors with that specialization."
+                      "\n                We're sorry, there aren't any registered doctors with that\n                specialization.\n            "
                     ),
                   ])
                 : _vm._e(),
@@ -6061,7 +6114,8 @@ var staticRenderFns = [
       _c(
         "a",
         {
-          staticClass: "btn btn-primary rounded my-2 mx-auto fw-bold",
+          staticClass:
+            "btn btn-primary text-white rounded my-2 mx-auto fw-bold",
           attrs: { href: "/search" },
         },
         [
