@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark navbar-back py-1">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-back fixed-top py-1">
     <div class="container">
         {{-- Nabar Brand --}}
         <a class="navbar-brand" href="/">BDoctors</a>

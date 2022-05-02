@@ -1,4 +1,4 @@
-<footer class="py-4">
+<footer class="py-3">
     <div class="container d-flex justify-content-between align-items-center">
         <div class="d-flex list-container">
             <div class="px-3 disp-no">

@@ -1,21 +1,24 @@
-.ms_card-div {
-    width: 70%;
+.ms_home {
+    padding: 100px 0;
 
-    .btn {
-        padding: 10px;
-        margin: 6px 4px;
+    .ms_card-div {
+        width: 70%;
+
+        .btn {
+            padding: 10px;
+            margin: 6px 4px;
+        }
+
+        .bott-mq {
+            margin: auto;
+        }
     }
 
-    .bott-mq {
-        margin: auto;
-    }
-
-}
-
-.ms_text-box {
-    .ms_text {
-        background-color: #c7eaf2;
-        border-radius: 15px;
-        overflow-y: auto;
+    .ms_text-box {
+        .ms_text {
+            background-color: #c7eaf2;
+            border-radius: 15px;
+            overflow-y: auto;
+        }
     }
 }

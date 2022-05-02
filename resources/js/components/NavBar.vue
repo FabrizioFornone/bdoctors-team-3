@@ -1,7 +1,9 @@
 <template>
-    <nav class="navbar navbar-expand-lg fixed-top py-1 fs-5">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-1 fs-5">
         <div class="container">
-            <img src="imgs/logo-wide.png" alt="" />
+            <a href="/">
+                <img src="imgs/logo-wide-black.png" alt="" />
+            </a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -70,7 +72,7 @@ export default {
     .nav-link {
         color: #2d3035;
 
-        &:hover{
+        &:hover {
             color: #454952;
         }
     }

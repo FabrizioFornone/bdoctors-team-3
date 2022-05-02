@@ -24,6 +24,12 @@
 // Login
 @import "partials/login";
 
+// Create
+@import "partials/create";
+
+// Edit
+@import "partials/edit";
+
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
@@ -36,7 +42,7 @@ body {
 }
 
 main {
-    min-height: calc(100vh - 59px);
+    min-height: calc(100vh - 250px);
     background-color: #696969;
 }
 

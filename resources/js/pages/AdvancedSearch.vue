@@ -1,6 +1,6 @@
 <template>
     <main>
-        <div class="container py-5">
+        <div class="container">
             <div class="search-group col-6">
                 <div class="input-group">
                     <select
@@ -118,6 +118,9 @@ export default {
 <style lang="scss" scoped>
 main {
     background-color: #59a7b8;
-    height: calc(100vh - 47px);
+
+    .container {
+        padding: 100px 0;
+    }
 }
 </style>

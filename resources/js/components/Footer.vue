@@ -55,8 +55,5 @@ export default {};
 footer {
     background-color: #2d3035;
 
-    img {
-        width: 300px;
-    }
 }
 </style>
