@@ -86,7 +86,7 @@
                 <div></div>
                 <button
                     type="submit"
-                    class="btn btn-success text-white mb-3"
+                    class="btn btn-success text-white fw-bold mb-3"
                     @click="formSubmit"
                 >
                     Submit

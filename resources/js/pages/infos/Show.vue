@@ -70,7 +70,7 @@
                             <div class="d-flex justify-content-center">
                             <!-- Message Button -->
                                 <div>
-                                    <router-link class="btn btn-primary rounded-5 text-white mx-3"
+                                    <router-link class="btn btn-primary rounded-5 text-white fw-bold mx-3"
                                         :to="{
                                             name: 'message.index',
                                             params: { result: info.id },
@@ -81,7 +81,7 @@
                                 </div> 
                                 <!-- Review Buttton -->
                                 <div>
-                                    <router-link class="btn btn-primary rounded text-white mx-3"
+                                    <router-link class="btn btn-primary rounded text-white fw-bold mx-3"
                                         :to="{
                                             name: 'review.index',
                                             params: { result: info.id },

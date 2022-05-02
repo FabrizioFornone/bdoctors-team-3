@@ -34,7 +34,7 @@
                 <!-- Details button on right side of card -->
                 <div class="d-flex justify-content-center">
                     <router-link
-                        class="btn btn-primary rounded text-white my-2 me-3"
+                        class="btn btn-primary rounded text-white fw-bold my-2 me-3"
                         :to="{
                             name: 'results.show',
                             params: { result: result.id },
