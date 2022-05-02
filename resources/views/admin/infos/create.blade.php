@@ -63,7 +63,11 @@
                             <input type="checkbox" class="form-check-input" value="{{ $specialization->id }}" id="specialization_{{$specialization->id}}"
                                 name="specializations[]">
                             </div>
-                            @endforeach
+                        @endforeach
+                        
+                        @error('specializations')
+                            <div class="pb-3 fw-bold text-danger">{{ $message }}</div>
+                        @enderror
 
                         {{-- CV--}}
                         <div class="mb-3">
