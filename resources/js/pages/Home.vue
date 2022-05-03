@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="text-danger">
-                        <p class="fw-bold" v-if="error">
+                        <p class="fw-bold fs-5" v-if="error">
                             You need at least one specialization selected.
                         </p>
                     </div>

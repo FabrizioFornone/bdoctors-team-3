@@ -2,7 +2,7 @@
     <main>
         <div class="container">
             <div class="search-group col-6" v-if="!boolean">
-                <div class="input-group">
+                <div class="input-group ">
                     <select
                         v-model="selected"
                         class="form-select"
@@ -26,13 +26,17 @@
                         v-model="searchCity"
                         @keydown.enter="findSearchSubmit()"
                     />
-
                     <button
                         class="btn btn-primary rounded text-white ms-2"
                         @click="findSearchSubmit()"
                     >
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
+                </div>
+                <div class="text-danger">
+                    <p class="fw-bold fs-5" v-if="error">
+                        You need one specialization selected and one city written in the search bar.
+                    </p>
                 </div>
             </div>
 
@@ -71,6 +75,7 @@ export default {
             advancedResults: null,
             searchCity: "",
             boolean: false,
+            error: false
         };
     },
     methods: {
@@ -100,7 +105,10 @@ export default {
         findSearchSubmit() {
             if (this.searchCity != "" && this.selected != "") {
                 this.getAdvancedResults(this.searchCity, this.selected);
+                this.error = false;
                 window.scrollTo(0, 0);
+            } else {
+                this.error = true;
             }
         },
         async getAllSpec() {
@@ -136,6 +144,10 @@ main {
             top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
+
+            .text-danger {
+                height: 10px;
+            }
         }
     }
 }
