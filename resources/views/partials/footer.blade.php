@@ -36,8 +36,8 @@
             </div>
         </div>
         <div class="d-flex flex-column align-items-center wr-m ">
-            <img class="img-fluid" src="{{asset('imgs/logo-wide.png')}}" alt="">
-            <ul class="text-center fw-bold disp-no">
+            <img class="img-fluid disp-no" src="{{asset('imgs/logo-wide.png')}}" alt="">
+            <ul class="text-center fw-bold">
                 <li class="footer-text">Rome, Italy</li>
                 <li class="footer-text">P.IVA: 12345678910</li>
             </ul>
