@@ -2032,6 +2032,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     result: Object
@@ -2193,6 +2197,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2205,7 +2217,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       selected: "",
       advancedResults: null,
       searchCity: "",
-      "boolean": false
+      "boolean": false,
+      error: false
     };
   },
   methods: {
@@ -2252,7 +2265,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     findSearchSubmit: function findSearchSubmit() {
       if (this.searchCity != "" && this.selected != "") {
         this.getAdvancedResults(this.searchCity, this.selected);
+        this.error = false;
         window.scrollTo(0, 0);
+      } else {
+        this.error = true;
       }
     },
     getAllSpec: function getAllSpec() {
@@ -2285,6 +2301,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee2, null, [[0, 5]]);
       }))();
+    },
+    changeBoolean: function changeBoolean() {
+      this["boolean"] = !this["boolean"];
+      this.selected = "";
+      this.searchCity = "";
     }
   },
   mounted: function mounted() {
@@ -2337,15 +2358,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -3016,6 +3028,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -3130,7 +3154,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card[data-v-42c6796e]:hover {\n  background-color: #f5f5f5;\n}\n.card .card-img[data-v-42c6796e] {\n  height: 175px;\n  width: 150px;\n  border: 0.5px solid #ccc;\n  border-radius: 5px;\n}\n.card .card-img img[data-v-42c6796e] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 5px;\n}\n.card i[data-v-42c6796e] {\n  width: 19px;\n}", ""]);
+exports.push([module.i, ".card[data-v-42c6796e]:hover {\n  background-color: #f5f5f5;\n}\n.card .info-box[data-v-42c6796e] {\n  font-size: 20px;\n}\n.card .card-img[data-v-42c6796e] {\n  height: 175px;\n  width: 150px;\n  border: 0.5px solid #ccc;\n  border-radius: 5px;\n}\n.card .card-img img[data-v-42c6796e] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 5px;\n}\n@media screen and (max-width: 575px) {\n.card-body[data-v-42c6796e] {\n    padding: 5px !important;\n}\n.card-body .card-img[data-v-42c6796e] {\n    height: 140px !important;\n    width: 120px !important;\n}\n.card-body .info-box[data-v-42c6796e] {\n    padding-left: 10px !important;\n    font-size: 14px !important;\n}\n.card-body .info-box .icon-size[data-v-42c6796e] {\n    width: 20px;\n}\n}", ""]);
 
 // exports
 
@@ -3149,7 +3173,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".navbar[data-v-5dd24bca] {\n  z-index: 1001;\n  background-color: #fff;\n  opacity: 0.8;\n}\n.navbar .nav-link[data-v-5dd24bca] {\n  color: #2d3035;\n  border-bottom: 2px solid transparent;\n}\n.navbar .nav-link[data-v-5dd24bca]:hover {\n  color: #454952;\n  border-bottom: 2px solid #454952;\n}\n.navbar img[data-v-5dd24bca] {\n  width: 200px;\n}", ""]);
+exports.push([module.i, ".navbar[data-v-5dd24bca] {\n  z-index: 1001;\n  background-color: #fff;\n  opacity: 0.8;\n}\n.navbar .nav-link[data-v-5dd24bca] {\n  color: #2d3035;\n  border-bottom: 3px solid transparent;\n}\n.navbar .nav-link[data-v-5dd24bca]:hover {\n  color: #454952;\n  border-bottom: 3px solid #454952;\n}\n.navbar img[data-v-5dd24bca] {\n  width: 200px;\n}", ""]);
 
 // exports
 
@@ -3168,7 +3192,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "main[data-v-0312e533] {\n  background-color: #59a7b8;\n}\nmain .container[data-v-0312e533] {\n  padding: 100px 0;\n}", ""]);
+exports.push([module.i, "main[data-v-0312e533] {\n  background-color: #59a7b8;\n}\nmain .container[data-v-0312e533] {\n  padding: 100px 0;\n}\nmain .container .search-group[data-v-0312e533] {\n  position: absolute;\n  top: 40%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\nmain .container .search-group .text-danger[data-v-0312e533] {\n  height: 10px;\n}", ""]);
 
 // exports
 
@@ -3206,7 +3230,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "main[data-v-b3c5cf30] {\n  background-color: #59a7b8;\n}\nmain .jumbotron[data-v-b3c5cf30] {\n  height: 100vh;\n  background: url(\"/imgs/jumbotron.png\") 65% 50%;\n  background-size: cover;\n  position: relative;\n}\nmain .jumbotron .input-box[data-v-b3c5cf30] {\n  position: absolute;\n  top: 40%;\n  left: 40%;\n  transform: translate(-50%, -50%);\n}\nmain .jumbotron .input-box button[data-v-b3c5cf30] {\n  margin-left: 15px;\n}\nmain .jumbotron h1[data-v-b3c5cf30] {\n  color: #fff;\n  min-width: 150px;\n}\nmain .text-danger[data-v-b3c5cf30] {\n  height: 10px;\n}\n@media screen and (max-width: 991px) {\nmain .jumbotron[data-v-b3c5cf30] {\n    background: url(\"/imgs/jumbo-mobile.png\") center center no-repeat;\n    background-size: cover;\n    position: relative;\n}\nmain .jumbotron .input-group[data-v-b3c5cf30] {\n    flex-direction: column;\n}\nmain .jumbotron .input-group select[data-v-b3c5cf30] {\n    width: 100%;\n    min-width: 225px;\n}\nmain .jumbotron .input-group .btn-group button[data-v-b3c5cf30] {\n    margin-left: 0;\n    margin-top: 30px;\n    width: 100%;\n}\n}", ""]);
+exports.push([module.i, "main[data-v-b3c5cf30] {\n  background-color: #59a7b8;\n}\nmain .jumbotron[data-v-b3c5cf30] {\n  height: 100vh;\n  background: url(\"/imgs/jumbotron.png\") 65% 50%;\n  background-size: cover;\n  position: relative;\n}\nmain .jumbotron .input-box[data-v-b3c5cf30] {\n  position: absolute;\n  top: 50%;\n  left: 35%;\n  transform: translate(-50%, -50%);\n}\nmain .jumbotron .input-box button[data-v-b3c5cf30] {\n  margin-left: 15px;\n}\nmain .jumbotron h2[data-v-b3c5cf30] {\n  color: #fff;\n  min-width: 150px;\n}\nmain .text-danger[data-v-b3c5cf30] {\n  height: 10px;\n}\n@media screen and (max-width: 991px) {\nmain .jumbotron[data-v-b3c5cf30] {\n    background: url(\"/imgs/jumbo-mobile.png\") center center no-repeat;\n    background-size: cover;\n    position: relative;\n}\nmain .jumbotron .input-group[data-v-b3c5cf30] {\n    flex-direction: column;\n}\nmain .jumbotron .input-group select[data-v-b3c5cf30] {\n    width: 100%;\n    min-width: 225px;\n}\nmain .jumbotron .input-group .btn-group button[data-v-b3c5cf30] {\n    margin-left: 0;\n    margin-top: 30px;\n    width: 100%;\n}\n}", ""]);
 
 // exports
 
@@ -3263,7 +3287,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "main[data-v-09439410] {\n  background-color: #59A7B8;\n}\nmain li[data-v-09439410] {\n  list-style: none;\n}", ""]);
+exports.push([module.i, "main[data-v-09439410] {\n  background-color: #59a7b8;\n}", ""]);
 
 // exports
 
@@ -5557,31 +5581,36 @@ var render = function () {
                 _c("img", { attrs: { src: _vm.result.photo, alt: "..." } }),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "ps-4 fs-5" }, [
-                _c("div", [
-                  _c("i", { staticClass: "fa-solid fa-user-doctor" }),
+              _c("div", { staticClass: "info-box ps-4" }, [
+                _c("div", { staticClass: "py-2" }, [
+                  _c("i", { staticClass: "fa-solid fa-user-doctor icon-size" }),
                   _vm._v(" "),
                   _c("span", [_vm._v(_vm._s(_vm.result.name))]),
                   _vm._v(" "),
                   _c("span", [_vm._v(_vm._s(_vm.result.surname))]),
                 ]),
                 _vm._v(" "),
-                _c("div", [
-                  _c("i", { staticClass: "fa-solid fa-briefcase-medical" }),
-                  _vm._v(" "),
-                  _c("span", [
-                    _vm._v(" " + _vm._s(_vm.result.specialization_name)),
-                  ]),
+                _c("div", { staticClass: "py-2" }, [
+                  _c("i", {
+                    staticClass: "fa-solid fa-briefcase-medical icon-size",
+                  }),
+                  _vm._v(
+                    "\n                            " +
+                      _vm._s(_vm.result.specialization_name) +
+                      "\n                        "
+                  ),
                 ]),
                 _vm._v(" "),
-                _c("div", [
-                  _c("i", { staticClass: "fa-solid fa-city" }),
+                _c("div", { staticClass: "py-2" }, [
+                  _c("i", { staticClass: "fa-solid fa-city icon-size" }),
                   _vm._v(" "),
                   _c("span", [_vm._v(_vm._s(_vm.result.city))]),
                 ]),
                 _vm._v(" "),
-                _c("div", [
-                  _c("i", { staticClass: "fa-solid fa-house-chimney-medical" }),
+                _c("div", { staticClass: "py-2" }, [
+                  _c("i", {
+                    staticClass: "fa-solid fa-house-chimney-medical icon-size",
+                  }),
                   _vm._v(" "),
                   _c("span", [_vm._v(_vm._s(_vm.result.business_address))]),
                 ]),
@@ -5597,7 +5626,8 @@ var render = function () {
             _c(
               "router-link",
               {
-                staticClass: "btn btn-primary rounded text-white my-2 me-3",
+                staticClass:
+                  "btn btn-primary rounded text-white fw-bold my-2 me-3",
                 attrs: {
                   to: {
                     name: "results.show",
@@ -5640,7 +5670,7 @@ var render = function () {
     "nav",
     { staticClass: "navbar navbar-expand-lg navbar-light fixed-top py-1 fs-5" },
     [
-      _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "container-fluid" }, [
         _vm._m(0),
         _vm._v(" "),
         _vm._m(1),
@@ -5686,7 +5716,7 @@ var render = function () {
                       },
                       [
                         _vm._v(
-                          "\n                        " +
+                          "\n                       Dr. " +
                             _vm._s(_vm.user.name) +
                             " " +
                             _vm._s(_vm.user.surname) +
@@ -5755,115 +5785,136 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("main", [
     _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "search-group col-6" }, [
-        _c("div", { staticClass: "input-group" }, [
-          _c(
-            "select",
-            {
-              directives: [
+      !_vm.boolean
+        ? _c("div", { staticClass: "search-group col-6" }, [
+            _c("div", { staticClass: "input-group " }, [
+              _c(
+                "select",
                 {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.selected,
-                  expression: "selected",
-                },
-              ],
-              staticClass: "form-select",
-              attrs: { "aria-label": "Example select with button addon" },
-              on: {
-                change: function ($event) {
-                  var $$selectedVal = Array.prototype.filter
-                    .call($event.target.options, function (o) {
-                      return o.selected
-                    })
-                    .map(function (o) {
-                      var val = "_value" in o ? o._value : o.value
-                      return val
-                    })
-                  _vm.selected = $event.target.multiple
-                    ? $$selectedVal
-                    : $$selectedVal[0]
-                },
-              },
-            },
-            [
-              _c("option", { attrs: { disabled: "", value: "" } }, [
-                _vm._v(
-                  "\n                        Choose one specialization...\n                    "
-                ),
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.allSpecializations, function (specialization) {
-                return _c(
-                  "option",
-                  {
-                    key: specialization.id,
-                    domProps: { value: specialization.specialization_name },
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.selected,
+                      expression: "selected",
+                    },
+                  ],
+                  staticClass: "form-select",
+                  attrs: { "aria-label": "Example select with button addon" },
+                  on: {
+                    change: function ($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function (o) {
+                          return o.selected
+                        })
+                        .map(function (o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.selected = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    },
                   },
-                  [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(specialization.specialization_name) +
-                        "\n                    "
-                    ),
-                  ]
-                )
-              }),
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.searchCity,
-                expression: "searchCity",
-              },
-            ],
-            staticClass: "form-control mx-2",
-            attrs: { type: "text", placeholder: "Search by city" },
-            domProps: { value: _vm.searchCity },
-            on: {
-              keydown: function ($event) {
-                if (
-                  !$event.type.indexOf("key") &&
-                  _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                ) {
-                  return null
-                }
-                return _vm.findSearchSubmit()
-              },
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.searchCity = $event.target.value
-              },
-            },
-          }),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary rounded text-white ms-2",
-              on: {
-                click: function ($event) {
-                  return _vm.findSearchSubmit()
                 },
-              },
-            },
-            [_c("i", { staticClass: "fa-solid fa-magnifying-glass" })]
-          ),
-        ]),
-      ]),
+                [
+                  _c("option", { attrs: { disabled: "", value: "" } }, [
+                    _vm._v(
+                      "\n                        Choose one specialization...\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.allSpecializations, function (specialization) {
+                    return _c(
+                      "option",
+                      {
+                        key: specialization.id,
+                        domProps: { value: specialization.specialization_name },
+                      },
+                      [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(specialization.specialization_name) +
+                            "\n                    "
+                        ),
+                      ]
+                    )
+                  }),
+                ],
+                2
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.searchCity,
+                    expression: "searchCity",
+                  },
+                ],
+                staticClass: "form-control mx-2",
+                attrs: { type: "text", placeholder: "Search by city" },
+                domProps: { value: _vm.searchCity },
+                on: {
+                  keydown: function ($event) {
+                    if (
+                      !$event.type.indexOf("key") &&
+                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                    ) {
+                      return null
+                    }
+                    return _vm.findSearchSubmit()
+                  },
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.searchCity = $event.target.value
+                  },
+                },
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary rounded text-white ms-2",
+                  on: {
+                    click: function ($event) {
+                      return _vm.findSearchSubmit()
+                    },
+                  },
+                },
+                [_c("i", { staticClass: "fa-solid fa-magnifying-glass" })]
+              ),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "text-danger" }, [
+              _vm.error
+                ? _c("p", { staticClass: "fw-bold fs-5" }, [
+                    _vm._v(
+                      "\n                    You need one specialization selected and one city written in the search bar.\n                "
+                    ),
+                  ])
+                : _vm._e(),
+            ]),
+          ])
+        : _vm._e(),
       _vm._v(" "),
       _vm.boolean
         ? _c(
             "div",
-            { staticClass: "my-5" },
+            { staticClass: "col-10 offset-1 col-lg-8 offset-lg-2 my-5" },
             [
+              _c("i", {
+                staticClass: "fa-solid fa-arrow-left ms_back-arrow",
+                on: {
+                  click: function ($event) {
+                    return _vm.changeBoolean()
+                  },
+                },
+              }),
+              _vm._v(" "),
               !_vm.advancedResults.advancedRes
                 ? _c("h2", { staticClass: "text-center text-white fw-bold" }, [
                     _vm._v(
@@ -5958,7 +6009,7 @@ var render = function () {
       ? _c("div", { staticClass: "jumbotron" }, [
           _c("div", { staticClass: "container" }, [
             _c("div", { staticClass: "col-6 input-box" }, [
-              _c("h1", { staticClass: "py-5 text-uppercase text-black" }, [
+              _c("h2", { staticClass: "py-5 text-uppercase" }, [
                 _vm._v(
                   "\n                    look for your healthcare professionals\n                "
                 ),
@@ -6045,7 +6096,7 @@ var render = function () {
               _vm._v(" "),
               _c("div", { staticClass: "text-danger" }, [
                 _vm.error
-                  ? _c("p", { staticClass: "fw-bold" }, [
+                  ? _c("p", { staticClass: "fw-bold fs-5" }, [
                       _vm._v(
                         "\n                        You need at least one specialization selected.\n                    "
                       ),
@@ -6061,7 +6112,7 @@ var render = function () {
       ? _c("div", { staticClass: "container py-5" }, [
           _c(
             "div",
-            { staticClass: "col-sm-12 col-lg-8 offset-lg-2 py-5" },
+            { staticClass: "col-10 offset-1 col-lg-8 offset-lg-2 py-5" },
             [
               _c(
                 "div",
@@ -6115,7 +6166,7 @@ var staticRenderFns = [
         "a",
         {
           staticClass:
-            "btn btn-primary text-white rounded my-2 mx-auto fw-bold",
+            "btn btn-primary text-white fw-bold rounded my-2 mx-auto",
           attrs: { href: "/search" },
         },
         [
@@ -6311,7 +6362,7 @@ var render = function () {
             _c(
               "button",
               {
-                staticClass: "btn btn-success text-white mb-3",
+                staticClass: "btn btn-success text-white fw-bold mb-3",
                 attrs: { type: "submit" },
                 on: { click: _vm.formSubmit },
               },
@@ -6564,7 +6615,7 @@ var render = function () {
               _c(
                 "button",
                 {
-                  staticClass: "btn btn-success text-white mb-3",
+                  staticClass: "btn btn-success text-white fw-bold mb-3",
                   attrs: { type: "submit" },
                   on: { click: _vm.formSubmit },
                 },
@@ -6630,26 +6681,23 @@ var render = function () {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-6" }, [
-                  _c("h3", { staticClass: "py-2" }, [
-                    _c("strong", [_vm._v("Name:")]),
+                  _c("h5", { staticClass: "py-2" }, [
+                    _c("i", {
+                      staticClass: "fa-solid fa-user-doctor icon-size",
+                    }),
                     _vm._v(
                       "\n                                    " +
+                        _vm._s(_vm.info.user.surname) +
+                        "\n                                    " +
                         _vm._s(_vm.info.user.name) +
                         "\n                                "
                     ),
                   ]),
                   _vm._v(" "),
-                  _c("h3", { staticClass: "py-2" }, [
-                    _c("strong", [_vm._v("Surname:")]),
-                    _vm._v(
-                      "\n                                    " +
-                        _vm._s(_vm.info.user.surname) +
-                        "\n                                "
-                    ),
-                  ]),
-                  _vm._v(" "),
                   _c("h5", { staticClass: "py-2" }, [
-                    _c("strong", [_vm._v("Business Address:")]),
+                    _c("i", {
+                      staticClass: "fa-solid fa-location-dot icon-size",
+                    }),
                     _vm._v(
                       "\n                                    " +
                         _vm._s(_vm.info.user.business_address) +
@@ -6658,7 +6706,7 @@ var render = function () {
                   ]),
                   _vm._v(" "),
                   _c("h5", { staticClass: "py-2" }, [
-                    _c("strong", [_vm._v("Phone Number:")]),
+                    _c("i", { staticClass: "fa-solid fa-phone icon-size" }),
                     _vm._v(
                       "\n                                    " +
                         _vm._s(_vm.info.phone) +
@@ -6667,7 +6715,9 @@ var render = function () {
                   ]),
                   _vm._v(" "),
                   _c("h5", { staticClass: "py-2" }, [
-                    _c("strong", [_vm._v("Performances:")]),
+                    _c("i", {
+                      staticClass: "fa-solid fa-stethoscope icon-size",
+                    }),
                     _vm._v(
                       "\n                                    " +
                         _vm._s(_vm.info.performances) +
@@ -6676,6 +6726,10 @@ var render = function () {
                   ]),
                   _vm._v(" "),
                   _c("h5", [
+                    _c("i", {
+                      staticClass: "fa-solid fa-briefcase-medical icon-size",
+                    }),
+                    _vm._v(" "),
                     _c("strong", [_vm._v("Specializations:")]),
                     _vm._v(" "),
                     _c(
@@ -6685,11 +6739,13 @@ var render = function () {
                         _vm.info.specializations,
                         function (specialization) {
                           return _c("ul", { key: specialization.id }, [
-                            _vm._v(
-                              "\n                                            - " +
-                                _vm._s(specialization.specialization_name) +
-                                "\n                                        "
-                            ),
+                            _c("li", [
+                              _vm._v(
+                                "\n                                                " +
+                                  _vm._s(specialization.specialization_name) +
+                                  "\n                                            "
+                              ),
+                            ]),
                           ])
                         }
                       ),
@@ -6709,7 +6765,7 @@ var render = function () {
                       "router-link",
                       {
                         staticClass:
-                          "btn btn-primary rounded-5 text-white mx-3",
+                          "btn btn-primary rounded-5 text-white fw-bold mx-3",
                         attrs: {
                           to: {
                             name: "message.index",
@@ -6733,7 +6789,8 @@ var render = function () {
                     _c(
                       "router-link",
                       {
-                        staticClass: "btn btn-primary rounded text-white mx-3",
+                        staticClass:
+                          "btn btn-primary rounded text-white fw-bold mx-3",
                         attrs: {
                           to: {
                             name: "review.index",
@@ -6772,19 +6829,17 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header text-center" }, [
-      _c("h4", { staticClass: "mb-0 fw-bold" }, [
-        _vm._v(
-          "\n                            Doctor's Profile\n                        "
-        ),
-      ]),
+      _c("h4", { staticClass: "mb-0 fw-bold" }, [_vm._v("Doctor's Profile")]),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center" }, [
-      _c("h4", { staticClass: "fw-bold" }, [_vm._v("More Infos")]),
+    return _c("div", { staticClass: "text-center pt-3" }, [
+      _c("h4", { staticClass: "fw-bold" }, [
+        _vm._v("Contact this healthcare professional"),
+      ]),
     ])
   },
 ]

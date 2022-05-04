@@ -7814,12 +7814,12 @@ readers do not read off random characters that represent icons */
 
 .navbar-dark .navbar-nav .nav-link {
   color: #fff !important;
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover:not(.dropdown-toggle) {
   color: rgba(240, 240, 240, 0.5803921569) !important;
-  border-bottom: 2px solid #fff;
+  border-bottom: 3px solid #fff;
 }
 
 .ms_infos {
@@ -20131,7 +20131,7 @@ body {
 
 main {
   min-height: calc(100vh - 250px);
-  background-color: #696969;
+  background-color: #C9C9C9;
 }
 
 ul {
@@ -20143,10 +20143,6 @@ a {
   text-decoration: none;
 }
 
-i {
-  width: 19px;
-}
-
 .ms_back-arrow {
   font-size: 30px;
   cursor: pointer;
@@ -20154,7 +20150,7 @@ i {
 }
 
 .ms_back-arrow:hover {
-  color: #000;
+  color: #0d6efd;
 }
 
 .ms_message,
@@ -20172,5 +20168,9 @@ i {
 .bg-message,
 .bg-review {
   background-color: #c7eaf2;
+}
+
+.icon-size {
+  width: 30px;
 }
 
